@@ -1,0 +1,27 @@
+#N canvas 763 138 536 460 10;
+#X obj 123 142 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 121 122 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1000 1;
+#X obj 131 181 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 10800 1;
+#X obj 123 162 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 154 256 pack f f f f;
+#X obj 55 215 r gpresave;
+#X obj 199 351 unpack f f f f;
+#X obj 171 284 instr/gabsaver 0 \$1 \$2;
+#X obj 124 239 f;
+#X connect 0 0 4 1;
+#X connect 1 0 8 1;
+#X connect 2 0 4 3;
+#X connect 3 0 4 2;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 1 0;
+#X connect 6 1 0 0;
+#X connect 6 2 3 0;
+#X connect 6 3 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;
+#X coords 0 -1 1 1 200 100 1 100 100;

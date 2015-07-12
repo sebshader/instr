@@ -1,0 +1,33 @@
+#N canvas 613 120 570 391 10;
+#X text 186 258 also see gabsender helpfile;
+#X text 63 22 gabsender takes 2 potential arguments: the 1st is an
+optional global control name. A send/receive pair is created with the
+name \$1-s where \$1 is this argument;
+#X text 50 93 the second argument/inlet is whether to disable saving
+or not.;
+#X obj 77 168 gabsender arrg;
+#X text 65 233 also sends "gpresave" a bang before saving;
+#X msg 27 186;
+#X text 18 115 second inlet takes load \, save \, and disable(on/off)
+messages;
+#X msg 181 139 load;
+#X msg 219 145 save;
+#X msg 259 143 disable 1;
+#X obj 234 199 show;
+#X msg 277 193 arrg;
+#X text 44 67 get_name reports the global name out of the rightmost
+outlet;
+#X obj 370 278 show;
+#X msg 205 321 /Users/sebshader/Library/Pd/instr/gabsender-help.pd
+;
+#X obj 327 154 gabsender;
+#X text 143 323 no args:;
+#X connect 3 0 5 0;
+#X connect 3 1 10 0;
+#X connect 5 0 3 0;
+#X connect 7 0 3 1;
+#X connect 8 0 3 1;
+#X connect 9 0 3 1;
+#X connect 10 0 11 0;
+#X connect 13 0 14 0;
+#X connect 15 1 13 0;

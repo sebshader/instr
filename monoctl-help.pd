@@ -1,0 +1,6 @@
+#N canvas 0 23 450 300 10;
+#X obj 114 148 monoctl;
+#X text 87 77 inlets: midi \, velocity \, gliss time;
+#X text 139 43 arg: gliss time;
+#X text 82 165 outs: list for line~ (midi + gliss) \, velocity \, list
+of current notes on;

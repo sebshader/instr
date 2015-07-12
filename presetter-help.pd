@@ -1,0 +1,8 @@
+#N canvas 399 112 664 368 10;
+#X text 131 49 presetter is a tool to read/write preferences from textfiles
+using msgfile from zexy;
+#X obj 239 179 presetabs;
+#X text 130 78 every line in the file is a different preset. see inside
+of "presetabs" for an example of how to use a file named afile.txt
+to store preferences;
+#X text 42 131 args: file \, preset # (starts from 1);

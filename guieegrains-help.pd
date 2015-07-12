@@ -1,0 +1,54 @@
+#N canvas 296 23 1055 797 10;
+#X obj 13 278 instr/guieegrains anar;
+#X obj 92 526 outputc~;
+#X obj 430 285 openpanel;
+#X obj 422 259 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 164 428 grainyback~ anotherar;
+#X text 316 426 use grainyback~ for stereo;
+#X text 445 256 open stereo soundfile;
+#X obj 428 317 sampbufs~ anar anotherar;
+#X text 510 6 simple gui for pitchshifting/timestreaching;
+#X text 45 -27 message selectors to 1st inlet: bang: playback from
+beginning if speed is positive \, or end if speed is negative set:
+sets array arg: symbol trans: transposition arg: float pos: position
+in overall soundfile (going from 0-1) arg: float ms: millisecond frequency
+of grains arg: float freq: frequency of grains arg: float speed: playback
+speed arg: float loop: whether to loop or not arg: float (0 or not)
+range: list of 2 inputs: low and high. both scaled to be between 0
+and 1 (where 0 is beginning of soundfile and 1 is the end). This is
+for looping \, Play and rewind. pause: freeze playback position. no
+args res: continue playback from current position no args tie: ties
+the sign of the speed to the sign of the grain-reader (so that if speed
+is negative \, the samples will be traversed backwards \, as well as
+the playback point. Note that the reverse is not true. (this is the
+speed->win parameter in the gui). arg: float (0 or not) rev: reverse
+window. no args. rew: rewind but don't begin playback. no args phase:
+set phase of master phasor;
+#X text 420 600 arguments: array name if state saving is wanted \,
+leave the other arguments blank. for custom-named saving name (matched
+to a named gabsender) \, make the second argument 0 and put the name
+as the 3rd argument \, and an optional gabsender name as the 4th;
+#X text 414 555 outlets: signal \, read point \, grain size \, phase
+of 1st reader \, overall position(0-1) \, message report;
+#X text 355 502 saves: transposition \, frequency \, speed \, loop
+\, ranges (list: low \, high) \, speed->window.;
+#X obj 527 184 nop;
+#X obj 535 445 print;
+#X obj 617 160 gabsender;
+#X msg 604 223 1 speed 0.666666 \, 1 loop 1 \, 1 trans 1 \,;
+#X obj 512 389 gabsaver;
+#X connect 0 0 1 0;
+#X connect 0 1 4 0;
+#X connect 0 2 4 1;
+#X connect 0 3 4 2;
+#X connect 0 5 17 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 1;
+#X connect 4 1 1 1;
+#X connect 13 0 0 0;
+#X connect 15 0 16 0;
+#X connect 16 0 15 0;
+#X connect 17 0 13 0;
+#X connect 17 0 14 0;
