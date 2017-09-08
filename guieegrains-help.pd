@@ -1,14 +1,18 @@
-#N canvas 296 23 1055 797 10;
+#N canvas 266 23 1055 797 10;
 #X obj 13 278 instr/guieegrains anar;
-#X obj 92 526 outputc~;
 #X obj 430 285 openpanel;
 #X obj 422 259 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 164 428 grainyback~ anotherar;
-#X text 316 426 use grainyback~ for stereo;
 #X text 445 256 open stereo soundfile;
-#X obj 428 317 sampbufs~ anar anotherar;
 #X text 510 6 simple gui for pitchshifting/timestreaching;
+#X text 443 481 saves: transposition \, frequency \, speed \, loop
+\, ranges (list: low \, high) \, speed->window.;
+#X msg 344 239 dump;
+#X text 440 603 arguments: array name of buffer;
+#X obj 392 410 stater \$0-guieegrains eegrains;
+#X msg 677 374 \; eegrains loop 1 \; eegrains tie 1 \; eegrains speed
+2 \; eegrains freq 12.5 \; eegrains range 0 1 \; eegrains trans -8
+\;;
 #X text 45 -27 message selectors to 1st inlet: bang: playback from
 beginning if speed is positive \, or end if speed is negative set:
 sets array arg: symbol trans: transposition arg: float pos: position
@@ -24,31 +28,28 @@ is negative \, the samples will be traversed backwards \, as well as
 the playback point. Note that the reverse is not true. (this is the
 speed->win parameter in the gui). arg: float (0 or not) rev: reverse
 window. no args. rew: rewind but don't begin playback. no args phase:
-set phase of master phasor;
-#X text 420 600 arguments: array name if state saving is wanted \,
-leave the other arguments blank. for custom-named saving name (matched
-to a named gabsender) \, make the second argument 0 and put the name
-as the 3rd argument \, and an optional gabsender name as the 4th;
-#X text 414 555 outlets: signal \, read point \, grain size \, phase
-of 1st reader \, overall position(0-1) \, message report;
-#X text 355 502 saves: transposition \, frequency \, speed \, loop
-\, ranges (list: low \, high) \, speed->window.;
-#X obj 527 184 nop;
-#X obj 535 445 print;
-#X obj 617 160 gabsender;
-#X msg 604 223 1 speed 0.666666 \, 1 loop 1 \, 1 trans 1 \,;
-#X obj 512 389 gabsaver;
-#X connect 0 0 1 0;
-#X connect 0 1 4 0;
-#X connect 0 2 4 1;
-#X connect 0 3 4 2;
-#X connect 0 5 17 0;
-#X connect 2 0 7 0;
-#X connect 3 0 2 0;
-#X connect 4 0 1 1;
-#X connect 4 1 1 1;
-#X connect 13 0 0 0;
+send messages to rightmost inlet of egrains~;
+#X text 436 557 outlets: signal1 \, signal2 \, read point \, grain
+size \, phase of 1st reader \, overall position(0-1) \, message report
+for saving;
+#X obj 92 526 shadylib/outputc~;
+#X obj 187 418 shadylib/grainyback~ anar2;
+#X obj 428 317 shadylib/sampbufs~ anar anar2;
+#X obj 679 281 shadylib/saver \$0-guieegrains;
+#X obj 680 352 shadylib/msgsave;
+#X connect 0 0 12 0;
+#X connect 0 1 12 0;
+#X connect 0 2 13 0;
+#X connect 0 3 13 1;
+#X connect 0 4 13 2;
+#X connect 0 6 8 0;
+#X connect 1 0 14 0;
+#X connect 2 0 1 0;
+#X connect 6 0 0 0;
+#X connect 8 1 0 0;
+#X connect 13 0 12 1;
+#X connect 13 1 12 1;
 #X connect 15 0 16 0;
-#X connect 16 0 15 0;
-#X connect 17 0 13 0;
-#X connect 17 0 14 0;
+#X connect 15 1 16 1;
+#X connect 15 2 16 2;
+#X connect 16 0 9 0;

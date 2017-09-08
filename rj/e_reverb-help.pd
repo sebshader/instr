@@ -1,4 +1,4 @@
-#N canvas 444 56 1051 534 10;
+#N canvas 389 56 1051 534 10;
 #X obj 480 151 osc~ 220;
 #X obj 480 233 *~;
 #X obj 480 277 e_reverb rev1;
@@ -7,7 +7,7 @@
 #X obj 545 151 metro 500;
 #X obj 545 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 480 129 5 0 0 0 - - -;
+#X floatatom 480 129 5 0 0 0 - - -, f 5;
 #X msg 787 388 amp 80 \, hall 80 \, freq 6000 \, damp 60;
 #X text 786 349 Defaults:;
 #N canvas 0 276 827 710 REFERENCE 0;
@@ -62,7 +62,7 @@ rev2 \, wrapped for rjlib. Useful for making lightweight scenes.;
 #X obj 791 93 r \$0-GUI;
 #X obj 787 367 loadbang;
 #X text 702 126 Dry/Wet Mix;
-#X obj 480 333 outputc~;
+#X obj 480 333 shadylib/outputc~;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 39 0;

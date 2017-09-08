@@ -28,7 +28,6 @@ be made. ajf2010.;
 #X text 7 14 s_cwc - a harmonic waveshaper;
 #X obj 575 87 pack;
 #X obj 575 50 notein;
-#X obj 575 167 outputc~;
 #X obj 575 119 s_cwc;
 #N canvas 292 173 1081 586 detailedhelp 0;
 #X obj 575 9 r \$0-GUI;
@@ -42,13 +41,13 @@ be made. ajf2010.;
 #X obj 152 300 loadbang;
 #X obj 114 242 r \$0-control;
 #X obj 575 528 s \$0-control;
-#X symbolatom 350 271 20 0 0 0 - - -;
+#X symbolatom 350 271 20 0 0 0 - - -, f 20;
 #X obj 445 250 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
 -262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 25 185 makenote 127 300;
-#X floatatom 112 62 5 0 0 0 - - -;
+#X floatatom 112 62 5 0 0 0 - - -, f 5;
 #X msg 135 319 name dinosaur \, mod3d 0 \, mod3c 0 \, mod3b 0.661417
 \, mod3a 0.551181 \, mod2d 0.409449 \, mod2c 0 \, mod2b 0.456693 \,
 mod2a 0.984252 \, mod1d 0 \, mod1c 0.338583 \, mod1b 0.0314961 \, mod1a
@@ -333,8 +332,9 @@ color 2 \,;
 #X connect 21 0 22 0;
 #X connect 21 0 22 1;
 #X restore 560 323 pd detailedhelp;
-#X connect 5 0 8 0;
+#X obj 575 167 shadylib/outputc~;
+#X connect 5 0 7 0;
 #X connect 6 0 5 0;
 #X connect 6 1 5 1;
-#X connect 8 0 7 0;
-#X connect 8 0 7 1;
+#X connect 7 0 9 0;
+#X connect 7 0 9 1;

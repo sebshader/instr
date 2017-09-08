@@ -31,13 +31,12 @@ rave \, bass;
 #X text 7 14 s_ejun - a juno/jupiter type analogue sound;
 #X obj 570 86 pack;
 #X obj 570 49 notein;
-#X obj 547 146 outputc~;
 #X obj 570 118 s_ejun;
 #N canvas 359 233 1081 586 detailed_help 0;
 #X obj 575 9 r \$0-GUI;
 #X obj 21 132 m_majorscale 50;
 #X obj 21 78 metro 500;
-#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 21 211 pack;
 #X obj 27 174 notein;
@@ -45,13 +44,13 @@ rave \, bass;
 #X obj 152 300 loadbang;
 #X obj 129 243 r \$0-control;
 #X obj 575 528 s \$0-control;
-#X symbolatom 350 271 20 0 0 0 - - -;
+#X symbolatom 350 271 20 0 0 0 - - -, f 20;
 #X obj 452 250 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 7 256;
+-262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 21 154 makenote 127 300;
-#X floatatom 112 62 5 0 0 0 - - -;
+#X floatatom 112 62 5 0 0 0 - - -, f 5;
 #X msg 135 319 name orchy \, mod3d 0.00787402 \, mod3c 0.015748 \,
 mod3b 0.401575 \, mod3a 0.015748 \, mod2d 0.740157 \, mod2c 0.015748
 \, mod2b 0.0314961 \, mod2a 0.0393701 \, mod1d 0 \, mod1c 0.102362
@@ -227,8 +226,9 @@ osc1b 0.80315 \, osc1a 0.913386 \, env3r 0.110236 \, env3s 0.0314961
 #X connect 22 0 21 0;
 #X connect 22 0 21 1;
 #X restore 573 303 pd detailed_help;
-#X connect 5 0 8 0;
+#X obj 547 146 shadylib/outputc~;
+#X connect 5 0 7 0;
 #X connect 6 0 5 0;
 #X connect 6 1 5 1;
-#X connect 8 0 7 0;
-#X connect 8 0 7 1;
+#X connect 7 0 9 0;
+#X connect 7 0 9 1;

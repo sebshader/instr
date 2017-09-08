@@ -4,11 +4,11 @@
 #X obj 594 146 pack 0 10;
 #X obj 515 76 osc~ 440;
 #X obj 538 126 noise~;
-#X floatatom 594 124 5 0 0 0 - - -;
+#X floatatom 594 124 5 0 0 0 - - -, f 5;
 #X obj 516 207 c_xfade;
 #X obj 760 90 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 1 10 -262144
 -1 -1 0 1;
-#X floatatom 757 118 5 0 0 0 - - -;
+#X floatatom 757 118 5 0 0 0 - - -, f 5;
 #X obj 757 147 pack 0 200 500;
 #X text 728 181 third number is predelay;
 #N canvas 368 107 702 587 REFERENCE 0;
@@ -30,7 +30,7 @@ this is connected to [vline~];
 #X coords 0 -1 1 1 450 450 1 100 100;
 #X restore 18 39 pd REFERENCE;
 #X text 18 16 c_xfade - linear crossfade;
-#X obj 516 268 outputc~;
+#X obj 516 268 shadylib/outputc~;
 #X connect 0 0 4 0;
 #X connect 1 0 5 2;
 #X connect 2 0 5 0;

@@ -3,20 +3,20 @@
 #X obj 575 9 r \$0-GUI;
 #X obj 21 132 m_majorscale 50;
 #X obj 21 78 metro 500;
-#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 21 211 pack;
 #X obj 27 174 notein;
 #X obj 144 465 s \$0-GUI;
 #X obj 125 240 r \$0-control;
 #X obj 575 528 s \$0-control;
-#X symbolatom 350 271 20 0 0 0 - - -;
+#X symbolatom 350 271 20 0 0 0 - - -, f 20;
 #X obj 452 251 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 1 256;
+-262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 21 154 makenote 127 300;
-#X floatatom 112 62 5 0 0 0 - - -;
+#X floatatom 112 62 5 0 0 0 - - -, f 5;
 #X obj 307 157 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
 #X msg 144 318 name tremstring \, mod3b 0.133858 \, mod3a 0.0629921
@@ -168,10 +168,10 @@ for synthesising string sounds. ajf2010;
 #X text 7 14 s_hstr high string and viloin synthesier;
 #X obj 570 86 pack;
 #X obj 570 49 notein;
-#X obj 571 181 outputc~;
 #X obj 570 117 s_hstr;
-#X connect 6 0 9 0;
+#X obj 571 181 shadylib/outputc~;
+#X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 7 1 6 1;
-#X connect 9 0 8 0;
-#X connect 9 0 8 1;
+#X connect 8 0 9 0;
+#X connect 8 0 9 1;

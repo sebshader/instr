@@ -80,14 +80,14 @@ empty 0 -8 0 10 -262144 -1 -1 0;
 #X restore 133 221 pd scanner_params;
 #X obj 729 69 loadbang;
 #X msg 729 98 0;
-#X floatatom 571 348 5 0 0 0 - - -;
-#X floatatom 478 412 5 0 0 0 - - -;
+#X floatatom 571 348 5 0 0 0 - - -, f 5;
+#X floatatom 478 412 5 0 0 0 - - -, f 5;
 #X obj 133 250 unpack f f f;
 #X obj 261 115 cnv 15 65 16 empty empty SCANNER~ 8 8 0 10 -33289 -262144
 0;
-#X floatatom 460 240 5 0 0 0 - - -;
+#X floatatom 460 240 5 0 0 0 - - -, f 5;
 #X obj 666 262 outlet;
-#X obj 645 212 iem_prepend scanner-mode;
+#X obj 645 212 iemlib/iem_prepend scanner-mode;
 #X connect 1 0 29 0;
 #X connect 2 0 7 0;
 #X connect 3 0 26 0;

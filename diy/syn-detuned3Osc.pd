@@ -1,10 +1,10 @@
 #N canvas 40 75 968 337 10;
 #X obj 23 95 outlet~;
 #X obj 721 46 loadbang;
-#X obj 126 131 hsl 60 13 0 1 0 0 \$0-a \$0-ra detuneA -2 -7 0 10 -237493
--262144 -355 590 1;
-#X obj 213 131 hsl 60 13 0 1 0 0 \$0-b \$0-rb detuneB -2 -7 0 10 -237493
--262144 -355 5310 1;
+#X obj 126 131 hsl 60 13 0 1 0 0 \$0-a \$0-ra detuneA -2 -7 0 10 -56
+-262144 -355 4190 1;
+#X obj 213 131 hsl 60 13 0 1 0 0 \$0-b \$0-rb detuneB -2 -7 0 10 -56
+-262144 -355 3810 1;
 #X obj 106 131 cnv 12 15 13 empty empty 0 1 6 0 12 -33289 -262144 0
 ;
 #X obj 193 131 cnv 12 15 13 empty empty 1 1 6 0 12 -33289 -262144 0
@@ -175,7 +175,7 @@
 #X obj 296 162 * -1;
 #X obj 343 158 * -1;
 #X obj 103 123 vsl 10 40 1 255 0 0 ertteetyeyterttretretrrtrtrtrtrt
-hhghghghghghghgggggh empty 0 -8 0 10 -4160 -262144 -1 0 0;
+hhghghghghghghgggggh empty 0 -8 0 10 -4160 -262144 -1 3400 0;
 #X obj 115 123 vsl 10 40 1 255 0 0 ertteetyeyterttretretrrtrtrtrtrt
 hhghghghghghghgggggh empty 0 -8 0 10 -4034 -262144 -1 0 0;
 #X obj 127 123 vsl 10 40 1 255 0 0 ertteetyeyterttretretrrtrtrtrtrt

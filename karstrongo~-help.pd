@@ -1,0 +1,12 @@
+#N canvas 479 49 450 300 10;
+#X floatatom 195 88 5 0 0 0 - - -, f 5;
+#X text 62 30 karstrongo is a simple karplus-strong algorithm \, a
+midi note in the left inlet starts a note and the right inlet is the
+feedback;
+#X floatatom 284 95 5 0 0 0 - - -, f 5;
+#X obj 210 133 karstrongo~;
+#X obj 219 176 shadylib/outputc~;
+#X connect 0 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 1;
+#X connect 3 0 4 0;
