@@ -19,9 +19,6 @@
 #X obj 129 211 vocode~;
 #X obj 168 163 zexy/multiplex~;
 #X obj 223 217 vocode~;
-#X obj 319 105 *~;
-#X obj 161 94 *~;
-#X floatatom 433 107 5 0 0 0 - - -, f 5;
 #X obj 14 72 shadylib/smoother~;
 #X connect 0 0 11 2;
 #X connect 1 0 0 1;
@@ -32,8 +29,8 @@
 #X connect 6 0 14 0;
 #X connect 7 0 5 0;
 #X connect 7 0 14 0;
-#X connect 8 0 17 0;
-#X connect 8 1 16 0;
+#X connect 8 0 5 1;
+#X connect 8 1 14 1;
 #X connect 8 2 3 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
@@ -45,8 +42,4 @@
 #X connect 13 0 2 0;
 #X connect 14 0 15 0;
 #X connect 15 0 2 1;
-#X connect 16 0 14 1;
-#X connect 17 0 5 1;
-#X connect 18 0 16 1;
-#X connect 18 0 17 1;
-#X connect 19 0 6 0;
+#X connect 16 0 6 0;
