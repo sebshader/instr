@@ -16,10 +16,10 @@
 #X obj 260 268 arraysize;
 #X obj 244 162 route bang;
 #X obj 558 362 mstof;
-#X obj 1 4 cnv 15 420 112 empty empty guieegrains 7 12 0 14 -233017
--66577 0;
+#X obj 1 4 cnv 15 420 112 empty empty ggrains~ 7 12 0 14 -233017 -66577
+0;
 #X obj 9 33 hsl 300 30 0 1 0 0 \$0-slide \$0-sslide Position 10 14
-0 14 -4032 -159808 -258113 500 1;
+0 14 -4032 -159808 -258113 0 1;
 #X obj 99 10 bng 15 250 50 0 \$0-play empty Play 20 7 0 12 -4034 -258113
 -258113;
 #X obj 258 845 s \$0-sslide;
@@ -38,7 +38,7 @@
 #X obj 371 538 *;
 #X obj 375 615 tof/phasorshot~;
 #X obj 188 71 tgl 15 0 \$0-loop \$0-sloop loop 17 7 0 10 -1 -4032 -4160
-1 1;
+0 1;
 #X obj 490 622 sig~;
 #X obj 493 578 t f b;
 #X obj 375 696 *~ 1;
@@ -99,7 +99,7 @@
 #X obj 526 409 * -1;
 #X obj 550 219 s \$0-res;
 #X obj 313 94 tgl 15 0 \$0-spdwin \$0-sspdwin speed->win 17 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 1 1;
 #X msg 617 150 1;
 #X obj 175 412 r \$0-spdwin;
 #X obj 617 215 s \$0-sspdwin;
@@ -156,7 +156,6 @@
 #X obj 912 533 lmap;
 #X obj 867 97 declare -path shadylib;
 #X obj 790 151 inlet;
-#X obj 695 762 dbgr~;
 #X obj 469 115 f \$2;
 #X obj 1020 199 inlet;
 #X obj 327 178 route set trans pos ms freq speed loop range pause res
@@ -170,7 +169,7 @@ tie rev rew egrains;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 0 96 0;
-#X connect 5 0 147 0;
+#X connect 5 0 146 0;
 #X connect 5 1 8 0;
 #X connect 5 1 55 0;
 #X connect 5 1 137 0;
@@ -189,7 +188,7 @@ tie rev rew egrains;
 #X connect 12 0 80 1;
 #X connect 13 0 132 0;
 #X connect 14 0 71 0;
-#X connect 14 1 149 0;
+#X connect 14 1 148 0;
 #X connect 15 0 83 0;
 #X connect 15 0 85 1;
 #X connect 15 0 103 0;
@@ -208,7 +207,6 @@ tie rev rew egrains;
 #X connect 32 0 74 1;
 #X connect 32 0 110 0;
 #X connect 33 0 37 0;
-#X connect 33 0 146 0;
 #X connect 33 1 140 0;
 #X connect 33 2 140 0;
 #X connect 35 0 38 0;
@@ -345,23 +343,23 @@ tie rev rew egrains;
 #X connect 142 0 139 0;
 #X connect 143 2 124 0;
 #X connect 145 0 133 0;
-#X connect 148 0 132 0;
-#X connect 149 0 3 0;
-#X connect 149 1 11 1;
-#X connect 149 1 30 0;
-#X connect 149 1 123 0;
-#X connect 149 2 12 0;
-#X connect 149 3 15 0;
-#X connect 149 3 61 0;
-#X connect 149 4 87 0;
-#X connect 149 5 24 0;
-#X connect 149 5 106 0;
-#X connect 149 6 44 0;
-#X connect 149 7 65 0;
-#X connect 149 8 75 0;
-#X connect 149 9 90 0;
-#X connect 149 10 94 0;
-#X connect 149 11 108 0;
-#X connect 149 12 117 0;
-#X connect 149 13 11 3;
+#X connect 147 0 132 0;
+#X connect 148 0 3 0;
+#X connect 148 1 11 1;
+#X connect 148 1 30 0;
+#X connect 148 1 123 0;
+#X connect 148 2 12 0;
+#X connect 148 3 15 0;
+#X connect 148 3 61 0;
+#X connect 148 4 87 0;
+#X connect 148 5 24 0;
+#X connect 148 5 106 0;
+#X connect 148 6 44 0;
+#X connect 148 7 65 0;
+#X connect 148 8 75 0;
+#X connect 148 9 90 0;
+#X connect 148 10 94 0;
+#X connect 148 11 108 0;
+#X connect 148 12 117 0;
+#X connect 148 13 11 3;
 #X coords 0 -1 1 1 422 120 1 0 0;

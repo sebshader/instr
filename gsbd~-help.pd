@@ -16,12 +16,12 @@
 #X msg 462 112 2000;
 #X obj 401 272 saver \$0-gsbd;
 #X obj 407 358 msgsave;
-#X obj 231 233 stater \$0-gsbd gsbd1;
 #X msg 416 394 \; gsbd1 pitchenv 0.75 \; gsbd1 decay 2000 \; gsbd1
 attack 5 \;;
+#X obj 235 223 gsave \$0-gsbd gsbd1;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
-#X connect 0 1 16 0;
+#X connect 0 1 17 0;
 #X connect 2 0 0 0;
 #X connect 4 0 0 0;
 #X connect 6 0 0 0;
@@ -34,6 +34,6 @@ attack 5 \;;
 #X connect 14 0 15 0;
 #X connect 14 1 15 1;
 #X connect 14 2 15 2;
-#X connect 15 0 17 0;
-#X connect 16 0 0 1;
-#X connect 16 1 0 0;
+#X connect 15 0 16 0;
+#X connect 17 0 0 1;
+#X connect 17 1 0 0;
