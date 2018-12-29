@@ -24,14 +24,14 @@
 -258113;
 #X obj 258 845 s \$0-sslide;
 #X obj 287 780 snapshot~;
-#X floatatom 6 72 5 0 0 1 speed #0-sspeed #0-speed, f 5;
+#X floatatom 6 72 5 0 0 1 speed #0-sspeed #0-speed;
 #X obj 448 261 s \$0-sspeed;
 #X msg 273 811 set \$1;
 #X msg 440 235 set \$1;
 #X obj 475 526 r \$0-slide;
 #X obj 178 229 r \$0-speed;
 #X obj 371 506 t b f;
-#X floatatom 82 72 5 0 0 1 transpose #0-strans #0-trans, f 5;
+#X floatatom 82 72 5 0 0 1 transpose #0-strans #0-trans;
 #X obj 357 294 s \$0-strans;
 #X msg 357 273 set \$1;
 #X obj 492 769 r \$0-trans;
@@ -49,8 +49,8 @@
 #X msg 394 672 1;
 #X obj 852 220 r \$0-loop;
 #X obj 467 212 s \$0-sloop;
-#X floatatom 316 25 5 0 0 1 lowrange #0-slrange #0-lrange, f 5;
-#X floatatom 316 45 5 0 0 1 hirange #0-shrange #0-hrange, f 5;
+#X floatatom 316 25 5 0 0 1 lowrange #0-slrange #0-lrange;
+#X floatatom 316 45 5 0 0 1 hirange #0-shrange #0-hrange;
 #X obj 589 527 * 1;
 #X obj 595 495 t b f;
 #X msg 689 443 set \$1;
@@ -63,7 +63,7 @@
 #X obj 602 465 -;
 #X obj 391 773 clip~ 0 0;
 #X obj 331 367 r \$0-play;
-#X floatatom 233 72 5 0 0 1 window(ms) #0-sms #0-ms, f 5;
+#X floatatom 233 72 5 0 0 1 window(ms) #0-sms #0-ms;
 #X obj 437 460 s \$0-sms;
 #X msg 436 431 set \$1;
 #X obj 553 317 r \$0-ms;
@@ -87,7 +87,7 @@
 #X obj 394 751 scaler~;
 #X obj 542 662 spigot;
 #X obj 442 583 f;
-#X floatatom 343 70 5 0 0 1 (freq) #0-frq #0-sfrq, f 5;
+#X floatatom 343 70 5 0 0 1 (freq) #0-frq #0-sfrq;
 #X obj 589 621 s \$0-frq;
 #X msg 590 598 set \$1;
 #X obj 448 382 r \$0-sfrq;
@@ -136,8 +136,7 @@
 #X obj 920 593 outlet;
 #X obj 608 403 unpack f f;
 #X obj 613 433 swap;
-#X symbolatom 87 94 20 0 0 0 buffer_name #0-tobox #0-rubbish, f 20
-;
+#X symbolatom 87 94 20 0 0 0 buffer_name #0-tobox #0-rubbish;
 #X obj 254 349 s \$0-tobox;
 #X obj 235 192 r \$0-rubbish;
 #X obj 276 211 b;
@@ -155,9 +154,9 @@
 #X msg 635 720 0;
 #X obj 912 533 lmap;
 #X obj 867 97 declare -path shadylib;
-#X obj 790 151 inlet;
+#X obj 1059 123 inlet;
 #X obj 469 115 f \$2;
-#X obj 1020 199 inlet;
+#X obj 790 116 inlet;
 #X obj 327 178 route set trans pos ms freq speed loop range pause res
 tie rev rew egrains;
 #X connect 0 0 14 0;
