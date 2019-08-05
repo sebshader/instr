@@ -1,0 +1,7 @@
+#N canvas 0 23 450 300 10;
+#X obj 131 147 * 0.00787402;
+#X obj 150 97 inlet;
+#X obj 147 195 outlet;
+#X text 181 26 map controller data from 0-127 to 0-1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;

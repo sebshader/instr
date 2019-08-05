@@ -1,0 +1,9 @@
+#N canvas 55 23 450 300 10;
+#X obj 189 74 inlet;
+#X obj 182 227 outlet;
+#X obj 192 128 - 8192;
+#X obj 189 175 * 0.00012207;
+#X text 128 28 map pitchbend data from 0-16383 to -1-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
