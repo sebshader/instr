@@ -3,46 +3,46 @@
 #X msg 390 102 numberbox_matrix 7 9 5 14 -3.40282e+38 3.40282e+38 0
 empty empty #000000 3 14;
 #X obj -206 41 inlet;
-#X obj 100 203 cnv 15 685 500 empty empty Datalogue_Editor_V1 5 12
+#X obj 100 203 cnv 15 685 520 empty empty Datalogue_Editor_V1 5 12
 0 14 -4032 -4160 0;
-#X obj 187 578 cnv 15 63 14 empty empty Key_Trk 2 8 0 12 -31361 -257985
+#X obj 187 607 cnv 15 63 14 empty empty Key_Trk 2 8 0 12 -31361 -257985
 0;
-#X obj 251 578 cnv 15 63 14 empty empty PitchBend 2 8 0 12 -31361 -257985
+#X obj 251 607 cnv 15 63 14 empty empty PitchBend 2 8 0 12 -31361 -257985
 0;
-#X obj 315 578 cnv 15 63 14 empty empty ModWheel 2 8 0 12 -31361 -257985
+#X obj 315 607 cnv 15 63 14 empty empty ModWheel 2 8 0 12 -31361 -257985
 0;
-#X obj 379 578 cnv 15 63 14 empty empty Env_1 2 8 0 12 -31361 -257985
+#X obj 379 607 cnv 15 63 14 empty empty Env_1 2 8 0 12 -31361 -257985
 0;
-#X obj 443 578 cnv 15 63 14 empty empty Env_2 2 8 0 12 -31361 -257985
+#X obj 443 607 cnv 15 63 14 empty empty Env_2 2 8 0 12 -31361 -257985
 0;
-#X obj 507 578 cnv 15 63 14 empty empty LFO_1 2 8 0 12 -31361 -257985
+#X obj 507 607 cnv 15 63 14 empty empty LFO_1 2 8 0 12 -31361 -257985
 0;
-#X obj 571 578 cnv 15 63 14 empty empty LFO_2 2 8 0 12 -31361 -257985
+#X obj 571 607 cnv 15 63 14 empty empty LFO_2 2 8 0 12 -31361 -257985
 0;
-#X obj 635 578 cnv 15 63 14 empty empty Mult_1 2 8 0 12 -31361 -257985
+#X obj 635 607 cnv 15 63 14 empty empty Mult_1 2 8 0 12 -31361 -257985
 0;
-#X obj 699 578 cnv 15 63 14 empty empty Mult_2 2 8 0 12 -31361 -257985
+#X obj 699 607 cnv 15 63 14 empty empty Mult_2 2 8 0 12 -31361 -257985
 0;
-#X obj 106 593 cnv 15 80 13 empty empty Osc_1_Pitch 2 8 0 12 -31361
+#X obj 106 622 cnv 15 80 13 empty empty Osc_1_Pitch 2 8 0 12 -31361
 -257985 0;
-#X obj 106 607 cnv 15 80 13 empty empty Osc_1_PW 2 8 0 12 -31361 -257985
+#X obj 106 636 cnv 15 80 13 empty empty Osc_1_PW 2 8 0 12 -31361 -257985
 0;
-#X obj 106 621 cnv 15 80 13 empty empty Osc_2_Pitch 2 8 0 12 -31361
+#X obj 106 650 cnv 15 80 13 empty empty Osc_2_Pitch 2 8 0 12 -31361
 -257985 0;
-#X obj 106 635 cnv 15 80 13 empty empty Osc_2_PW 2 8 0 12 -31361 -257985
+#X obj 106 664 cnv 15 80 13 empty empty Osc_2_PW 2 8 0 12 -31361 -257985
 0;
-#X obj 106 649 cnv 15 80 13 empty empty VCF_MIDI 2 8 0 12 -31361 -257985
+#X obj 106 678 cnv 15 80 13 empty empty VCF_MIDI 2 8 0 12 -31361 -257985
 0;
-#X obj 106 663 cnv 15 80 13 empty empty VCA_1 2 8 0 12 -31361 -257985
+#X obj 106 692 cnv 15 80 13 empty empty VCA_1 2 8 0 12 -31361 -257985
 0;
-#X obj 106 677 cnv 15 80 13 empty empty VCA_2 2 8 0 12 -31361 -257985
+#X obj 106 706 cnv 15 80 13 empty empty VCA_2 2 8 0 12 -31361 -257985
 0;
-#X obj 106 557 cnv 15 180 20 empty empty Signal_Routing 2 10 0 15 -18561
+#X obj 106 586 cnv 15 180 20 empty empty Signal_Routing 2 10 0 15 -18561
 -4160 0;
-#X floatatom 365 375 5 0 0 1 Filter_MIDI_Note #0-bfmidi #0-bfmidis
+#X floatatom 632 378 5 0 0 1 Filter_MIDI_Note #0-bfmidi #0-bfmidis
 ;
-#X obj 368 356 hsl 80 15 0 4 0 0 \$0-bress \$0-bres Filter_Resonance
--2 -8 0 10 -4160 -260097 -16662 5800 1;
+#X obj 508 385 hsl 80 15 0 4 0 0 \$0-bress \$0-bres Filter_Resonance
+-2 -8 0 10 -4160 -260097 -16662 5200 1;
 #X obj 471 228 cnv 15 145 141 empty empty Mult_1 20 12 0 14 -4160 -4034
 0;
 #X obj 476 260 vradio 15 1 0 7 \$0-mul1src1s \$0-mul1src1 source1 -5
@@ -90,133 +90,133 @@ empty empty #000000 3 14;
 #X obj 109 262 vsl 15 102 0 1 0 0 \$0-osc1saws \$0-osc1saw saw 0 -9
 0 10 -4160 -4032 -4032 10100 1;
 #X obj 129 262 vsl 15 102 0 1 0 0 \$0-osc1sqrs \$0-osc1sqr sqr 0 -9
-0 10 -258113 -257985 -4032 4600 1;
+0 10 -258113 -257985 -4032 0 1;
 #X obj 150 262 vsl 15 102 0 1 0 0 \$0-osc1tris \$0-osc1tri tri 0 -9
-0 10 -257985 -30401 -4032 0 1;
+0 10 -257985 -30401 -4032 10100 1;
 #X obj 171 262 vsl 15 102 0 1 0 0 \$0-osc1sins \$0-osc1sin sin 0 -9
 0 10 -27201 -4160 -4032 0 1;
 #X obj 191 262 vsl 15 102 0 1 0 0 \$0-osc1noises \$0-osc1noise noise
 0 -9 0 10 -262144 -159808 -4032 0 1;
 #X msg 513 59 numberbox_matrix 2 5 5 14 -3.40282e+38 3.40282e+38 0
 empty empty #000000 3 14;
-#X obj 106 374 cnv 15 180 20 empty empty LFO_Freq_Routing 2 10 0 15
+#X obj 106 403 cnv 15 180 20 empty empty LFO_Freq_Routing 2 10 0 15
 -18561 -4160 0;
-#X obj 106 410 cnv 15 73 14 empty empty LFO_1_Freq 2 8 0 12 -31361
+#X obj 106 439 cnv 15 73 14 empty empty LFO_1_Freq 2 8 0 12 -31361
 -257985 0;
-#X obj 106 425 cnv 15 73 14 empty empty LFO_2_Freq 2 8 0 12 -31361
+#X obj 106 454 cnv 15 73 14 empty empty LFO_2_Freq 2 8 0 12 -31361
 -257985 0;
-#X obj 180 395 cnv 15 63 14 empty empty Key_Trk 2 8 0 12 -31361 -257985
+#X obj 180 424 cnv 15 63 14 empty empty Key_Trk 2 8 0 12 -31361 -257985
 0;
-#X obj 244 395 cnv 15 63 14 empty empty PitchBend 2 8 0 12 -31361 -257985
+#X obj 244 424 cnv 15 63 14 empty empty PitchBend 2 8 0 12 -31361 -257985
 0;
-#X obj 308 395 cnv 15 63 14 empty empty ModWheel 2 8 0 12 -31361 -257985
+#X obj 308 424 cnv 15 63 14 empty empty ModWheel 2 8 0 12 -31361 -257985
 0;
-#X obj 372 395 cnv 15 63 14 empty empty Env_1 2 8 0 12 -31361 -257985
+#X obj 372 424 cnv 15 63 14 empty empty Env_1 2 8 0 12 -31361 -257985
 0;
-#X obj 436 395 cnv 15 63 14 empty empty Env_2 2 8 0 12 -31361 -257985
+#X obj 436 424 cnv 15 63 14 empty empty Env_2 2 8 0 12 -31361 -257985
 0;
-#X obj 662 373 cnv 15 120 96 empty empty Env1 5 8 0 14 -260097 -4160
+#X obj 662 402 cnv 15 120 96 empty empty Env1 5 8 0 14 -260097 -4160
 0;
-#X obj 355 208 cnv 15 110 65 empty empty empty 20 12 0 14 -257985 -66577
+#X obj 355 228 cnv 15 110 85 empty empty empty 20 12 0 14 -257985 -66577
 0;
-#X obj 362 233 hsl 80 15 0 1 0 0 \$0-pw1s \$0-pw1 Osc_1_PW 10 8 0 10
+#X obj 362 273 hsl 80 15 0 1 0 0 \$0-pw1s \$0-pw1 Osc_1_PW 10 8 0 10
 -159808 -4034 -262144 3950 1;
-#X floatatom 359 212 5 0 0 1 Tune_Osc_1 #0-bmidi1 #0-bmidi1s;
+#X floatatom 359 232 5 0 0 1 Tune_Osc1 #0-bmidi1 #0-bmidi1s;
 #X obj 231 229 cnv 15 120 141 empty empty Osc2_Waves 20 12 0 14 -159808
 -232576 0;
 #X obj 195 29 declare -stdpath iemgui -stdlib iemmatrix;
-#X obj 187 593 numberbox_matrix 7 9 5 14 -3.40282e+38 3.40282e+38 0
+#X obj 187 622 numberbox_matrix 7 9 5 14 -3.40282e+38 3.40282e+38 0
 empty empty #000000 0 14;
-#X obj 180 410 numberbox_matrix 2 5 5 14 -3.40282e+38 3.40282e+38 0
+#X obj 180 439 numberbox_matrix 2 5 5 14 -3.40282e+38 3.40282e+38 0
 empty empty #000000 0 14;
-#X obj 106 444 cnv 15 275 110 empty empty LFO_1 5 10 0 14 -36034 -159808
+#X obj 106 473 cnv 15 275 110 empty empty LFO_1 5 10 0 14 -36034 -159808
 0;
-#X floatatom 188 448 5 0 0 1 Base_Freq #0-lfo1bfreq #0-lfo1bfreqs;
-#X obj 112 476 vradio 15 1 0 5 \$0-lfo1wavs \$0-lfo1wav wave 0 -8 0
-10 -1 -4032 -4160 2;
-#X obj 128 476 cnv 15 63 14 empty empty Sine 2 8 0 12 -4160 -257985
+#X floatatom 188 477 5 0 0 1 Base_Freq #0-lfo1bfreq #0-lfo1bfreqs;
+#X obj 112 505 vradio 15 1 0 5 \$0-lfo1wavs \$0-lfo1wav wave 0 -8 0
+10 -1 -4032 -4160 0;
+#X obj 128 505 cnv 15 63 14 empty empty Sine 2 8 0 12 -4160 -257985
 0;
-#X obj 128 491 cnv 15 63 14 empty empty Square 2 8 0 12 -4160 -257985
+#X obj 128 520 cnv 15 63 14 empty empty Square 2 8 0 12 -4160 -257985
 0;
-#X obj 128 506 cnv 15 63 14 empty empty Triangle 2 8 0 12 -4160 -257985
+#X obj 128 535 cnv 15 63 14 empty empty Triangle 2 8 0 12 -4160 -257985
 0;
-#X obj 128 521 cnv 15 63 14 empty empty Sawtooth 2 8 0 12 -4160 -257985
+#X obj 128 550 cnv 15 63 14 empty empty Sawtooth 2 8 0 12 -4160 -257985
 0;
-#X obj 196 498 vradio 15 1 0 2 \$0-lfo1polars \$0-lfo1polar polarity
+#X obj 196 527 vradio 15 1 0 2 \$0-lfo1polars \$0-lfo1polar polarity
 0 -8 0 10 -1 -4032 -4160 0;
-#X obj 212 498 cnv 15 63 14 empty empty bipolar 2 8 0 12 -4160 -257985
+#X obj 212 527 cnv 15 63 14 empty empty bipolar 2 8 0 12 -4160 -257985
 0;
-#X obj 212 513 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
+#X obj 212 542 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
 0;
-#X obj 289 495 hsl 80 15 0 1 0 0 \$0-lfo1pws \$0-lfo1pw Pulse_Width
+#X obj 289 524 hsl 80 15 0 1 0 0 \$0-lfo1pws \$0-lfo1pw Pulse_Width
 10 8 0 10 -1 -260097 -4032 3950 1;
-#X obj 355 274 cnv 15 110 65 empty empty empty 22 12 0 14 -257985 -66577
+#X obj 355 319 cnv 15 110 85 empty empty empty 22 12 0 14 -257985 -66577
 0;
-#X obj 362 299 hsl 80 15 0 1 0 0 \$0-pw2s \$0-pw2 Osc_2_PW 10 8 0 10
--159808 -4034 -262144 2200 1;
-#X floatatom 359 278 5 0 0 1 Tune_Osc_2 #0-bmidi2 #0-bmidi2s;
-#X obj 197 468 tgl 15 0 \$0-lfo1retrigs \$0-lfo1retrig Reset_Phase
-17 7 0 10 -1 -4032 -1 1 1;
-#X obj 289 451 hsl 80 15 0 1 0 0 \$0-lfo1phases \$0-lfo1phase Phase
-10 8 0 10 -1 -260097 -4032 0 1;
-#X obj 289 519 hsl 80 15 0 1 0 0 \$0-lfo1offsets \$0-lfo1offset PW_Offset
-10 8 0 10 -1 -260097 -4032 0 1;
-#X obj 384 444 cnv 15 275 110 empty empty LFO_2 5 10 0 14 -36034 -159808
-0;
-#X floatatom 466 448 5 0 0 1 Base_Freq #0-lfo2bfreq #0-lfo2bfreqs;
-#X obj 390 476 vradio 15 1 0 5 \$0-lfo2wavs \$0-lfo2wav wave 0 -8 0
-10 -1 -4032 -4160 1;
-#X obj 406 476 cnv 15 63 14 empty empty Sine 2 8 0 12 -4160 -257985
-0;
-#X obj 406 491 cnv 15 63 14 empty empty Square 2 8 0 12 -4160 -257985
-0;
-#X obj 406 506 cnv 15 63 14 empty empty Triangle 2 8 0 12 -4160 -257985
-0;
-#X obj 406 521 cnv 15 63 14 empty empty Sawtooth 2 8 0 12 -4160 -257985
-0;
-#X obj 474 500 vradio 15 1 0 2 \$0-lfo2polars \$0-lfo2polar polarity
-0 -8 0 10 -1 -4032 -4160 1;
-#X obj 490 500 cnv 15 63 14 empty empty bipolar 2 8 0 12 -4160 -257985
-0;
-#X obj 490 515 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
-0;
-#X obj 567 495 hsl 80 15 0 1 0 0 \$0-lfo2pws \$0-lfo2pw Pulse_Width
-10 8 0 10 -1 -260097 -4032 3950 1;
-#X obj 475 470 tgl 15 0 \$0-lfo2retrigs \$0-lfo2retrig Reset_Phase
+#X obj 362 365 hsl 80 15 0 1 0 0 \$0-pw2s \$0-pw2 Osc_2_PW 10 8 0 10
+-159808 -4034 -262144 3950 1;
+#X floatatom 359 323 5 0 0 1 Tune_Osc_2 #0-bmidi2 #0-bmidi2s;
+#X obj 197 497 tgl 15 0 \$0-lfo1retrigs \$0-lfo1retrig Reset_Phase
 17 7 0 10 -1 -4032 -1 0 1;
-#X obj 567 451 hsl 80 15 0 1 0 0 \$0-lfo2phases \$0-lfo2phase Phase
+#X obj 289 480 hsl 80 15 0 1 0 0 \$0-lfo1phases \$0-lfo1phase Phase
 10 8 0 10 -1 -260097 -4032 0 1;
-#X obj 567 519 hsl 80 15 0 1 0 0 \$0-lfo2offsets \$0-lfo2offset PW_Offset
+#X obj 289 548 hsl 80 15 0 1 0 0 \$0-lfo1offsets \$0-lfo1offset PW_Offset
 10 8 0 10 -1 -260097 -4032 0 1;
-#X floatatom 666 390 6 0 0 1 Attack #0-env1attack #0-env1attacks;
-#X floatatom 666 410 6 0 0 1 Decay #0-env1decay #0-env1decays;
-#X floatatom 666 450 6 0 0 1 Release #0-env1release #0-env1releases
-;
-#X obj 669 430 hsl 107 15 0 1 0 0 \$0-env1sustains \$0-env1sustain
-Sustain 10 8 0 10 -99865 -4034 -262144 10600 1;
-#X obj 662 473 cnv 15 120 96 empty empty Env2 5 8 0 14 -260097 -4160
+#X obj 384 473 cnv 15 275 110 empty empty LFO_2 5 10 0 14 -36034 -159808
 0;
-#X floatatom 666 490 6 0 0 1 Attack #0-env2attack #0-env2attacks;
-#X floatatom 666 510 6 0 0 1 Decay #0-env2decay #0-env2decays;
-#X floatatom 666 550 6 0 0 1 Release #0-env2release #0-env2releases
-;
-#X obj 669 530 hsl 107 15 0 1 0 0 \$0-env2sustains \$0-env2sustain
-Sustain 10 8 0 10 -99865 -4034 -262144 0 1;
-#X obj 505 375 cnv 15 153 63 empty empty empty 20 12 0 14 -233017 -66577
+#X floatatom 466 477 5 0 0 1 Base_Freq #0-lfo2bfreq #0-lfo2bfreqs;
+#X obj 390 505 vradio 15 1 0 5 \$0-lfo2wavs \$0-lfo2wav wave 0 -8 0
+10 -1 -4032 -4160 0;
+#X obj 406 505 cnv 15 63 14 empty empty Sine 2 8 0 12 -4160 -257985
 0;
-#X floatatom 511 419 5 0 0 1 Base_Ktrk_Key #0-bmidi #0-bmidis;
-#X floatatom 511 399 5 0 0 1 Portamento #0-porta #0-portas;
-#X obj 512 379 tgl 15 0 empty empty Mono 17 7 0 10 -4160 -260097 -16662
+#X obj 406 520 cnv 15 63 14 empty empty Square 2 8 0 12 -4160 -257985
+0;
+#X obj 406 535 cnv 15 63 14 empty empty Triangle 2 8 0 12 -4160 -257985
+0;
+#X obj 406 550 cnv 15 63 14 empty empty Sawtooth 2 8 0 12 -4160 -257985
+0;
+#X obj 474 529 vradio 15 1 0 2 \$0-lfo2polars \$0-lfo2polar polarity
+0 -8 0 10 -1 -4032 -4160 0;
+#X obj 490 529 cnv 15 63 14 empty empty bipolar 2 8 0 12 -4160 -257985
+0;
+#X obj 490 544 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
+0;
+#X obj 567 524 hsl 80 15 0 1 0 0 \$0-lfo2pws \$0-lfo2pw Pulse_Width
+10 8 0 10 -1 -260097 -4032 3950 1;
+#X obj 475 499 tgl 15 0 \$0-lfo2retrigs \$0-lfo2retrig Reset_Phase
+17 7 0 10 -1 -4032 -1 0 1;
+#X obj 567 480 hsl 80 15 0 1 0 0 \$0-lfo2phases \$0-lfo2phase Phase
+10 8 0 10 -1 -260097 -4032 0 1;
+#X obj 567 548 hsl 80 15 0 1 0 0 \$0-lfo2offsets \$0-lfo2offset PW_Offset
+10 8 0 10 -1 -260097 -4032 0 1;
+#X floatatom 666 419 6 0 0 1 Attack #0-env1attack #0-env1attacks;
+#X floatatom 666 439 6 0 0 1 Decay #0-env1decay #0-env1decays;
+#X floatatom 666 479 6 0 0 1 Release #0-env1release #0-env1releases
+;
+#X obj 669 459 hsl 75 15 0 1 0 0 \$0-env1sustains \$0-env1sustain Sustain
+10 8 0 10 -99865 -4034 -262144 7400 1;
+#X obj 662 502 cnv 15 120 96 empty empty Env2 5 8 0 14 -260097 -4160
+0;
+#X floatatom 666 519 6 0 0 1 Attack #0-env2attack #0-env2attacks;
+#X floatatom 666 539 6 0 0 1 Decay #0-env2decay #0-env2decays;
+#X floatatom 666 579 6 0 0 1 Release #0-env2release #0-env2releases
+;
+#X obj 669 559 hsl 75 15 0 1 0 0 \$0-env2sustains \$0-env2sustain Sustain
+10 8 0 10 -99865 -4034 -262144 3600 1;
+#X obj 505 404 cnv 15 153 63 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X floatatom 511 448 5 0 0 1 Base_Ktrk_Key #0-bmidi #0-bmidis;
+#X floatatom 511 428 5 0 0 1 Portamento #0-porta #0-portas;
+#X obj 512 408 tgl 15 0 empty empty Mono 17 7 0 10 -4160 -260097 -16662
 0 1;
 #X obj -39 863 outlet;
-#X obj 608 399 bng 15 250 50 0 empty empty Panic 17 7 0 10 -258113
+#X obj 608 428 bng 15 250 50 0 empty empty Panic 17 7 0 10 -258113
 -1 -258113;
 #X obj 552 207 bng 15 250 50 0 empty empty Send_All 17 7 0 10 -262144
 -1 -1;
 #X obj 235 262 vsl 15 102 0 1 0 0 \$0-osc2saws \$0-osc2saw saw 0 -9
 0 10 -4160 -4032 -4032 0 1;
 #X obj 255 262 vsl 15 102 0 1 0 0 \$0-osc2sqrs \$0-osc2sqr sqr 0 -9
-0 10 -258113 -257985 -4032 6100 1;
+0 10 -258113 -257985 -4032 10100 1;
 #X obj 297 262 vsl 15 102 0 1 0 0 \$0-osc2sins \$0-osc2sin sin 0 -9
 0 10 -27201 -4160 -4032 0 1;
 #X obj 317 262 vsl 15 102 0 1 0 0 \$0-osc2noises \$0-osc2noise noise
@@ -270,9 +270,9 @@ Sustain 10 8 0 10 -99865 -4034 -262144 0 1;
 #X restore -240 152 pd env1route;
 #X obj -119 194 s \$0-bmidi;
 #X obj -107 112 s \$0-porta;
-#X obj 294 377 bng 15 250 50 0 empty empty clr_mtx 17 7 0 10 -262144
+#X obj 294 406 bng 15 250 50 0 empty empty clr_mtx 17 7 0 10 -262144
 -1 -1;
-#X obj 294 560 bng 15 250 50 0 empty empty clr_mtx 17 7 0 10 -262144
+#X obj 294 589 bng 15 250 50 0 empty empty clr_mtx 17 7 0 10 -262144
 -1 -1;
 #X obj -199 759 iemlib/iem_prepend lfo_mtx;
 #X msg -276 593 matrix 7 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -320,13 +320,13 @@ Sustain 10 8 0 10 -99865 -4034 -262144 0 1;
 #X connect 1 4 6 0;
 #X restore -54 182 pd wav_mtx2;
 #X obj 276 262 vsl 15 102 0 1 0 0 \$0-osc2tris \$0-osc2tri tri 0 -9
-0 10 -257985 -30401 -4032 10100 1;
+0 10 -257985 -30401 -4032 0 1;
 #X obj -30 114 s \$0-pw1;
 #X obj -18 141 s \$0-pw2;
 #X obj 27 123 s \$0-bmidi1;
 #X obj 51 152 s \$0-bmidi2;
 #X obj 68 175 s \$0-bfmidi;
-#X obj 106 126 s \$0-bres;
+#X obj 107 120 s \$0-bres;
 #X obj -11 817 zexy/demultiplex;
 #N canvas 29 424 719 300 receivers 0;
 #X obj 107 234 outlet;
@@ -558,30 +558,34 @@ noise;
 #X obj 579 125 r \$0-noiseq1s;
 #X obj 611 144 r \$0-noiseq2s;
 #X obj 195 16 inlet;
-#X obj 271 172 shadylib/prepender bmidi porta pw1 pw2 bfmidi bres bmidi1
-bmidi2 noiseq1 noiseq2 gain;
 #X obj 643 76 r \$0-gains;
+#X obj 243 194 shadylib/prepender bmidi porta pw1 pw2 bfmidi bres bmidi1
+bmidi2 noiseq1 noiseq2 gain bhz1 bhz2;
+#X obj 565 172 r \$0-bhz1s;
+#X obj 635 174 r \$0-bhz2s;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
-#X connect 4 0 19 0;
-#X connect 5 0 19 1;
+#X connect 4 0 20 0;
+#X connect 5 0 20 1;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
 #X connect 8 0 0 0;
-#X connect 9 0 19 2;
-#X connect 10 0 19 3;
-#X connect 11 0 19 4;
+#X connect 9 0 20 2;
+#X connect 10 0 20 3;
+#X connect 11 0 20 4;
 #X connect 12 0 0 0;
-#X connect 13 0 19 5;
-#X connect 14 0 19 6;
-#X connect 15 0 19 7;
-#X connect 16 0 19 8;
-#X connect 17 0 19 9;
+#X connect 13 0 20 5;
+#X connect 14 0 20 6;
+#X connect 15 0 20 7;
+#X connect 16 0 20 8;
+#X connect 17 0 20 9;
 #X connect 18 0 2 0;
 #X connect 18 0 1 0;
-#X connect 19 0 0 0;
-#X connect 20 0 19 10;
+#X connect 19 0 20 10;
+#X connect 20 0 0 0;
+#X connect 21 0 20 11;
+#X connect 22 0 20 12;
 #X restore 16 701 pd receivers;
 #X obj 310 845 outlet;
 #X obj 283 67 inlet;
@@ -590,7 +594,7 @@ bmidi2 noiseq1 noiseq2 gain;
 #X msg 160 789 0;
 #X obj -21 752 matrix 7 9;
 #X obj -13 787 iemlib/iem_prepend sig_mtx;
-#X obj 168 715 iemlib/iem_prepend element;
+#X obj 166 768 iemlib/iem_prepend element;
 #X obj -209 728 matrix 2 5;
 #X obj -179 697 iemlib/iem_prepend element;
 #N canvas 166 131 731 611 triglist 0;
@@ -625,36 +629,36 @@ bmidi2 noiseq1 noiseq2 gain;
 #X obj 227 357 zexy/drip;
 #X msg 133 263 symbol src2;
 #X obj 102 31 t b b b b b b;
-#X msg 202 315 bmidi porta pw1 pw2 bmidi1 bmidi2 bfmidi bres noiseq1
-noiseq2 gain;
 #X msg 236 168 wav polar pw phase offset noise;
 #X msg 563 214 symbol alin;
 #X msg 455 156 dlin sustain rlin;
+#X msg 202 315 bmidi porta pw1 pw2 bmidi1 bmidi2 bfmidi bres noiseq1
+noiseq2 gain bhz1 bhz2;
 #X connect 0 0 30 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
 #X connect 5 0 2 0;
 #X connect 5 1 2 1;
-#X connect 6 0 34 0;
+#X connect 6 0 33 0;
 #X connect 6 1 3 0;
-#X connect 6 2 33 0;
+#X connect 6 2 32 0;
 #X connect 7 0 8 0;
 #X connect 7 1 6 0;
-#X connect 8 0 34 0;
+#X connect 8 0 33 0;
 #X connect 8 1 9 0;
-#X connect 8 2 33 0;
+#X connect 8 2 32 0;
 #X connect 9 0 2 0;
 #X connect 10 0 1 0;
 #X connect 11 0 12 0;
 #X connect 12 0 10 0;
 #X connect 12 1 10 1;
-#X connect 13 0 32 0;
+#X connect 13 0 31 0;
 #X connect 13 1 17 0;
 #X connect 13 2 16 0;
 #X connect 14 0 15 0;
 #X connect 14 1 13 0;
-#X connect 15 0 32 0;
+#X connect 15 0 31 0;
 #X connect 15 1 18 0;
 #X connect 15 2 16 0;
 #X connect 16 0 10 1;
@@ -677,14 +681,14 @@ noiseq2 gain;
 #X connect 28 0 1 0;
 #X connect 29 0 19 1;
 #X connect 30 0 27 0;
-#X connect 30 1 31 0;
+#X connect 30 1 34 0;
 #X connect 30 2 22 0;
 #X connect 30 3 14 0;
 #X connect 30 4 7 0;
-#X connect 31 0 28 0;
-#X connect 32 0 11 0;
-#X connect 33 0 2 1;
-#X connect 34 0 4 0;
+#X connect 31 0 11 0;
+#X connect 32 0 2 1;
+#X connect 33 0 4 0;
+#X connect 34 0 28 0;
 #X restore 297 122 pd triglist;
 #X obj 349 148 list trim;
 #N canvas 126 156 378 300 lfo1route 0;
@@ -758,15 +762,15 @@ noiseq2 gain;
 #X connect 5 1 2 0;
 #X connect 6 0 5 0;
 #X connect 7 0 1 1;
-#X restore 181 137 pd mul2route;
+#X restore 8 216 pd mul2route;
 #X obj -142 317 f;
 #X obj -73 303 f;
 #X obj 286 152 t b b;
 #X obj -142 343 iem_prepend retrig;
 #X obj -16 344 iem_prepend retrig;
 #X obj -25 298 f;
-#X floatatom 359 254 5 0 0 1 Noise_Q_1 #0-noiseq1 #0-noiseq1s;
-#X floatatom 359 319 5 0 0 1 Noise_Q_2 #0-noiseq2 #0-noiseq2s;
+#X floatatom 359 294 5 0 0 1 Noise_Q_1 #0-noiseq1 #0-noiseq1s;
+#X floatatom 359 385 5 0 0 1 Noise_Q_2 #0-noiseq2 #0-noiseq2s;
 #X obj 168 99 s \$0-noiseq1;
 #X obj 187 59 s \$0-noiseq2;
 #X obj 475 207 bng 15 250 50 0 empty empty Clear_All 17 7 0 10 -262144
@@ -776,59 +780,59 @@ noiseq2 gain;
 #X obj 208 60 inlet;
 #X obj 240 646 outlet;
 #X msg 203 116 wav_mtx1 1 0 0 0 0 \, wav_mtx2 0 0 0 0 0 \, env1 attack
-10 0 \, env1 decay 10 0 \, env1 sustain 0.5 \, env1 release 500 0 \,
-env2 attack 10 0 \, env2 decay 10 0 \, env2 sustain 0.5 \, env2 release
-500 0 \, lfo1 bfreq 3 \, lfo1 wav 0 \, lfo1 polar 0 \, lfo1 pw 0.5
-\, lfo1 phase 0 \, lfo1 offset 0 \, lfo2 bfreq 3 \, lfo2 wav 0 \, lfo2
-polar 0 \, lfo2 pw 0.5 \, lfo2 phase 0 \, lfo2 offset 0 \, mul1 src2
-0 \, mul1 src1 0 \, mul2 src2 0 \, mul2 src1 0 \, bmidi 60 \, porta
-0 \, pw1 0.5 \, pw2 0.5 \, bmidi1 0 \, bmidi2 0 \, bfmidi 127 \, bres
-0 \, noiseq1 0 \, noiseq2 0 \, lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1
-noise 0 \, lfo2 noise 0 \, mono 0 \, gain 0.75 \, legato 1 \, last
-0 \, sig_mtx matrix 7 9 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0
-0 0 0.5 0 0 0 0 0;
+10 0 \, env1 decay 500 0 \, env1 sustain 0.5 \, env1 release 500 0
+\, env2 attack 10 0 \, env2 decay 500 0 \, env2 sustain 0.5 \, env2
+release 500 0 \, lfo1 bfreq 3 \, lfo1 wav 0 \, lfo1 polar 0 \, lfo1
+pw 0.5 \, lfo1 phase 0 \, lfo1 offset 0 \, lfo2 bfreq 3 \, lfo2 wav
+0 \, lfo2 polar 0 \, lfo2 pw 0.5 \, lfo2 phase 0 \, lfo2 offset 0 \,
+mul1 src2 0 \, mul1 src1 0 \, mul2 src2 0 \, mul2 src1 0 \, bmidi 60
+\, porta 0 \, pw1 0.5 \, pw2 0.5 \, bmidi1 0 \, bmidi2 0 \, bhz1 0
+\, bhz2 0 \, bfmidi 127 \, bres 0 \, noiseq1 0 \, noiseq2 0 \, lfo2
+retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
+\, gain 0.75 \, legato 1 \, last 0 \, sig_mtx matrix 7 9 1 1 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore -254 381 pd clear;
 #X msg 511 134 sig_mtx matrix 7 9 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0
 0 0 0 0 0 0 0 0.5 0 0 0 0 0;
-#X obj 590 474 bng 15 250 50 0 empty empty mid_PW 17 7 0 10 -1 -260097
+#X obj 590 503 bng 15 250 50 0 empty empty mid_PW 17 7 0 10 -1 -260097
 -1;
-#X obj 311 474 bng 15 250 50 0 empty empty mid_PW 17 7 0 10 -1 -260097
+#X obj 311 503 bng 15 250 50 0 empty empty mid_PW 17 7 0 10 -1 -260097
 -1;
 #X msg 829 476 0.5;
 #X msg 51 486 0.5;
-#X obj 447 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -159808
+#X obj 447 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -159808
 -4034 -1;
-#X obj 447 299 bng 15 250 50 0 empty empty empty 17 7 0 10 -159808
+#X obj 447 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -159808
 -4034 -1;
 #X msg 815 320 0.5;
 #X msg 812 352 0.5;
-#X obj 400 558 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
--2 8 0 10 -260097 -4160 -45076 6500 1;
+#X obj 400 587 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
+-2 8 0 10 -260097 -4160 -45076 8950 1;
 #X obj 184 181 s \$0-gain;
-#X floatatom 593 558 5 0 1.2 0 - - -;
+#X floatatom 593 587 5 0 1.2 0 - - -;
 #X msg 541 750 set \$1;
-#X obj 128 536 cnv 15 63 14 empty empty Noise 2 8 0 12 -4160 -257985
+#X obj 128 565 cnv 15 63 14 empty empty Noise 2 8 0 12 -4160 -257985
 0;
-#X obj 406 536 cnv 15 63 14 empty empty Noise 2 8 0 12 -4160 -257985
+#X obj 406 565 cnv 15 63 14 empty empty Noise 2 8 0 12 -4160 -257985
 0;
-#X obj 192 535 hradio 15 1 0 3 \$0-lfo1noises \$0-lfo1noise s&h/lin/cos
+#X obj 192 564 hradio 15 1 0 3 \$0-lfo1noises \$0-lfo1noise s&h/lin/cos
 48 8 0 10 -1 -4032 -4160 0;
-#X obj 470 535 hradio 15 1 0 3 \$0-lfo2noises \$0-lfo2noise s&h/lin/cos
+#X obj 470 564 hradio 15 1 0 3 \$0-lfo2noises \$0-lfo2noise s&h/lin/cos
 48 8 0 10 -1 -4032 -4160 0;
-#X floatatom 748 390 5 0 1 2 - #0-env1alin #0-env1alins;
-#X obj 729 373 cnv 15 53 14 empty empty exp/lin 2 8 0 12 -260097 -4160
+#X floatatom 748 419 5 0 1 2 - #0-env1alin #0-env1alins;
+#X obj 729 402 cnv 15 53 14 empty empty exp/lin 2 8 0 12 -260097 -4160
 0;
-#X floatatom 748 410 5 0 1 2 - #0-env1dlin #0-env1dlins;
-#X floatatom 748 450 5 0 1 2 - #0-env1rlin #0-env1rlins;
-#X floatatom 748 490 5 0 1 2 - #0-env2alin #0-env2alins;
-#X obj 729 473 cnv 15 53 14 empty empty exp/lin 2 8 0 12 -260097 -4160
+#X floatatom 748 439 5 0 1 2 - #0-env1dlin #0-env1dlins;
+#X floatatom 748 479 5 0 1 2 - #0-env1rlin #0-env1rlins;
+#X floatatom 748 519 5 0 1 2 - #0-env2alin #0-env2alins;
+#X obj 729 502 cnv 15 53 14 empty empty exp/lin 2 8 0 12 -260097 -4160
 0;
-#X floatatom 748 510 5 0 1 2 - #0-env2dlin #0-env2dlins;
-#X floatatom 748 550 5 0 1 2 - #0-env2rlin #0-env2rlins;
+#X floatatom 748 539 5 0 1 2 - #0-env2dlin #0-env2dlins;
+#X floatatom 748 579 5 0 1 2 - #0-env2rlin #0-env2rlins;
 #N canvas 1005 155 400 431 env2route 0;
 #X obj 108 50 inlet;
 #X obj 124 213 s;
@@ -877,22 +881,32 @@ noise 0 \, lfo2 noise 0 \, mono 0 \, gain 0.75 \, legato 1 \, last
 #X connect 19 1 1 0;
 #X restore -187 118 pd env2route;
 #X msg 464 757 panic;
-#X obj 557 379 tgl 15 0 empty empty Legato 17 7 0 10 -4160 -260097
+#X obj 557 408 tgl 15 0 empty empty Legato 17 7 0 10 -4160 -260097
 -16662 1 1;
 #X obj 13 299 f;
-#X obj 615 379 tgl 15 0 empty empty Last 17 7 0 10 -4160 -260097 -16662
+#X obj 615 408 tgl 15 0 empty empty Last 17 7 0 10 -4160 -260097 -16662
 0 1;
-#X obj -196 70 route env1 env2 lfo1 lfo2 bmidi porta lfo_mtx sig_mtx
-wav_mtx1 wav_mtx2 pw1 pw2 bmidi1 bmidi2 bfmidi bres mul1 mul2 mono
-noiseq1 noiseq2 gain legato last;
 #X obj -188 364 shadylib/prepender lfo1 lfo2 mono legato last;
 #X obj 62 315 f;
 #X obj -52 526 t b b b b;
-#X connect 1 0 195 0;
+#X floatatom 359 253 5 0 0 1 Hz_Tune_Osc1 #0-bhz1 #0-bhz1s;
+#X floatatom 359 344 5 0 0 1 Hz_Tune_Osc2 #0-bhz2 #0-bhz2s;
+#X obj -196 70 route env1 env2 lfo1 lfo2 bmidi porta lfo_mtx sig_mtx
+wav_mtx1 wav_mtx2 pw1 pw2 bmidi1 bmidi2 bfmidi bres mul1 mul2 mono
+noiseq1 noiseq2 gain legato last bhz1 bhz2;
+#X obj 152 138 s \$0-bhz1;
+#X obj 223 149 s \$0-bhz2;
+#X floatatom 748 459 5 0 1 2 - - -;
+#X floatatom 748 559 5 0 1 2 - - -;
+#X msg 794 431 set \$1;
+#X msg 799 531 set \$1;
+#X connect 1 0 200 0;
 #X connect 64 0 143 0;
 #X connect 65 0 145 0;
 #X connect 80 0 152 0;
 #X connect 94 0 153 0;
+#X connect 100 0 205 0;
+#X connect 105 0 206 0;
 #X connect 109 0 157 0;
 #X connect 111 0 191 0;
 #X connect 112 0 146 0;
@@ -921,24 +935,24 @@ noiseq1 noiseq2 gain legato last;
 #X connect 145 0 122 0;
 #X connect 146 0 154 0;
 #X connect 146 1 147 0;
-#X connect 147 0 195 0;
+#X connect 147 0 200 0;
 #X connect 152 0 155 0;
 #X connect 153 0 156 0;
-#X connect 154 0 198 0;
+#X connect 154 0 197 0;
 #X connect 154 1 153 0;
 #X connect 154 1 152 0;
 #X connect 154 1 157 0;
 #X connect 154 1 193 0;
-#X connect 154 1 197 0;
-#X connect 155 0 196 0;
-#X connect 156 0 196 1;
-#X connect 157 0 196 2;
+#X connect 154 1 196 0;
+#X connect 155 0 195 0;
+#X connect 156 0 195 1;
+#X connect 157 0 195 2;
 #X connect 162 0 163 0;
 #X connect 163 0 124 0;
 #X connect 163 0 123 0;
 #X connect 163 0 164 0;
-#X connect 164 0 195 0;
-#X connect 165 0 195 0;
+#X connect 164 0 200 0;
+#X connect 165 0 200 0;
 #X connect 166 0 168 0;
 #X connect 167 0 169 0;
 #X connect 168 0 93 0;
@@ -952,38 +966,44 @@ noiseq1 noiseq2 gain legato last;
 #X connect 177 0 176 0;
 #X connect 191 0 110 0;
 #X connect 192 0 193 0;
-#X connect 193 0 196 3;
-#X connect 194 0 197 0;
-#X connect 195 0 117 0;
-#X connect 195 1 190 0;
-#X connect 195 2 148 0;
-#X connect 195 3 149 0;
-#X connect 195 4 118 0;
-#X connect 195 5 119 0;
-#X connect 195 6 65 0;
-#X connect 195 6 144 0;
-#X connect 195 7 64 0;
-#X connect 195 7 141 0;
-#X connect 195 8 125 0;
-#X connect 195 9 126 0;
-#X connect 195 10 128 0;
-#X connect 195 11 129 0;
-#X connect 195 12 130 0;
-#X connect 195 13 131 0;
-#X connect 195 14 132 0;
-#X connect 195 15 133 0;
-#X connect 195 16 150 0;
-#X connect 195 17 151 0;
-#X connect 195 18 109 0;
-#X connect 195 19 160 0;
-#X connect 195 20 161 0;
-#X connect 195 21 175 0;
-#X connect 195 22 192 0;
-#X connect 195 23 194 0;
-#X connect 196 0 134 0;
-#X connect 197 0 196 4;
-#X connect 198 0 191 0;
-#X connect 198 1 141 0;
-#X connect 198 2 144 0;
-#X connect 198 3 135 0;
-#X coords 0 -1 1 1 685 506 2 100 200;
+#X connect 193 0 195 3;
+#X connect 194 0 196 0;
+#X connect 195 0 134 0;
+#X connect 196 0 195 4;
+#X connect 197 0 191 0;
+#X connect 197 1 141 0;
+#X connect 197 2 144 0;
+#X connect 197 3 135 0;
+#X connect 200 0 117 0;
+#X connect 200 1 190 0;
+#X connect 200 2 148 0;
+#X connect 200 3 149 0;
+#X connect 200 4 118 0;
+#X connect 200 5 119 0;
+#X connect 200 6 65 0;
+#X connect 200 6 144 0;
+#X connect 200 7 64 0;
+#X connect 200 7 141 0;
+#X connect 200 8 125 0;
+#X connect 200 9 126 0;
+#X connect 200 10 128 0;
+#X connect 200 11 129 0;
+#X connect 200 12 130 0;
+#X connect 200 13 131 0;
+#X connect 200 14 132 0;
+#X connect 200 15 133 0;
+#X connect 200 16 150 0;
+#X connect 200 17 151 0;
+#X connect 200 18 109 0;
+#X connect 200 19 160 0;
+#X connect 200 20 161 0;
+#X connect 200 21 175 0;
+#X connect 200 22 192 0;
+#X connect 200 23 194 0;
+#X connect 200 24 201 0;
+#X connect 200 25 202 0;
+#X connect 203 0 100 0;
+#X connect 204 0 105 0;
+#X connect 205 0 203 0;
+#X connect 206 0 204 0;
+#X coords 0 -1 1 1 685 526 2 100 200;
