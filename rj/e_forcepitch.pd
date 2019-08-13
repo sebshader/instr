@@ -46,7 +46,7 @@
 #X text 280 371 pitchshift by difference;
 #X text 109 199 delay by sigmund~'s buffer size;
 #X text 249 40 desired pitch;
-#X obj 103 368 pitchshift~;
+#X obj 103 368 shadylib/pitchshift~;
 #X connect 0 0 2 0;
 #X connect 1 0 14 0;
 #X connect 2 1 3 0;
