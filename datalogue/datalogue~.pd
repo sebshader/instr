@@ -1,4 +1,4 @@
-#N canvas 34 177 505 639 10;
+#N canvas 71 198 505 639 10;
 #X obj 82 31 inlet;
 #X obj 186 38 inlet;
 #X text 180 18 pitch bend;
