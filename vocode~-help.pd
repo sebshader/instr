@@ -1,25 +1,27 @@
 #N canvas 91 130 941 568 10;
 #X obj 721 165 spigot;
-#X obj 762 142 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 1
+#X obj 762 142 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 221 254 shadylib/outputc~;
 #X obj 492 64 spigot;
-#X obj 530 45 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 1 1
+#X obj 530 45 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 45 159 zexy/multiplex~;
 #X obj 52 121 shadylib/blsaw~;
-#X floatatom 215 128 5 0 0 0 - - -, f 5;
+#X floatatom 215 128 5 0 0 0 - - -;
 #X obj 125 28 shadylib/sndfread~;
 #X obj 688 33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 491 95 symbol /Applications/Pd.app/Contents/Resources/doc/sound/voice.wav
 ;
 #X obj 299 136 shadylib/sndfread~;
-#X floatatom 463 206 5 0 0 0 - - -, f 5;
+#X floatatom 463 206 5 0 0 0 - - -;
 #X obj 129 211 vocode~;
 #X obj 168 163 zexy/multiplex~;
 #X obj 223 217 vocode~;
 #X obj 14 72 shadylib/smoother~;
+#X text 287 407 modified patch from pure data forum https://forum.pdpatchrepo.info/topic/11028/attempting-to-make-a-vocoder-help
+;
 #X connect 0 0 11 2;
 #X connect 1 0 0 1;
 #X connect 3 0 8 2;

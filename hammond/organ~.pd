@@ -232,23 +232,23 @@
 #X obj 50 54 cnv 15 270 200 empty empty empty 20 12 0 14 -66577 -66577
 0;
 #X obj 61 86 vsl 15 128 0 127 0 0 \$0_drawbar_1 \$0_r_drawbar_1 16
-2 -8 0 8 -180289 -262144 -1 11500 0;
+2 -8 0 8 -180289 -262144 -1 0 0;
 #X obj 88 86 vsl 15 128 0 127 0 0 \$0_drawbar_2 \$0_r_drawbar_2 5_1/3
--4 -8 0 8 -168001 -262144 -1 11400 0;
+-4 -8 0 8 -168001 -262144 -1 0 0;
 #X obj 116 86 vsl 15 128 0 127 0 0 \$0_drawbar_3 \$0_r_drawbar_3 8
 5 -8 0 8 -191407 -1 -1 0 0;
 #X obj 145 86 vsl 15 128 0 127 0 0 \$0_drawbar_4 \$0_r_drawbar_4 4
-4 -8 0 8 -191407 -1 -1 4300 0;
+4 -8 0 8 -191407 -1 -1 0 0;
 #X obj 174 86 vsl 15 128 0 127 0 0 \$0_drawbar_5 \$0_r_drawbar_5 2_2/3
--4 -8 0 8 -33289 -262131 -1 4600 0;
+-4 -8 0 8 -33289 -262131 -1 0 0;
 #X obj 203 86 vsl 15 128 0 127 0 0 \$0_drawbar_6 \$0_r_drawbar_6 2
-5 -8 0 8 -191407 -1 -1 8500 0;
+5 -8 0 8 -191407 -1 -1 0 0;
 #X obj 233 86 vsl 15 128 0 127 0 0 \$0_drawbar_7 \$0_r_drawbar_7 1_3/5
--4 -8 0 8 -33289 -262131 -1 8300 0;
+-4 -8 0 8 -33289 -262131 -1 0 0;
 #X obj 262 86 vsl 15 128 0 127 0 0 \$0_drawbar_8 \$0_r_drawbar_8 1_1/3
--4 -8 0 8 -33289 -262131 -1 5900 0;
+-4 -8 0 8 -33289 -262131 -1 0 0;
 #X obj 292 86 vsl 15 128 0 127 0 0 \$0_drawbar_9 \$0_r_drawbar_9 1
-5 -8 0 8 -191407 -1 -1 3400 0;
+5 -8 0 8 -191407 -1 -1 0 0;
 #X obj 104 56 cnv 15 120 16 empty empty ORGAN~ 4 8 0 10 -66577 -162280
 0;
 #X obj 409 111 inlet note;
@@ -262,13 +262,13 @@
 #X text 574 50 preset <1-4>;
 #X text 246 217 PRESET;
 #X obj 62 232 hradio 15 1 0 2 \$0_percussion_enable \$0_r_percussion_enable
-empty 0 -8 0 10 -262144 -1 -1 1;
+empty 0 -8 0 10 -262144 -1 -1 0;
 #X obj 151 232 hradio 15 1 0 2 \$0_percussion_soft \$0_r_percussion_soft
 empty 0 -8 0 10 -262144 -1 -1 0;
 #X obj 107 232 hradio 15 1 0 2 \$0_percussion_third \$0_r_percussion_third
-empty 0 -8 0 10 -262144 -1 -1 1;
+empty 0 -8 0 10 -262144 -1 -1 0;
 #X obj 194 232 hradio 15 1 0 2 \$0_percussion_fast \$0_r_percussion_fast
-empty 0 -8 0 10 -262144 -1 -1 1;
+empty 0 -8 0 10 -262144 -1 -1 0;
 #X text 103 219 2ND/3D;
 #X text 197 219 FAST;
 #X text 153 219 SOFT;
@@ -531,7 +531,7 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 #X obj 614 596 outlet cmd;
 #X text 573 33 drawbar <1-9> <0-8>;
 #X obj 271 425 organ_voice~;
-#N canvas 517 126 663 611 registration 0;
+#N canvas 517 126 663 611 registration 1;
 #X obj 100 28 inlet drawbars;
 #X obj 100 163 route 1 2 3 4 5 6 7 8 9;
 #X obj 115 382 t b f;
@@ -548,7 +548,7 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 #X obj 100 133 pack f f;
 #X obj 157 106 int;
 #X obj 100 53 route idrawbar;
-#X obj 100 447 makesymbol %s%s_%s%s%s%s_%s%s%s;
+#X obj 100 447 zexy/makesymbol %s%s_%s%s%s%s_%s%s%s;
 #X connect 0 0 15 0;
 #X connect 1 0 11 0;
 #X connect 1 1 2 0;
