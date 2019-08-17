@@ -1,0 +1,134 @@
+--- Datalogue Documentation ---
+Datalogue aims to be a virtual 8-voice analog polysynth
+
+Required libraries: iemlib, shadylib, zexy, iemmatrix, cyclone (for svf~), iemgui (for numberbox_matrix)
+
+optional: hcs/folder_list for listing patches
+
+datalogue~.pd: The actual synthesizer, which contains monophonic and polyphonic voice allocation for voices and the voices themselves, as [clone ./datavoice~]
+
+datalogue_editor.pd: GUI editor for parameters for datalogue~. When patches or presets are loaded they get loaded into the GUI and the GUI forwards the messages to datalogue~
+
+datavoice~.pd: an individual synth voice. This does most of the computational work and sound generation.
+
+datalogue-main.pd: example/performance patch implementation. Also includes presets, patch management, 3phase~ chorus, and a simple example of how to insert controller modification for patch parameters after their saved values.
+
+Datalogue uses iemmatrix-style matrices (mtx_*~)/matrix to send routing information. these matrices represent inputs as columns and outputs as rows, with messages in the form of "matrix row column values" where values are values going across the rows left to right, then top to bottom. The value at a certain cell represents what the input (column) value will be multiplied by before it is summed with the other values in the row and sent to the output of the row.
+
+Parameters:
+datalogue~ inlets:
+1. pitch
+2. midi velocity (this goes through f(x)=sqrt(x/127) before datavoice)
+3. pitch bend (scaled to be -1 to 1)
+4. mod wheel/control inlet (scaled to be 0 to 1)
+5. message inlet/persistent state:
+
+gain: set gain
+
+panic: clear all current voices in voice allocators and send "note offs" to all
+
+mono: 1 for monophonic, 0 for polyphonic
+
+last: for portamento, last 1 will glide from the last note played when a new note is started. last 0 will not glide if there are no other notes held down, but if there are 2 notes held down and you release the most recent note the still held note becomes the new start point for the next glide (rather than the released note).
+
+the following messages are forwarded to datavoice~ from this inlet:
+
+env1/env2:
+	attack: attack time in milliseconds or list of attack time & curvature (0 is 
+		exponential, 1 is linear 
+	decay: same
+	sustain: sustain level (from 0 - 1)
+	release: same as attack & decay
+
+lfo1/lfo2:
+	bfreq: multiples of 1/(frequency of midi note 0) (so that when keytrack midi
+		to the lfo is 0, the frequency of the lfo will be this value in hz)
+	wav: 0-sine 1-square 2-triangle 3-sawtooth 4-noise/random (sampled at 
+		frequency)
+	polar: 0 for polar (lfo goes from -1 to 1) 1 for unipolar (0 to 1)
+	pw: pulse width/phase distortion of lfo
+	retrig: if not 0, jump to point set by phase when a new note starts
+	phase: set phase value to jump to on note start if retrig is 1
+	offset: phase offset after phase distortion/pulse width is applied and
+		before the wave is looked up.
+	noise: type of noise: 0-sample & hold 1-linear interpolation 2-cosine 
+		interpolation
+
+bmidi: midi value to calculate keytrack signal from (for instance if set to 60,
+	the default, when note 63 is played the keytrack signal will be 3)
+
+porta: portamento/glide length in milliseconds
+
+lfo_mtx: iemmatrix matrix message: 
+	rows: LFO1 frequency, LFO2 frequency
+	columns: Key track signal, pitch bend, modwheel, envelope 1, envelope 2
+
+sig_mtx: iemmatrix matrix message:
+	rows: Oscillator 1 Pitch, Osc 1 Pulse-width, Osc2 Pitch, Osc2 PW, Lowpass
+		filter midi value, VCA for oscillator 1, VCA for oscillator 2, VCA for
+		ring-modulated signal between oscillators (before their VCAs)
+	columns: Key Track, Pitch bend, modwheel, env1, env2, lfo1 output, lfo2,
+		output of multiplier 1, multiplier 2
+
+wav_mtx1 & wav_mtx2: iemmatrix with 1 output: controls the levels of the various 
+	waveforms for an oscillator, in order: sawtooth, square, triangle, sine,
+	noise. Output is normalized to not be above an amplitude of 1
+
+pw1 & pw2: base pulse-width between 0 and 1 for osc1 and osc2
+
+bmidi1 & bmidi2: midi value for transposing osc1 and osc2
+
+bhz1 & bhz2: hz value for transposing osc1 and osc2
+
+bfmidi: base frequency in midi for lowpass VCF
+
+bres: resonance for lowpass VCF between 0 and 4
+
+mul1 & mul2: set signals to multiply together to generate new signals for
+	routing/modulation
+	src1 or src2 (which are multiplied together): 0-Keytrack 1-Pitchbend 
+		2-modwheel 3-env1 4-env2 5-lfo1 6-lfo2
+	mul2 also has 7-output of mul1
+
+noiseq1 & noiseq2: band-pass q-value for noise in oscillators
+
+legato: for monophonic, won't retrigger envelope if the previous note is still
+	on
+
+bhfmidi: base midi value for high-pass vcf frequency
+
+bhktrk: value keytrack is multiplied by before being added to bhfmidi
+
+bhq: set q for highbass vcf
+
+
+--------------------------------------------------------------------------------
+datalogue_editor:
+--------------------------------------------------------------------------------
+Datalogue editor receives all of these messages besides panic. The Clear_All button will set all values to default (basic sawtooth wave synth)
+the Send_All button will resend all values to datalogue~.
+Note: The Base_Ktrk_Key corresponds to bmidi above.
+
+sending a message to datalogue_editor's right inlet will dump all of the parameters out of the right outlet.
+--------------------------------------------------------------------------------
+datalogue-main:
+--------------------------------------------------------------------------------
+State Saving:
+By default, when a patch or preset is "prepared" it is automatically loaded. Preparing presets (patches saved in message boxes) is done by selecting the value in the hradio (horizontal row of boxes). Preparing patches saved in files is done by typing the patch name in the Prepare_File symbol box and hitting "enter", or afterwards hitting the bang button connected to it. Patch files are stored in .txt files in the "patches" folder.
+
+To turn off automatic loading of patches (which can be desirable when copying patches) un-toggle the Preset_Auto_Load_On_Prepare and/or File_Auto_Load_On_Prepare bang buttons.
+
+Preparing a patch has the effect of switching into that mode for saving (preparing a file will switch into file mode, preparing a message will switch into message mode). This can be manually controlled by the message/file hradio switch.
+
+Hitting load_file or load_preset will manually load the current file or preset, but the switch should be in the correct mode.
+
+Hitting the save/write bang button will save (and write for files) the current patch to the current preset or patch, depending on the state of the preset/file switch.
+
+
+Controller Modification: an example of controller modification is in [pd examplectl]. Controller 7 is first scaled by scaler (here to be between -127 and 0 by default), and sent to [pd examplectl]. [pd examplectl] intercepts messages from datalogue_editor. (here it intercepts bfmidi messages by default). The message to be intercepted/modified can be changed in the [pd choosesymbol] subpatch. All of these parameters could be saved per-patch if included in state saving. However, here it is just a control over the base value of the frequency of the lowpass vcf.
+
+In future versions there may be a dedicated abstraction for controller modification..
+
+There is also an abstraction 3phase~ used here, a 3-phase 2-oscillator chorus loosely based on descriptions of the chorus in the solina string machine/ensemble.
+
+Note: If you use midi devices not on channel 1 you need to change the midi objects (notein, bendin, ctlin)

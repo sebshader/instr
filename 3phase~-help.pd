@@ -35,6 +35,8 @@
 #X obj 125 188 lop~ 5000;
 #X msg 154 52 0.14 0.28;
 #X obj 94 127 blsqr~ 0.5;
+#X text 173 383 two-oscillators chorusing \, each with 3 taps equally
+spaced around a circle (loosely based around solina chorus);
 #X connect 0 0 25 0;
 #X connect 0 1 25 0;
 #X connect 0 2 25 0;

@@ -54,7 +54,7 @@
 #X restore 166 122 pd mono;
 #X obj 157 149 t b f;
 #X obj 143 381 sqrt;
-#X obj 223 220 f;
+#X obj 192 397 f;
 #N canvas 0 23 450 300 clear 0;
 #X obj 265 75 inlet;
 #X obj 208 243 outlet;
@@ -123,6 +123,8 @@
 #X connect 22 0 19 1;
 #X restore 86 161 pd poly;
 #X msg 342 203 clear;
+#X text 46 276 todo: control legato from this patch rather than datavoice~
+(add method for changeing pitch & velocity independantly);
 #X connect 0 0 25 0;
 #X connect 1 0 9 0;
 #X connect 4 0 27 1;

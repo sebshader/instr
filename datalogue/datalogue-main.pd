@@ -1,7 +1,7 @@
-#N canvas 160 23 1184 771 10;
+#N canvas 243 23 1184 771 10;
 #X obj 943 104 stater \$0-mainlogue datalogue;
 #X obj 594 48 hradio 15 1 0 16 \$0-preset empty Prepare_Preset 0 -8
-0 10 -262144 -1 -1 9;
+0 10 -262144 -1 -1 15;
 #X obj 889 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 43 254 notein 1;
@@ -246,13 +246,13 @@ subpatch);
 #X obj 1033 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 587 797 print save;
-#X msg 381 68 pw1 0.3;
+#X msg 308 91 pw1 0.3;
 #X obj 942 85 bng 15 250 50 0 empty empty print_patches 17 7 0 10 -262144
 -1 -1;
-#X obj 972 181 hcs/folder_list ./patches/*;
-#X obj 983 206 iemlib/splitfilename /;
-#X obj 984 246 list trim;
-#X obj 983 227 iemlib/splitfilename .;
+#X obj 911 135 hcs/folder_list ./patches/*;
+#X obj 922 160 iemlib/splitfilename /;
+#X obj 923 200 list trim;
+#X obj 922 181 iemlib/splitfilename .;
 #X obj 847 38 hradio 15 1 0 2 \$0-kinds \$0-kind message/file 0 -8
 0 10 -262144 -1 -1 0;
 #X obj 43 74 s \$0-msgtgl;
@@ -261,7 +261,7 @@ subpatch);
 #X obj 124 916 pack f 10;
 #X obj 19 99 s \$0-loadfade;
 #X obj 147 479 r \$0-all;
-#N canvas 152 23 871 709 state_saving 1;
+#N canvas 442 111 871 709 state_saving 0;
 #X obj 225 360 shadylib/saver \$0-mainlogue;
 #X obj 153 498 shadylib/msgsave;
 #N canvas 295 43 450 300 msgboxes 0;
@@ -819,7 +819,9 @@ matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1
 #X connect 33 0 32 0;
 #X connect 34 0 32 0;
 #X restore 487 92 pd state_saving;
-#X obj 983 271 print patch;
+#X obj 922 225 print patch;
+#X text 382 48 start by selecting hradio value->;
+#X text 344 66 (& turn up outputc~ volume below);
 #X connect 0 0 11 1;
 #X connect 0 1 11 0;
 #X connect 1 0 22 0;
