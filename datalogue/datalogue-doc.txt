@@ -27,6 +27,15 @@ going across the rows left to right, then top to bottom. The value at a certain
 cell represents what the input (column) value will be multiplied by before it is
 summed with the other values in the row and sent to the output of the row.
 
+Signal Flow:
+2 Oscillators->2 VCAs (Voltage-Controlled Amplifiers)
+		\->(Oscillators multiplied together)->Ring VCA
+
+However, 2 LFOs and 2 envelopes are also used as signals to be routed to
+parameters of the oscillators and amplifiers, along with key track, modwheel,
+pitch bend signals and 2 multipliers that can multiply any of these signals
+together to generate 2 more signals.
+
 Parameters:
 datalogue~ inlets:
 1. pitch
