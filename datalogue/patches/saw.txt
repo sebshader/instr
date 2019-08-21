@@ -50,9 +50,14 @@ datalogue lfo1 retrig 0;
 datalogue mono 1;
 datalogue legato 1;
 datalogue last 1;
+datalogue name saw;
 datalogue wav_mtx2 0 0 0 0 0;
 datalogue wav_mtx1 1 0 0 0 0;
-datalogue lfo_mtx matrix 2 5 0 5 0 0 0 0 0 0 0 0;
-datalogue sig_mtx matrix 8 9 1 1 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0
-1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0 0
-0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
+datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
+datalogue vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
+datalogue lfo_mtx matrix 2 6 0 5 0 0 0 0 0 0 0 0 0 0;
+datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0;

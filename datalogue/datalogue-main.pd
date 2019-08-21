@@ -1,22 +1,22 @@
-#N canvas 243 23 1184 771 10;
-#X obj 943 104 stater \$0-mainlogue datalogue;
+#N canvas 261 49 1184 771 10;
+#X obj 1072 103 stater \$0-mainlogue datalogue;
 #X obj 594 48 hradio 15 1 0 16 \$0-preset empty Prepare_Preset 0 -8
-0 10 -262144 -1 -1 15;
-#X obj 889 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+0 10 -262144 -1 -1 0;
+#X obj 1018 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 43 254 notein 1;
-#X obj 119 1026 outputc~;
+#X obj 51 1078 outputc~;
 #X obj 98 429 instr/pbtou;
 #X obj 92 394 bendin 1;
 #X obj 117 345 instr/ctltou;
-#X obj 110 967 *~;
-#X obj 126 937 line~;
+#X obj 62 954 *~;
+#X obj 78 924 line~;
 #X obj 118 19 loadbang;
-#X obj 213 121 datalogue_editor;
+#X obj 225 123 datalogue_editor;
 #X obj 64 475 datalogue~;
-#X obj 119 791 instr/3phase~;
-#X obj 90 852 shadylib/xfade~;
-#X floatatom 506 796 5 0 1 0 - - -;
+#X obj 71 778 instr/3phase~;
+#X obj 42 839 shadylib/xfade~;
+#X floatatom 313 840 5 0 1 0 - - -;
 #N canvas 221 149 762 472 3phasecontrol 0;
 #X floatatom 241 171 5 0 1 0 Depth1 - -;
 #X floatatom 311 173 5 0 50 0 Freq1 - -;
@@ -95,20 +95,20 @@
 #X connect 31 0 0 0;
 #X connect 31 0 4 0;
 #X coords 0 -1 1 1 300 60 1 200 150;
-#X restore 193 714 pd 3phasecontrol;
-#X obj 515 727 f;
+#X restore 175 901 pd 3phasecontrol;
+#X obj 485 881 f;
 #X obj 605 11 bng 15 250 50 0 \$0-load_preset empty load_preset 17
 7 0 10 -262144 -1 -1;
-#X obj 506 696 shadylib/stater \$0-mainlogue 3phase;
-#X obj 513 670 iemlib/iem_prepend wet;
-#X obj 541 738 route wet;
+#X obj 476 850 shadylib/stater \$0-mainlogue 3phase;
+#X obj 483 824 iemlib/iem_prepend wet;
+#X obj 511 892 route wet;
 #X floatatom 594 65 5 0 0 0 - - -;
 #X obj 638 66 tgl 15 0 \$0-msgtgls \$0-msgtgl Preset_Auto_Load_On_Prepare
 17 7 0 10 -262144 -1 -1 1 1;
 #X msg 50 33 1;
-#X obj 241 879 meters~;
-#X obj 91 537 lop~ 5500;
-#X obj 128 822 lop~ 5500;
+#X obj 153 1024 meters~;
+#X obj 70 745 lop~ 5500;
+#X obj 80 809 lop~ 5500;
 #X obj 85 504 *~ 1;
 #X obj 114 302 ctlin 1 1;
 #X msg 244 93 bhq 0.01;
@@ -245,23 +245,23 @@ subpatch);
 -1 -1;
 #X obj 1033 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 587 797 print save;
+#X obj 557 951 print save;
 #X msg 308 91 pw1 0.3;
-#X obj 942 85 bng 15 250 50 0 empty empty print_patches 17 7 0 10 -262144
--1 -1;
-#X obj 911 135 hcs/folder_list ./patches/*;
-#X obj 922 160 iemlib/splitfilename /;
-#X obj 923 200 list trim;
-#X obj 922 181 iemlib/splitfilename .;
+#X obj 1071 84 bng 15 250 50 0 empty empty print_patches 17 7 0 10
+-262144 -1 -1;
+#X obj 1040 134 hcs/folder_list ./patches/*;
+#X obj 1051 159 iemlib/splitfilename /;
+#X obj 1052 199 list trim;
+#X obj 1051 180 iemlib/splitfilename .;
 #X obj 847 38 hradio 15 1 0 2 \$0-kinds \$0-kind message/file 0 -8
 0 10 -262144 -1 -1 0;
 #X obj 43 74 s \$0-msgtgl;
 #X obj 32 54 s \$0-filetgl;
-#X obj 129 886 r \$0-loadfade;
-#X obj 124 916 pack f 10;
+#X obj 81 873 r \$0-loadfade;
+#X obj 76 903 pack f 10;
 #X obj 19 99 s \$0-loadfade;
 #X obj 147 479 r \$0-all;
-#N canvas 442 111 871 709 state_saving 0;
+#N canvas 0 169 871 709 state_saving 0;
 #X obj 225 360 shadylib/saver \$0-mainlogue;
 #X obj 153 498 shadylib/msgsave;
 #N canvas 295 43 450 300 msgboxes 0;
@@ -269,7 +269,7 @@ subpatch);
 #X obj 140 39 inlet;
 #X obj 51 123 zexy/demultiplex 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 ;
-#N canvas 0 23 574 635 msgbox 0;
+#N canvas 44 118 574 635 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6.07 \; 3phase osc2 depth 0 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0 \; 3phase wet 0 \; datalogue env1
@@ -289,15 +289,18 @@ datalogue bres 1.92405 \; datalogue noiseq1 0 \; datalogue noiseq2
 0 \; datalogue gain 0.879888 \; datalogue bhz1 0 \; datalogue bhz2
 0 \; datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01
 \; datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 1 \; datalogue
-mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2
-0 0 0 0 0 \; datalogue wav_mtx1 1 0 0 0 0 \; datalogue lfo_mtx matrix
-2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 28 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-\;;
+mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name
+owen \; datalogue wav_mtx2 0 0 0 0 0 \; datalogue wav_mtx1 1 0 0 0
+0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix
+3 2 0.5 0 0 0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0
+0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 50 157 pd msgbox;
-#N canvas 158 57 450 300 msgbox 0;
+#N canvas 45 164 580 485 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6.07 \; 3phase osc2 depth 0 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0 \; 3phase wet 0 \; datalogue env1
@@ -309,7 +312,7 @@ env2 release 499 0 \; datalogue lfo1 bfreq 3.5 \; datalogue lfo1 wav
 phase 0 \; datalogue lfo1 offset 0 \; datalogue lfo1 noise 0 \; datalogue
 lfo2 bfreq 0 \; datalogue lfo2 wav 0 \; datalogue lfo2 polar 0 \; datalogue
 lfo2 pw 0 \; datalogue lfo2 phase 0 \; datalogue lfo2 offset 0 \; datalogue
-lfo2 noise 0 \; datalogue mul1 src2 5 \; datalogue mul1 src1 3 \; datalogue
+lfo2 noise 0 \; datalogue mul1 src2 0 \; datalogue mul1 src1 0 \; datalogue
 mul2 src2 0 \; datalogue mul2 src1 0 \; datalogue bmidi 60 \; datalogue
 porta 0 \; datalogue pw1 0.417722 \; datalogue pw2 0.493671 \; datalogue
 bmidi1 0 \; datalogue bmidi2 16 \; datalogue bfmidi 109 \; datalogue
@@ -317,14 +320,18 @@ bres 1.77215 \; datalogue noiseq1 15 \; datalogue noiseq2 7 \; datalogue
 gain 1 \; datalogue bhz1 0 \; datalogue bhz2 0 \; datalogue bhfmidi
 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01 \; datalogue lfo2 retrig
 0 \; datalogue lfo1 retrig 1 \; datalogue mono 0 \; datalogue legato
-1 \; datalogue last 0 \; datalogue wav_mtx2 0 0 0 0 0.316832 \; datalogue
-wav_mtx1 0 0 0 1 0 \; datalogue lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0
-0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0.05 0 0 0 0 0 0 0 0
-0 0 0 0 0.2 1 0 0 0 0.05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 0 0 0 0 0 0
-0 0 0 0.5 0 0 0 0.1 0 0 0 0 0 0.05 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
+1 \; datalogue last 0 \; datalogue name flute \; datalogue wav_mtx2
+0 0 0 0 0.316832 \; datalogue wav_mtx1 0 0 0 1 0 \; datalogue env2
+mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue env1 mtx matrix
+4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix 3 2 0.5 0 0
+0.05 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0 0 0 0 \;
+datalogue sig_mtx matrix 8 11 1 1 0 0 0 0.05 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0.2 1 0 0 0 0.05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 0
+0 0 0 0 0 0 0 0 0 0 0 0 -0.2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 71 178 pd msgbox;
-#N canvas 0 23 450 300 msgbox 0;
+#N canvas 26 23 450 300 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6 \; 3phase osc2 depth 0.075 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0.125 \; 3phase wet 1 \; datalogue
@@ -344,15 +351,18 @@ datalogue bmidi1 0 \; datalogue bmidi2 0.05 \; datalogue bfmidi 92
 datalogue gain 0.76257 \; datalogue bhz1 0 \; datalogue bhz2 0 \; datalogue
 bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01 \; datalogue
 lfo2 retrig 0 \; datalogue lfo1 retrig 1 \; datalogue mono 0 \; datalogue
-legato 1 \; datalogue last 0 \; datalogue wav_mtx2 1 0.49505 0 0 0
-\; datalogue wav_mtx1 1 0.475248 0 0 0 \; datalogue lfo_mtx matrix
-2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0.04
-0.04 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 \;;
+legato 1 \; datalogue last 0 \; datalogue name ensemble \; datalogue
+wav_mtx2 1 0.49505 0 0 0 \; datalogue wav_mtx1 1 0.475248 0 0 0 \;
+datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix
+3 2 0.5 0 0.5 0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0
+0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0 0.04 0.04 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 92 197 pd msgbox;
-#N canvas 45 427 450 300 msgbox 0;
+#N canvas 183 178 450 300 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6.6 \; 3phase osc2 depth 0 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0 \; 3phase wet 0 \; datalogue env1
@@ -372,15 +382,17 @@ datalogue lfo2 noise 0 \; datalogue mul1 src2 5 \; datalogue mul1 src1
 datalogue gain 0.553073 \; datalogue bhz1 0 \; datalogue bhz2 0 \;
 datalogue bhfmidi 0 \; datalogue bhktrk 0 \; datalogue bhq 0.01 \;
 datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue mono
-1 \; datalogue legato 1 \; datalogue last 1 \; datalogue wav_mtx2 0
-0 0 0 0 \; datalogue wav_mtx1 1 0 0 0 0 \; datalogue lfo_mtx matrix
-2 5 0 5 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0
-0 0.5 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 \;;
+1 \; datalogue legato 1 \; datalogue last 1 \; datalogue name saw \;
+datalogue wav_mtx2 0 0 0 0 0 \; datalogue wav_mtx1 1 0 0 0 0 \; datalogue
+env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue env1 mtx matrix
+4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix 3 2 0.5 0 0.5
+0 0 0 \; datalogue lfo_mtx matrix 2 6 0 5 0 0 0 0 0 0 0 0 0 0 \; datalogue
+sig_mtx matrix 8 11 1 1 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 114 158 pd msgbox;
-#N canvas 745 319 450 300 msgbox 0;
+#N canvas 257 33 450 300 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6.6 \; 3phase osc2 depth 0 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0 \; 3phase wet 0 \; datalogue env1
@@ -400,14 +412,17 @@ datalogue bres 0 \; datalogue noiseq1 0 \; datalogue noiseq2 0 \; datalogue
 gain 0.452514 \; datalogue bhz1 0 \; datalogue bhz2 0 \; datalogue
 bhfmidi 0 \; datalogue bhktrk 0 \; datalogue bhq 0.01 \; datalogue
 lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue mono 0 \; datalogue
-legato 1 \; datalogue last 0 \; datalogue wav_mtx2 0 0 0 0 0 \; datalogue
-wav_mtx1 0 1 0 0 0 \; datalogue lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0
-0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5
-0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
+legato 1 \; datalogue last 0 \; datalogue name square \; datalogue
+wav_mtx2 0 0 0 0 0 \; datalogue wav_mtx1 0 1 0 0 0 \; datalogue env2
+mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue env1 mtx matrix
+4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix 3 2 0.5 0 0.5
+0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 135 178 pd msgbox;
-#N canvas 0 23 450 300 msgbox 0;
+#N canvas 68 85 450 300 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6.6 \; 3phase osc2 depth 0 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0 \; 3phase wet 0 \; datalogue env1
@@ -427,15 +442,18 @@ bfmidi 71 \; datalogue bres 1.16456 \; datalogue noiseq1 0 \; datalogue
 noiseq2 0 \; datalogue gain 1 \; datalogue bhz1 0 \; datalogue bhz2
 0 \; datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01
 \; datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 1 \; datalogue
-mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2
-0 0 0 0 0 \; datalogue wav_mtx1 1 0 0 0 0 \; datalogue lfo_mtx matrix
-2 5 0 0 4 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0 0
-0 15 0 0 0 0 0 0 0 0.45 0 0 0 0.07 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 \;;
+mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name
+brass \; datalogue wav_mtx2 0 0 0 0 0 \; datalogue wav_mtx1 1 0 0 0
+0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix
+3 2 0.5 0 0.5 0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 4 0 0 0 0 0
+0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0
+0 0 15 0 0 0 0 0 0 0 0 0 0 0 -0.14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 157 199 pd msgbox;
-#N canvas 0 23 450 300 msgbox 0;
+#N canvas 123 82 450 300 msgbox 0;
 #X obj 131 18 inlet;
 #X msg 132 47 \; 3phase osc2 freq 6.6 \; 3phase osc2 depth 0 \; 3phase
 osc1 freq 0.6 \; 3phase osc1 depth 0 \; 3phase wet 0 \; datalogue env1
@@ -455,11 +473,14 @@ datalogue bres 0 \; datalogue noiseq1 65 \; datalogue noiseq2 0 \;
 datalogue gain 1 \; datalogue bhz1 0 \; datalogue bhz2 0 \; datalogue
 bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01 \; datalogue
 lfo2 retrig 0 \; datalogue lfo1 retrig 1 \; datalogue mono 0 \; datalogue
-legato 1 \; datalogue last 0 \; datalogue wav_mtx2 0 0 0 0 0 \; datalogue
-wav_mtx1 0 0 0 0 1 \; datalogue lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0
-0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 -12 0 0 0 0 0 0 0 0 0
-0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5
-0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
+legato 1 \; datalogue last 0 \; datalogue name noisectave \; datalogue
+wav_mtx2 0 0 0 0 0 \; datalogue wav_mtx1 0 0 0 0 1 \; datalogue env2
+mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue env1 mtx matrix
+4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix 3 2 0.5 0 0.5
+0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+sig_mtx matrix 8 11 1 1 0 0 0 -12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 177 158 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -482,12 +503,15 @@ bmidi 60 \; datalogue porta 0 \; datalogue pw1 0.5 \; datalogue pw2
 10 \; datalogue gain 0.75 \; datalogue bhz1 0 \; datalogue bhz2 0 \;
 datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01 \;
 datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue mono
-0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2 0
-0 0 0 0.00574257 \; datalogue wav_mtx1 1 0 0 0 0.019802 \; datalogue
-lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix
-8 9 1 1 0 0 0 0.05 0 0 0 0 0 0 0 0 0 0 0 0 0.5 1 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0.8 0 0 0 10 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0.5
-0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
+0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name cellalin
+\; datalogue wav_mtx2 0 0 0 0 0.00574257 \; datalogue wav_mtx1 1 0
+0 0 0.019802 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0
+0 \; datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+vca_mtx matrix 3 2 0.5 0 0 0.5 0 0 \; datalogue lfo_mtx matrix 2 6
+0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0
+0.05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 1 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0.8 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 198 178 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -510,12 +534,15 @@ datalogue lfo2 noise 0 \; datalogue mul1 src2 0 \; datalogue mul1 src1
 5 \; datalogue gain 0.368715 \; datalogue bhz1 0 \; datalogue bhz2
 0 \; datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01
 \; datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 1 \; datalogue
-mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2
-0 0 1 0 0 \; datalogue wav_mtx1 1 0 0 0 0 \; datalogue lfo_mtx matrix
-2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0.05
-0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0 0 0 1 0 0
-0 12 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 \;;
+mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name
+string_ensemble \; datalogue wav_mtx2 0 0 1 0 0 \; datalogue wav_mtx1
+1 0 0 0 0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0
+\; datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+vca_mtx matrix 3 2 0.5 0 0.5 0 0 0 \; datalogue lfo_mtx matrix 2 6
+0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0
+0.05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0.1 0 0 0 0 0 1 0 0 0 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 220 199 pd msgbox;
 #N canvas 128 37 450 300 msgbox 0;
@@ -539,12 +566,15 @@ noiseq1 0 \; datalogue noiseq2 0 \; datalogue gain 0.930168 \; datalogue
 bhz1 0 \; datalogue bhz2 0 \; datalogue bhfmidi 60 \; datalogue bhktrk
 1 \; datalogue bhq 0.01 \; datalogue lfo2 retrig 0 \; datalogue lfo1
 retrig 1 \; datalogue mono 0 \; datalogue legato 1 \; datalogue last
-0 \; datalogue wav_mtx2 0.227723 0.316832 0.257426 0 0 \; datalogue
-wav_mtx1 1 0.227723 0.217822 0.643564 0 \; datalogue lfo_mtx matrix
-2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0.05
-0 0 0 0 0 0 0 0 0.02 0.02 0 0 0 0 1 1 0 0.05 0 0.002 0 0 0 0 0 0 0
-0 0 0 0 0 0.2 0 0 6 6 0 0 0 0 0 0 0 0.4 0.1 0 0 0 0 0 0 0 0.25 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 \;;
+0 \; datalogue name sax \; datalogue wav_mtx2 0.227723 0.316832 0.257426
+0 0 \; datalogue wav_mtx1 1 0.227723 0.217822 0.643564 0 \; datalogue
+env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue env1 mtx matrix
+4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix 3 2 0.4 0.1
+0.25 0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0 0 0 0
+\; datalogue sig_mtx matrix 8 11 1 1 0 0.05 0 0 0 0 0 0 0 0 0 0 0.02
+0.02 0 0 0 0 0 0 1 1 0 0.05 0 0.002 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0.2 0 0 6 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 241 158 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -567,12 +597,15 @@ datalogue lfo2 noise 0 \; datalogue mul1 src2 0 \; datalogue mul1 src1
 5 \; datalogue gain 0.511173 \; datalogue bhz1 0 \; datalogue bhz2
 0 \; datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01
 \; datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 1 \; datalogue
-mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2
-0 0.60396 1 0 0 \; datalogue wav_mtx1 1 0.455446 0 0 0 \; datalogue
-lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix
-8 9 1 1 0 0 0 0.05 4 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 7 0 0 0 0 0
-0 0 0.1 0 0 0 1 0 0 0 12 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 \;;
+mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name
+major_texture \; datalogue wav_mtx2 0 0.60396 1 0 0 \; datalogue wav_mtx1
+1 0.455446 0 0 0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0
+0 0 0 \; datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+vca_mtx matrix 3 2 0.5 0 0.5 0 0 0 \; datalogue lfo_mtx matrix 2 6
+0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0
+0.05 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 7 0 0 0 0 0 0 0 0
+0 0.1 0 0 0 0 0 1 0 0 0 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 262 178 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -595,12 +628,15 @@ datalogue bfmidi 108 \; datalogue bres 0.253165 \; datalogue noiseq1
 0 \; datalogue noiseq2 0 \; datalogue gain 1 \; datalogue bhz1 0 \;
 datalogue bhz2 0 \; datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue
 bhq 0.01 \; datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue
-mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2
-1 0 1 0 0 \; datalogue wav_mtx1 1 0 1 0 0 \; datalogue lfo_mtx matrix
-2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0
-0 0 0 0 0 0 0 0 0.4 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0 0 1 0
-0 0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 \;;
+mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name
+detune \; datalogue wav_mtx2 1 0 1 0 0 \; datalogue wav_mtx1 1 0 1
+0 0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix
+3 2 0.5 0 0.5 0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0
+0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0.4 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 284 199 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -624,11 +660,15 @@ noiseq1 0 \; datalogue noiseq2 0 \; datalogue gain 1 \; datalogue bhz1
 0 \; datalogue bhz2 1.5 \; datalogue bhfmidi 60 \; datalogue bhktrk
 1 \; datalogue bhq 0.01 \; datalogue lfo2 retrig 0 \; datalogue lfo1
 retrig 0 \; datalogue mono 0 \; datalogue legato 1 \; datalogue last
-1 \; datalogue wav_mtx2 0.19802 0 0 0 0 \; datalogue wav_mtx1 0.425743
-0 1 0 0 \; datalogue lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue
-sig_mtx matrix 8 9 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0 0 0 1 1 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 0 0 0 0 0 0 0 0.7 0 0 0 0 0
-0 0 0 0.35 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
+1 \; datalogue name detune_hz \; datalogue wav_mtx2 0.19802 0 0 0 0
+\; datalogue wav_mtx1 0.425743 0 1 0 0 \; datalogue env2 mtx matrix
+4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue env1 mtx matrix 4 3 0 0 0
+0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix 3 2 0.7 0 0.35 0 0 0
+\; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0 0 0 0 0
+1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;
+;
 #X connect 0 0 1 0;
 #X restore 305 158 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -651,12 +691,15 @@ bmidi 60 \; datalogue porta 0 \; datalogue pw1 0.5 \; datalogue pw2
 0 \; datalogue gain 0.6 \; datalogue bhz1 0 \; datalogue bhz2 0 \;
 datalogue bhfmidi 60 \; datalogue bhktrk 1 \; datalogue bhq 0.01 \;
 datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue mono
-0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2 0
-1 0 0 0 \; datalogue wav_mtx1 1 0 1 0 0 \; datalogue lfo_mtx matrix
-2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 24
-0 24 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 \;;
+0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name womp_bass
+\; datalogue wav_mtx2 0 1 0 0 0 \; datalogue wav_mtx1 1 0 1 0 0 \;
+datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix
+3 2 0.5 0 0.5 0 0 0 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0
+0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 24
+0 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 326 178 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -679,12 +722,15 @@ datalogue bres 2.78481 \; datalogue noiseq1 12 \; datalogue noiseq2
 0 \; datalogue gain 0.896648 \; datalogue bhz1 0 \; datalogue bhz2
 0 \; datalogue bhfmidi 0 \; datalogue bhktrk 0 \; datalogue bhq 0 \;
 datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue mono
-0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2 0
-0 0.613861 1 0 \; datalogue wav_mtx1 0 0 0.306931 1 0 \; datalogue
-lfo_mtx matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix
-8 9 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0.4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0.5 0 0 0 0 \;;
+0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name bell
+\; datalogue wav_mtx2 0 0 0.613861 1 0 \; datalogue wav_mtx1 0 0 0.306931
+1 0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue vca_mtx matrix
+3 2 0.4 0 0 0 0 0.5 \; datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0
+0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 348 199 pd msgbox;
 #N canvas 0 23 450 300 msgbox 0;
@@ -707,12 +753,15 @@ bmidi 60 \; datalogue porta 0 \; datalogue pw1 0.5 \; datalogue pw2
 0 \; datalogue gain 0.963687 \; datalogue bhz1 0 \; datalogue bhz2
 0 \; datalogue bhfmidi 66 \; datalogue bhktrk 1 \; datalogue bhq 0
 \; datalogue lfo2 retrig 0 \; datalogue lfo1 retrig 0 \; datalogue
-mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue wav_mtx2
-0 0 1 0 0 \; datalogue wav_mtx1 0 0 0.287129 1 0 \; datalogue lfo_mtx
-matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-1 0 0 0 0 0 0 0 0 0 0 0 0.4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5
-0 0 0 0 \;;
+mono 0 \; datalogue legato 1 \; datalogue last 0 \; datalogue name
+percbell \; datalogue wav_mtx2 0 0 1 0 0 \; datalogue wav_mtx1 0 0
+0.287129 1 0 \; datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0
+0 \; datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue
+vca_mtx matrix 3 2 0.4 0 0 0 0 0.5 \; datalogue lfo_mtx matrix 2 6
+0 0 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 11 1 1 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \;;
 #X connect 0 0 1 0;
 #X restore 370 158 pd msgbox;
 #X connect 0 0 2 1;
@@ -819,9 +868,10 @@ matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1
 #X connect 33 0 32 0;
 #X connect 34 0 32 0;
 #X restore 487 92 pd state_saving;
-#X obj 922 225 print patch;
+#X obj 1051 224 print patch;
 #X text 382 48 start by selecting hradio value->;
 #X text 344 66 (& turn up outputc~ volume below);
+#X obj 380 1040 sndfwritem~;
 #X connect 0 0 11 1;
 #X connect 0 1 11 0;
 #X connect 1 0 22 0;
@@ -834,6 +884,7 @@ matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1
 #X connect 7 0 12 3;
 #X connect 8 0 4 0;
 #X connect 8 0 4 1;
+#X connect 8 0 66 0;
 #X connect 9 0 8 1;
 #X connect 10 0 40 0;
 #X connect 10 0 41 0;
@@ -849,6 +900,7 @@ matrix 2 5 0 0 0 0 0 0 0 0 0 0 \; datalogue sig_mtx matrix 8 9 1 1
 #X connect 13 2 27 0;
 #X connect 14 0 8 0;
 #X connect 14 0 25 0;
+#X connect 14 0 25 1;
 #X connect 15 0 14 2;
 #X connect 15 0 17 1;
 #X connect 16 0 13 1;
