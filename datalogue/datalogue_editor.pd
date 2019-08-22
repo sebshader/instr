@@ -1,4 +1,4 @@
-#N canvas 233 26 1207 852 10;
+#N canvas 153 26 1207 852 10;
 #X declare -stdpath iemgui -stdlib iemmatrix;
 #X msg 390 102 numberbox_matrix 8 11 5 14 -3.40282e+38 3.40282e+38
 0 empty empty #000000 3 14;
@@ -39,9 +39,9 @@
 0;
 #X obj 107 718 cnv 15 180 20 empty empty Signal_Routing 2 10 0 15 -18561
 -4160 0;
-#X floatatom 107 685 5 0 0 1 LPF_MIDI_Note #0-bfmidi #0-bfmidis;
-#X obj 226 685 hsl 80 15 0 4 0 0 \$0-bress \$0-bres LPF_Resonance 2
-8 0 10 -4160 -260097 -204786 0 1;
+#X floatatom 362 676 5 0 0 1 LPF_MIDI_Note #0-bfmidi #0-bfmidis;
+#X obj 482 676 hsl 80 15 0 4 0 0 \$0-bress \$0-bres LPF_Resonance 2
+8 0 10 -4160 -260097 -204786 5500 1;
 #X obj 389 228 cnv 15 145 155 empty empty Mult_1 20 12 0 14 -4160 -4034
 0;
 #X obj 394 260 vradio 15 1 0 8 \$0-mul1src1s \$0-mul1src1 source1 -5
@@ -91,11 +91,11 @@
 #X obj 141 262 vsl 15 102 0 1 0 0 \$0-osc1sqrs \$0-osc1sqr sqr 0 -9
 0 10 -258113 -257985 -4032 0 1;
 #X obj 162 262 vsl 15 102 0 1 0 0 \$0-osc1tris \$0-osc1tri tri 0 -9
-0 10 -257985 -30401 -4032 0 1;
+0 10 -257985 -30401 -4032 3100 1;
 #X obj 183 262 vsl 15 102 0 1 0 0 \$0-osc1sins \$0-osc1sin sin 0 -9
-0 10 -27201 -4160 -4032 0 1;
+0 10 -27201 -4160 -4032 10100 1;
 #X obj 203 262 vsl 15 102 0 1 0 0 \$0-osc1noises \$0-osc1noise noise
-0 -9 0 10 -262144 -159808 -4032 10100 1;
+0 -9 0 10 -262144 -159808 -4032 0 1;
 #X msg 513 59 numberbox_matrix 2 6 5 14 -3.40282e+38 3.40282e+38 0
 empty empty #000000 3 14;
 #X obj 390 395 cnv 15 180 20 empty empty LFO_Freq_Routing 2 10 0 15
@@ -132,7 +132,7 @@ empty empty #000000 0 14;
 0;
 #X floatatom 192 467 5 0 0 1 Base_Freq #0-lfo1bfreq #0-lfo1bfreqs;
 #X obj 116 495 vradio 15 1 0 5 \$0-lfo1wavs \$0-lfo1wav wave 0 -8 0
-10 -1 -4032 -4160 1;
+10 -1 -4032 -4160 0;
 #X obj 132 495 cnv 15 63 14 empty empty Sine 2 8 0 12 -4160 -257985
 0;
 #X obj 132 510 cnv 15 63 14 empty empty Square 2 8 0 12 -4160 -257985
@@ -142,7 +142,7 @@ empty empty #000000 0 14;
 #X obj 132 540 cnv 15 63 14 empty empty Sawtooth 2 8 0 12 -4160 -257985
 0;
 #X obj 200 517 vradio 15 1 0 2 \$0-lfo1polars \$0-lfo1polar polarity
-0 -8 0 10 -1 -4032 -4160 1;
+0 -8 0 10 -1 -4032 -4160 0;
 #X obj 216 517 cnv 15 63 14 empty empty bipolar 2 8 0 12 -4160 -257985
 0;
 #X obj 216 532 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
@@ -155,7 +155,7 @@ empty empty #000000 0 14;
 -159808 -4034 -262144 3950 1;
 #X floatatom 256 377 5 0 0 1 Tune_Osc_2 #0-bmidi2 #0-bmidi2s;
 #X obj 201 487 tgl 15 0 \$0-lfo1retrigs \$0-lfo1retrig Reset_Phase
-17 7 0 10 -1 -4032 -1 1 1;
+17 7 0 10 -1 -4032 -1 0 1;
 #X obj 293 470 hsl 80 15 0 1 0 0 \$0-lfo1phases \$0-lfo1phase Phase
 10 8 0 10 -1 -260097 -4032 0 1;
 #X obj 293 538 hsl 80 15 0 1 0 0 \$0-lfo1offsets \$0-lfo1offset PW_Offset
@@ -192,7 +192,7 @@ empty empty #000000 0 14;
 #X floatatom 110 653 6 0 0 1 Release #0-env1release #0-env1releases
 ;
 #X obj 113 633 hsl 75 15 0 1 0 0 \$0-env1sustains \$0-env1sustain Sustain
-10 8 0 10 -99865 -4034 -262144 3700 1;
+10 8 0 10 -99865 -4034 -262144 0 1;
 #X obj 499 576 cnv 15 120 96 empty empty Env2 5 8 0 14 -260097 -4160
 0;
 #X floatatom 503 593 6 0 0 1 Attack #0-env2attack #0-env2attacks;
@@ -200,7 +200,7 @@ empty empty #000000 0 14;
 #X floatatom 503 653 6 0 0 1 Release #0-env2release #0-env2releases
 ;
 #X obj 506 633 hsl 75 15 0 1 0 0 \$0-env2sustains \$0-env2sustain Sustain
-10 8 0 10 -99865 -4034 -262144 3700 1;
+10 8 0 10 -99865 -4034 -262144 0 1;
 #X obj 687 672 cnv 15 153 63 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 693 716 5 0 0 1 Base_Ktrk_Key #0-bmidi #0-bmidis;
@@ -217,7 +217,7 @@ empty empty #000000 0 14;
 #X obj 280 262 vsl 15 102 0 1 0 0 \$0-osc2sqrs \$0-osc2sqr sqr 0 -9
 0 10 -258113 -257985 -4032 0 1;
 #X obj 322 262 vsl 15 102 0 1 0 0 \$0-osc2sins \$0-osc2sin sin 0 -9
-0 10 -27201 -4160 -4032 0 1;
+0 10 -27201 -4160 -4032 10100 1;
 #X obj 342 262 vsl 15 102 0 1 0 0 \$0-osc2noises \$0-osc2noise noise
 0 -9 0 10 -262144 -159808 -4032 0 1;
 #N canvas 41 141 400 431 env1route 0;
@@ -319,7 +319,7 @@ empty empty #000000 0 14;
 #X connect 1 4 6 0;
 #X restore -54 182 pd wav_mtx2;
 #X obj 301 262 vsl 15 102 0 1 0 0 \$0-osc2tris \$0-osc2tri tri 0 -9
-0 10 -257985 -30401 -4032 0 1;
+0 10 -257985 -30401 -4032 6200 1;
 #X obj -30 114 s \$0-pw1;
 #X obj -18 141 s \$0-pw2;
 #X obj 27 123 s \$0-bmidi1;
@@ -562,7 +562,7 @@ noise;
 #X obj 588 100 r \$0-bmidi2s;
 #X obj 579 125 r \$0-noiseq1s;
 #X obj 611 144 r \$0-noiseq2s;
-#X obj 195 16 inlet;
+#X obj 66 11 inlet;
 #X obj 643 76 r \$0-gains;
 #X obj 565 172 r \$0-bhz1s;
 #X obj 635 174 r \$0-bhz2s;
@@ -571,6 +571,21 @@ noise;
 #X obj 246 224 shadylib/prepender bmidi porta pw1 pw2 bfmidi bres bmidi1
 bmidi2 noiseq1 noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq;
 #X obj 621 202 r \$0-bhqs;
+#N canvas 0 23 450 300 vel 0;
+#X obj 69 72 r \$0-vellins;
+#X obj 180 73 r \$0-velatks;
+#X obj 101 160 iemlib/iem_prepend vel;
+#X obj 109 215 outlet;
+#X obj 278 67 r \$0-velrels;
+#X obj 99 127 shadylib/prepender lin attack release delay;
+#X obj 298 95 r \$0-veldels;
+#X connect 0 0 5 0;
+#X connect 1 0 5 1;
+#X connect 2 0 3 0;
+#X connect 4 0 5 2;
+#X connect 5 0 2 0;
+#X connect 6 0 5 3;
+#X restore 186 160 pd vel;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -597,6 +612,7 @@ bmidi2 noiseq1 noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq;
 #X connect 23 0 24 14;
 #X connect 24 0 0 0;
 #X connect 25 0 24 15;
+#X connect 26 0 0 0;
 #X restore 16 701 pd receivers;
 #X obj 310 1051 outlet;
 #X obj 283 67 inlet;
@@ -645,6 +661,12 @@ noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq;
 #X obj 42 144 t b b b;
 #X obj 142 186 t b b b;
 #X msg 32 257 mul3;
+#X obj 288 88 iemlib/iem_prepend vel;
+#X msg 272 66 attack;
+#X msg 243 63 lin;
+#X msg 345 61 release;
+#X obj 237 36 zexy/nop;
+#X msg 401 59 delay;
 #X connect 0 0 29 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
@@ -694,6 +716,7 @@ noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq;
 #X connect 29 2 34 0;
 #X connect 29 3 14 0;
 #X connect 29 4 7 0;
+#X connect 29 5 41 0;
 #X connect 30 0 11 0;
 #X connect 31 0 2 1;
 #X connect 32 0 4 0;
@@ -705,6 +728,15 @@ noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq;
 #X connect 35 1 36 0;
 #X connect 35 2 28 0;
 #X connect 36 0 19 0;
+#X connect 37 0 1 0;
+#X connect 38 0 37 0;
+#X connect 39 0 37 0;
+#X connect 40 0 37 0;
+#X connect 41 0 39 0;
+#X connect 41 0 38 0;
+#X connect 41 0 40 0;
+#X connect 41 0 42 0;
+#X connect 42 0 37 0;
 #X restore 297 122 pd triglist;
 #X obj 349 148 list trim;
 #N canvas 126 156 378 300 lfo1route 0;
@@ -792,7 +824,7 @@ noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq;
 #X obj 475 207 bng 15 250 50 0 empty empty Clear_All 17 7 0 10 -262144
 -1 -1;
 #X obj -259 295 zexy/nop;
-#N canvas 305 103 779 775 clear 0;
+#N canvas 8 56 779 775 clear 1;
 #X obj 208 60 inlet;
 #X obj 240 646 outlet;
 #X msg 203 116 wav_mtx1 1 0 0 0 0 \, wav_mtx2 0 0 0 0 0 \, env1 attack
@@ -807,11 +839,12 @@ src2 0 \, mul3 src1 0 \, bmidi 60 \, porta 0 \, pw1 0.5 \, pw2 0.5
 \, bmidi1 0 \, bmidi2 0 \, bhz1 0 \, bhz2 0 \, bfmidi 127 \, bres 0
 \, bhfmidi 60 \, bhktrk 1 \, bhq 0.01 \, noiseq1 0 \, noiseq2 0 \,
 lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono
-0 \, gain 0.75 \, legato 1 \, last 0 \, sig_mtx matrix 8 11 1 1 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0.5
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6 0 0 0 0 0
-0 0 0 0 0 0 0 \, vca_mtx matrix 3 2 0 0 0 0 0 0;
+0 \, gain 0.75 \, legato 1 \, last 0 \, vel attack 10 \, vel release
+1000 \, vel delay 0 \, vel lin 0.84096 \, sig_mtx matrix 8 11 1 1 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 0 0
+0 0 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6 0 0 0 0 0 0
+0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.075 0 0.075 0 0 0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore -233 230 pd clear;
@@ -821,10 +854,10 @@ lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono
 -1;
 #X msg 584 151 0.5;
 #X msg 51 486 0.5;
-#X obj 401 719 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
--2 8 0 10 -260097 -4160 -45076 11933 1;
+#X obj 401 718 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
+-2 8 0 10 -260097 -4160 -45076 10700 1;
 #X obj 184 181 s \$0-gain;
-#X floatatom 594 719 5 0 1.2 0 - - -;
+#X floatatom 594 718 5 0 1.2 0 - - -;
 #X msg 541 956 set \$1;
 #X obj 132 555 cnv 15 63 14 empty empty Noise 2 8 0 12 -4160 -257985
 0;
@@ -912,13 +945,13 @@ lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono
 #X msg 42 593 set \$1;
 #X obj 107 852 cnv 15 80 13 empty empty VCA_Ring 2 8 0 12 -31361 -257985
 0;
-#X floatatom 358 686 5 0 0 1 HPF_MIDI_Note #0-bhfmidi #0-bhfmidis;
-#X floatatom 472 686 5 0 0 1 HPF_MIDI_Ktrk #0-bhktrk #0-bhktrks;
+#X floatatom 362 697 5 0 0 1 HPF_MIDI_Note #0-bhfmidi #0-bhfmidis;
+#X floatatom 479 697 5 0 0 1 HPF_MIDI_Ktrk #0-bhktrk #0-bhktrks;
 #X obj 64 89 s \$0-bhfmidi;
 #X obj 159 91 s \$0-bhktrk;
 #X obj 176 8 s \$0-bhq;
-#X obj 590 686 hsl 80 15 0 1 0 0 \$0-bhqs \$0-bhq HPF_Q 20 8 0 10 -4160
--260097 -204786 79 1;
+#X obj 597 696 hsl 80 15 0 1 0 0 \$0-bhqs \$0-bhq HPF_Q 20 8 0 10 -4160
+-260097 -204786 0 1;
 #X obj 215 83 s \$0-name;
 #X symbolatom 316 207 20 0 0 1 name #0-name #0-names;
 #X obj -249 481 shadylib/prepender lfo1 lfo2 mono legato last name
@@ -965,9 +998,9 @@ empty empty #000000 0 14;
 #X obj 736 216 cnv 15 145 185 empty empty Mult_3 20 12 0 14 -4160 -4034
 0;
 #X obj 741 248 vradio 15 1 0 10 \$0-mul3src1s \$0-mul3src1 source1
--5 -8 0 10 -262144 -1 -257985 6;
+-5 -8 0 10 -262144 -1 -257985 0;
 #X obj 789 248 vradio 15 1 0 10 \$0-mul3src2s \$0-mul3src2 source2
--5 -8 0 10 -262144 -1 -257985 2;
+-5 -8 0 10 -262144 -1 -257985 0;
 #X obj 809 248 cnv 15 63 14 empty empty Key_Trk 2 8 0 12 -31361 -257985
 0;
 #X obj 809 263 cnv 15 63 14 empty empty PitchBend 2 8 0 12 -31361 -257985
@@ -1033,10 +1066,6 @@ empty empty #000000 0 14;
 #X obj 215 932 matrix 3 2;
 #X obj 191 954 iemlib/iem_prepend vca_mtx;
 #X obj -209 728 matrix 2 6;
-#X obj -214 30 route env1 env2 lfo1 lfo2 bmidi porta lfo_mtx sig_mtx
-wav_mtx1 wav_mtx2 pw1 pw2 bmidi1 bmidi2 bfmidi bres mul1 mul2 mono
-noiseq1 noiseq2 gain legato last bhz1 bhz2 bhfmidi bhktrk bhq name
-vca_mtx mul3;
 #N canvas 126 156 378 300 mul3route 0;
 #X obj 108 50 inlet;
 #X obj 124 213 s;
@@ -1064,11 +1093,35 @@ vca_mtx mul3;
 #X msg 929 514 matrix 3 2 0 0 0 0 0 0;
 #X msg 668 941 matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
 #X msg 912 626 matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
-#X connect 1 0 267 0;
-#X connect 60 0 271 0;
+#X obj -214 30 route env1 env2 lfo1 lfo2 bmidi porta lfo_mtx sig_mtx
+wav_mtx1 wav_mtx2 pw1 pw2 bmidi1 bmidi2 bfmidi bres mul1 mul2 mono
+noiseq1 noiseq2 gain legato last bhz1 bhz2 bhfmidi bhktrk bhq name
+vca_mtx mul3 vel;
+#N canvas 346 213 450 300 vel 0;
+#X obj 102 35 inlet;
+#X obj 152 111 s \$0-velatk;
+#X obj 94 128 s \$0-vellin;
+#X obj 225 128 s \$0-velrel;
+#X obj 114 76 route lin attack release delay;
+#X obj 313 108 s \$0-veldel;
+#X connect 0 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 1 0;
+#X connect 4 2 3 0;
+#X connect 4 3 5 0;
+#X restore 349 67 pd vel;
+#X obj 107 674 cnv 15 245 40 empty empty Velocity 5 8 0 14 -258113
+-262144 0;
+#X floatatom 112 695 6 0 0 1 Attack #0-velatk #0-velatks;
+#X floatatom 180 676 6 0 1 1 exponential/linear #0-vellin #0-vellins
+;
+#X floatatom 192 694 6 0 0 1 Release #0-velrel #0-velrels;
+#X floatatom 278 694 6 0 0 1 Delay #0-veldel #0-veldels;
+#X connect 1 0 276 0;
+#X connect 60 0 270 0;
 #X connect 64 0 140 0;
 #X connect 65 0 141 0;
-#X connect 78 0 272 0;
+#X connect 78 0 271 0;
 #X connect 80 0 148 0;
 #X connect 94 0 149 0;
 #X connect 100 0 193 0;
@@ -1097,7 +1150,7 @@ vca_mtx mul3;
 #X connect 141 0 266 0;
 #X connect 142 0 150 0;
 #X connect 142 1 143 0;
-#X connect 143 0 267 0;
+#X connect 143 0 276 0;
 #X connect 148 0 151 0;
 #X connect 149 0 152 0;
 #X connect 150 0 248 0;
@@ -1114,7 +1167,7 @@ vca_mtx mul3;
 #X connect 159 0 252 0;
 #X connect 159 0 253 0;
 #X connect 159 0 160 0;
-#X connect 160 0 267 0;
+#X connect 160 0 276 0;
 #X connect 161 0 163 0;
 #X connect 162 0 164 0;
 #X connect 163 0 93 0;
@@ -1142,8 +1195,8 @@ vca_mtx mul3;
 #X connect 241 0 242 0;
 #X connect 241 0 245 0;
 #X connect 242 0 245 0;
-#X connect 243 0 275 0;
-#X connect 244 0 276 0;
+#X connect 243 0 274 0;
+#X connect 244 0 275 0;
 #X connect 245 0 132 0;
 #X connect 246 0 247 0;
 #X connect 246 0 249 0;
@@ -1162,52 +1215,53 @@ vca_mtx mul3;
 #X connect 253 0 64 0;
 #X connect 253 0 251 0;
 #X connect 256 0 263 0;
-#X connect 262 0 274 0;
+#X connect 262 0 273 0;
 #X connect 263 0 264 0;
 #X connect 263 0 265 0;
 #X connect 264 0 265 0;
 #X connect 265 0 132 0;
 #X connect 266 0 122 0;
-#X connect 267 0 117 0;
-#X connect 267 1 181 0;
-#X connect 267 2 144 0;
-#X connect 267 3 145 0;
-#X connect 267 4 118 0;
-#X connect 267 5 119 0;
-#X connect 267 6 65 0;
-#X connect 267 6 266 0;
-#X connect 267 7 64 0;
-#X connect 267 7 251 0;
-#X connect 267 8 123 0;
-#X connect 267 9 124 0;
-#X connect 267 10 126 0;
-#X connect 267 11 127 0;
-#X connect 267 12 128 0;
-#X connect 267 13 129 0;
-#X connect 267 14 130 0;
-#X connect 267 15 131 0;
-#X connect 267 16 146 0;
-#X connect 267 17 147 0;
-#X connect 267 18 109 0;
-#X connect 267 19 156 0;
-#X connect 267 20 157 0;
-#X connect 267 21 166 0;
-#X connect 267 22 183 0;
-#X connect 267 23 185 0;
-#X connect 267 24 189 0;
-#X connect 267 25 190 0;
-#X connect 267 26 198 0;
-#X connect 267 27 199 0;
-#X connect 267 28 200 0;
-#X connect 267 29 207 0;
-#X connect 267 30 264 0;
-#X connect 267 30 256 0;
-#X connect 267 31 268 0;
-#X connect 269 0 60 0;
-#X connect 270 0 78 0;
+#X connect 268 0 60 0;
+#X connect 269 0 78 0;
+#X connect 270 0 268 0;
 #X connect 271 0 269 0;
-#X connect 272 0 270 0;
-#X connect 274 0 256 0;
-#X connect 275 0 208 0;
-#X connect 276 0 217 0;
-#X coords 0 -1 1 1 795 675 2 100 200;
+#X connect 273 0 256 0;
+#X connect 274 0 208 0;
+#X connect 275 0 217 0;
+#X connect 276 0 117 0;
+#X connect 276 1 181 0;
+#X connect 276 2 144 0;
+#X connect 276 3 145 0;
+#X connect 276 4 118 0;
+#X connect 276 5 119 0;
+#X connect 276 6 65 0;
+#X connect 276 6 266 0;
+#X connect 276 7 64 0;
+#X connect 276 7 251 0;
+#X connect 276 8 123 0;
+#X connect 276 9 124 0;
+#X connect 276 10 126 0;
+#X connect 276 11 127 0;
+#X connect 276 12 128 0;
+#X connect 276 13 129 0;
+#X connect 276 14 130 0;
+#X connect 276 15 131 0;
+#X connect 276 16 146 0;
+#X connect 276 17 147 0;
+#X connect 276 18 109 0;
+#X connect 276 19 156 0;
+#X connect 276 20 157 0;
+#X connect 276 21 166 0;
+#X connect 276 22 183 0;
+#X connect 276 23 185 0;
+#X connect 276 24 189 0;
+#X connect 276 25 190 0;
+#X connect 276 26 198 0;
+#X connect 276 27 199 0;
+#X connect 276 28 200 0;
+#X connect 276 29 207 0;
+#X connect 276 30 264 0;
+#X connect 276 30 256 0;
+#X connect 276 31 267 0;
+#X connect 276 32 277 0;
+#X coords 0 -1 1 1 795 676 2 100 200;

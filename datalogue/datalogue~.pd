@@ -1,4 +1,4 @@
-#N canvas 16 27 505 639 10;
+#N canvas 227 57 505 639 10;
 #X obj 82 31 inlet;
 #X obj 186 38 inlet;
 #X text 180 18 pitch bend;
@@ -18,7 +18,7 @@
 #X obj 85 504 *~ 0.5;
 #X obj 97 527 *~ 1;
 #X obj 195 512 list split 1;
-#X msg 200 400 \$1 getpitch bang;
+#X msg 203 385 \$1 getpitch bang;
 #X obj 231 538 route 0 1;
 #X obj 244 580 zexy/demultiplex;
 #X obj 240 605 b;
