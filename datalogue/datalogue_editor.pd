@@ -41,7 +41,7 @@
 -4160 0;
 #X floatatom 362 676 5 0 0 1 LPF_MIDI_Note #0-bfmidi #0-bfmidis;
 #X obj 482 676 hsl 80 15 0 4 0 0 \$0-bress \$0-bres LPF_Resonance 2
-8 0 10 -4160 -260097 -204786 5500 1;
+8 0 10 -4160 -260097 -204786 0 1;
 #X obj 389 228 cnv 15 145 155 empty empty Mult_1 20 12 0 14 -4160 -4034
 0;
 #X obj 394 260 vradio 15 1 0 8 \$0-mul1src1s \$0-mul1src1 source1 -5
@@ -87,13 +87,13 @@
 #X obj 117 229 cnv 15 120 141 empty empty Osc1_Waves 20 12 0 14 -159808
 -232576 0;
 #X obj 121 262 vsl 15 102 0 1 0 0 \$0-osc1saws \$0-osc1saw saw 0 -9
-0 10 -4160 -4032 -4032 0 1;
+0 10 -4160 -4032 -4032 10100 1;
 #X obj 141 262 vsl 15 102 0 1 0 0 \$0-osc1sqrs \$0-osc1sqr sqr 0 -9
 0 10 -258113 -257985 -4032 0 1;
 #X obj 162 262 vsl 15 102 0 1 0 0 \$0-osc1tris \$0-osc1tri tri 0 -9
-0 10 -257985 -30401 -4032 3100 1;
+0 10 -257985 -30401 -4032 0 1;
 #X obj 183 262 vsl 15 102 0 1 0 0 \$0-osc1sins \$0-osc1sin sin 0 -9
-0 10 -27201 -4160 -4032 10100 1;
+0 10 -27201 -4160 -4032 0 1;
 #X obj 203 262 vsl 15 102 0 1 0 0 \$0-osc1noises \$0-osc1noise noise
 0 -9 0 10 -262144 -159808 -4032 0 1;
 #X msg 513 59 numberbox_matrix 2 6 5 14 -3.40282e+38 3.40282e+38 0
@@ -192,7 +192,7 @@ empty empty #000000 0 14;
 #X floatatom 110 653 6 0 0 1 Release #0-env1release #0-env1releases
 ;
 #X obj 113 633 hsl 75 15 0 1 0 0 \$0-env1sustains \$0-env1sustain Sustain
-10 8 0 10 -99865 -4034 -262144 0 1;
+10 8 0 10 -99865 -4034 -262144 3700 1;
 #X obj 499 576 cnv 15 120 96 empty empty Env2 5 8 0 14 -260097 -4160
 0;
 #X floatatom 503 593 6 0 0 1 Attack #0-env2attack #0-env2attacks;
@@ -200,7 +200,7 @@ empty empty #000000 0 14;
 #X floatatom 503 653 6 0 0 1 Release #0-env2release #0-env2releases
 ;
 #X obj 506 633 hsl 75 15 0 1 0 0 \$0-env2sustains \$0-env2sustain Sustain
-10 8 0 10 -99865 -4034 -262144 0 1;
+10 8 0 10 -99865 -4034 -262144 3700 1;
 #X obj 687 672 cnv 15 153 63 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 693 716 5 0 0 1 Base_Ktrk_Key #0-bmidi #0-bmidis;
@@ -217,7 +217,7 @@ empty empty #000000 0 14;
 #X obj 280 262 vsl 15 102 0 1 0 0 \$0-osc2sqrs \$0-osc2sqr sqr 0 -9
 0 10 -258113 -257985 -4032 0 1;
 #X obj 322 262 vsl 15 102 0 1 0 0 \$0-osc2sins \$0-osc2sin sin 0 -9
-0 10 -27201 -4160 -4032 10100 1;
+0 10 -27201 -4160 -4032 0 1;
 #X obj 342 262 vsl 15 102 0 1 0 0 \$0-osc2noises \$0-osc2noise noise
 0 -9 0 10 -262144 -159808 -4032 0 1;
 #N canvas 41 141 400 431 env1route 0;
@@ -319,7 +319,7 @@ empty empty #000000 0 14;
 #X connect 1 4 6 0;
 #X restore -54 182 pd wav_mtx2;
 #X obj 301 262 vsl 15 102 0 1 0 0 \$0-osc2tris \$0-osc2tri tri 0 -9
-0 10 -257985 -30401 -4032 6200 1;
+0 10 -257985 -30401 -4032 0 1;
 #X obj -30 114 s \$0-pw1;
 #X obj -18 141 s \$0-pw2;
 #X obj 27 123 s \$0-bmidi1;
@@ -844,7 +844,7 @@ lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 0 0
 0 0 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6 0 0 0 0 0 0
-0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.075 0 0.075 0 0 0;
+0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore -233 230 pd clear;
@@ -855,7 +855,7 @@ lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono
 #X msg 584 151 0.5;
 #X msg 51 486 0.5;
 #X obj 401 718 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
--2 8 0 10 -260097 -4160 -45076 10700 1;
+-2 8 0 10 -260097 -4160 -45076 8950 1;
 #X obj 184 181 s \$0-gain;
 #X floatatom 594 718 5 0 1.2 0 - - -;
 #X msg 541 956 set \$1;
@@ -951,7 +951,7 @@ lfo2 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono
 #X obj 159 91 s \$0-bhktrk;
 #X obj 176 8 s \$0-bhq;
 #X obj 597 696 hsl 80 15 0 1 0 0 \$0-bhqs \$0-bhq HPF_Q 20 8 0 10 -4160
--260097 -204786 0 1;
+-260097 -204786 79 1;
 #X obj 215 83 s \$0-name;
 #X symbolatom 316 207 20 0 0 1 name #0-name #0-names;
 #X obj -249 481 shadylib/prepender lfo1 lfo2 mono legato last name

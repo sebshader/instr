@@ -124,7 +124,6 @@
 #X msg 342 203 clear;
 #X text 46 276 todo: control legato from this patch rather than datavoice~
 (add method for changeing pitch & velocity independantly);
-#X msg 42 401 vis 2 1;
 #X obj 291 146 route gain panic mono last;
 #X connect 0 0 24 0;
 #X connect 1 0 9 0;
@@ -133,7 +132,7 @@
 #X connect 6 0 28 0;
 #X connect 7 0 15 1;
 #X connect 9 0 7 0;
-#X connect 10 0 35 0;
+#X connect 10 0 34 0;
 #X connect 11 0 12 0;
 #X connect 12 0 7 0;
 #X connect 14 0 15 0;
@@ -169,11 +168,10 @@
 #X connect 32 0 26 0;
 #X connect 32 0 31 3;
 #X connect 32 0 7 0;
-#X connect 34 0 15 0;
-#X connect 35 0 17 1;
-#X connect 35 1 32 0;
-#X connect 35 1 30 0;
-#X connect 35 2 25 1;
-#X connect 35 3 21 1;
-#X connect 35 3 31 2;
-#X connect 35 4 7 0;
+#X connect 34 0 17 1;
+#X connect 34 1 32 0;
+#X connect 34 1 30 0;
+#X connect 34 2 25 1;
+#X connect 34 3 21 1;
+#X connect 34 3 31 2;
+#X connect 34 4 7 0;
