@@ -33,8 +33,8 @@ Signal Flow:
 
 However, 2 LFOs and 2 envelopes are also used as signals to be routed to
 parameters of the oscillators and amplifiers, along with key track, modwheel,
-pitch bend signals and 2 multipliers that can multiply any of these signals
-together to generate 2 more signals.
+pitch bend, and velocity signals as well as 3 multipliers that can multiply any
+of these signals together to generate 3 more signals.
 
 Parameters:
 datalogue~ inlets:
@@ -65,6 +65,10 @@ env1/env2:
 	decay: same
 	sustain: sustain level (from 0 - 1)
 	release: same as attack & decay
+	mtx: routing for envelope parameters:
+		rows: attack, decay, sustain, release
+		columns: key track, velocity, mod wheel
+	paramaters in matrix are sampled when the note starts
 
 lfo1/lfo2:
 	bfreq: multiples of 1/(frequency of midi note 0) (so that when keytrack midi
@@ -89,15 +93,23 @@ lfo_mtx: iemmatrix matrix message:
 	rows: LFO1 frequency, LFO2 frequency
 	columns: Key track signal, pitch bend, modwheel, envelope 1, envelope 2
 
+vca_mtx: routes envelopes to the VCAs
+	Rows: VCA Oscillator 1, VCA Oscillator 2, VCA Ring Modulation
+	Columns: Envelope 1, Envelope 2
+
 sig_mtx: iemmatrix matrix message:
 	rows: Oscillator 1 Pitch, Osc 1 Pulse-width, Osc2 Pitch, Osc2 PW, Lowpass
 		filter midi value, VCA for oscillator 1, VCA for oscillator 2, VCA for
 		ring-modulated signal between oscillators (before their VCAs)
 	columns: Key Track, Pitch bend, modwheel, env1, env2, lfo1 output, lfo2,
-		output of multiplier 1, multiplier 2
+		output of multiplier 1, multiplier 2, velocity
+		
+The signals sent to the VCAs from sig_mtx are added to 1, then multiplied
+by the signals from vca_mtx before being multiplied by the signal from the
+oscillator (this is because in a polyphonic synth using the VCA without an
+envelope hardly ever happens)
 
 wav_mtx1 & wav_mtx2: iemmatrix with 1 output: controls the levels of the various
-
 	waveforms for an oscillator, in order: sawtooth, square, triangle, sine,
 	noise. Output is normalized to not be above an amplitude of 1
 
@@ -111,11 +123,11 @@ bfmidi: base frequency in midi for lowpass VCF
 
 bres: resonance for lowpass VCF between 0 and 4
 
-mul1 & mul2: set signals to multiply together to generate new signals for
+mul1, mul2, & mul3: set signals to multiply together to generate new signals for
 	routing/modulation
 	src1 or src2 (which are multiplied together): 0-Keytrack 1-Pitchbend 
-		2-modwheel 3-env1 4-env2 5-lfo1 6-lfo2
-	mul2 also has 7-output of mul1
+		2-modwheel 3-env1 4-env2 5-lfo1 6-lfo2 7-velocity
+	mul2 also has 8-output of mul1, and mul3 has 8-mul1 and 9-mul2
 
 noiseq1 & noiseq2: band-pass q-value for noise in oscillators
 
@@ -128,6 +140,14 @@ bhktrk: value keytrack is multiplied by before being added to bhfmidi
 
 bhq: set q for highbass vcf
 
+vel: controls generation for velocity signal for routing (with attack-release 
+	envelope)
+	lin: linearity of envelope attack & release stages: 0 is exponential, 1 is 
+		linear
+	attack: attack time in milliseconds
+	release: release time in milliseconds
+	delay: if not 0 automatically send release before/instead of note off after
+		this amount of time in milliseconds.
 
 --------------------------------------------------------------------------------
 datalogue_editor:
