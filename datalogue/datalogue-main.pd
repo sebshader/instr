@@ -1,7 +1,7 @@
 #N canvas 174 23 1184 771 10;
 #X obj 1072 103 stater \$0-mainlogue datalogue;
 #X obj 594 48 hradio 15 1 0 16 \$0-preset empty Prepare_Preset 0 -8
-0 10 -262144 -1 -1 15;
+0 10 -262144 -1 -1 4;
 #X obj 1018 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 43 254 notein 1;
@@ -871,11 +871,11 @@ vca_mtx matrix 3 2 0.4 0 0 0 0 0.5 \; datalogue lfo_mtx matrix 2 6
 #X text 382 48 start by selecting hradio value->;
 #X text 344 66 (& turn up outputc~ volume below);
 #X msg 15 322 60;
-#X obj 3 341 makenote 100 2000;
 #X msg 45 318 127;
 #X floatatom 10 304 5 0 0 0 - - -;
 #X floatatom 112 281 5 0 0 0 - - -;
 #X obj 51 1078 shadylib/outputc~;
+#X obj 3 341 makenote 100 200;
 #X connect 0 0 10 1;
 #X connect 0 1 10 0;
 #X connect 1 0 21 0;
@@ -883,12 +883,12 @@ vca_mtx matrix 3 2 0.4 0 0 0 0 0.5 \; datalogue lfo_mtx matrix 2 6
 #X connect 3 0 11 0;
 #X connect 3 0 28 0;
 #X connect 3 1 11 1;
-#X connect 3 1 67 0;
+#X connect 3 1 66 0;
 #X connect 4 0 11 2;
 #X connect 5 0 4 0;
 #X connect 6 0 11 3;
-#X connect 7 0 68 0;
-#X connect 7 0 68 1;
+#X connect 7 0 67 0;
+#X connect 7 0 67 1;
 #X connect 8 0 7 1;
 #X connect 9 0 37 0;
 #X connect 9 0 38 0;
@@ -943,8 +943,8 @@ vca_mtx matrix 3 2 0.4 0 0 0 0 0.5 \; datalogue lfo_mtx matrix 2 6
 #X connect 55 0 56 0;
 #X connect 56 0 8 0;
 #X connect 58 0 11 4;
-#X connect 63 0 64 0;
-#X connect 64 0 11 0;
-#X connect 64 1 11 1;
-#X connect 65 0 64 1;
-#X connect 66 0 64 0;
+#X connect 63 0 68 0;
+#X connect 64 0 68 1;
+#X connect 65 0 68 0;
+#X connect 68 0 11 0;
+#X connect 68 1 11 1;
