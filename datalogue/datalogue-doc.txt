@@ -1,7 +1,7 @@
 --- Datalogue Documentation ---
 Datalogue aims to be a virtual 8-voice analog polysynth
 
-Required libraries: iemlib, shadylib, zexy, iemmatrix, cyclone (for svf~),
+Required libraries: iemlib, shadylib 2.1, zexy, iemmatrix, cyclone (for svf~),
 iemgui (for numberbox_matrix)
 
 optional: hcs/folder_list for listing patches
