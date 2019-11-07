@@ -51,6 +51,7 @@ datalogue bhz2 0;
 datalogue bhfmidi 0;
 datalogue bhktrk 0;
 datalogue bhq 0.01;
+datalogue ftype 0;
 datalogue lfo2 retrig 0;
 datalogue lfo1 retrig 0;
 datalogue mono 1;
