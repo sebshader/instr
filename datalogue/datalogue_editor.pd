@@ -1,4 +1,4 @@
-#N canvas 160 26 1207 852 10;
+#N canvas 233 26 1207 852 10;
 #X declare -stdpath iemgui -stdlib iemmatrix;
 #X msg 390 102 numberbox_matrix 8 11 5 14 -3.40282e+38 3.40282e+38
 0 empty empty #000000 3 14;
@@ -87,9 +87,9 @@
 #X obj 117 229 cnv 15 120 141 empty empty Osc1_Waves 20 12 0 14 -159808
 -232576 0;
 #X obj 121 262 vsl 15 102 0 1 0 0 \$0-osc1saws \$0-osc1saw saw 0 -9
-0 10 -4160 -4032 -4032 10100 1;
+0 10 -4160 -4032 -4032 0 1;
 #X obj 141 262 vsl 15 102 0 1 0 0 \$0-osc1sqrs \$0-osc1sqr sqr 0 -9
-0 10 -258113 -257985 -4032 0 1;
+0 10 -258113 -257985 -4032 10100 1;
 #X obj 162 262 vsl 15 102 0 1 0 0 \$0-osc1tris \$0-osc1tri tri 0 -9
 0 10 -257985 -30401 -4032 0 1;
 #X obj 183 262 vsl 15 102 0 1 0 0 \$0-osc1sins \$0-osc1sin sin 0 -9
@@ -200,7 +200,7 @@ empty empty #000000 0 14;
 #X floatatom 503 653 6 0 0 1 Release #0-env2release #0-env2releases
 ;
 #X obj 506 633 hsl 75 15 0 1 0 0 \$0-env2sustains \$0-env2sustain Sustain
-10 8 0 10 -99865 -4034 -262144 0 1;
+10 8 0 10 -99865 -4034 -262144 3700 1;
 #X obj 708 672 cnv 15 153 63 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 714 716 5 0 0 1 Base_Ktrk_Key #0-bmidi #0-bmidis;
@@ -417,7 +417,7 @@ noise;
 #X restore 154 38 pd lfo1;
 #X obj 252 45 r \$0-bmidis;
 #X obj 328 39 r \$0-portas;
-#N canvas 123 23 685 300 env1 0;
+#N canvas 155 221 685 300 env1 0;
 #X obj 3 8 r \$0-env1attacks;
 #X obj 149 7 r \$0-env1decays;
 #X obj 216 97 r \$0-env1sustains;
@@ -437,6 +437,7 @@ noise;
 #X obj 24 70 iemlib/speedlim 2000;
 #X obj 122 79 iemlib/speedlim 2000;
 #X obj 333 75 iemlib/speedlim 2000;
+#X obj 571 26 inlet;
 #X connect 0 0 7 1;
 #X connect 0 0 9 0;
 #X connect 1 0 9 1;
@@ -461,6 +462,9 @@ noise;
 #X connect 16 0 7 0;
 #X connect 17 0 11 0;
 #X connect 18 0 14 0;
+#X connect 19 0 18 1;
+#X connect 19 0 17 1;
+#X connect 19 0 16 1;
 #X restore 41 79 pd env1;
 #N canvas 164 110 653 300 lfo2 0;
 #X obj 153 264 outlet;
@@ -486,7 +490,7 @@ noise;
 #X connect 9 0 8 0;
 #X connect 10 0 9 7;
 #X restore 202 47 pd lfo2;
-#N canvas 0 23 450 300 env2 0;
+#N canvas 85 66 450 300 env2 0;
 #X obj 135 248 outlet;
 #X obj 13 48 r \$0-env2attacks;
 #X obj 117 31 r \$0-env2decays;
@@ -506,6 +510,7 @@ noise;
 #X obj 37 68 iemlib/speedlim 2000;
 #X obj 147 50 iemlib/speedlim 2000;
 #X obj 297 70 iemlib/speedlim 2000;
+#X obj 398 16 inlet;
 #X connect 1 0 6 0;
 #X connect 1 0 8 1;
 #X connect 2 0 6 1;
@@ -530,6 +535,9 @@ noise;
 #X connect 16 0 8 0;
 #X connect 17 0 10 0;
 #X connect 18 0 12 0;
+#X connect 19 0 18 1;
+#X connect 19 0 17 1;
+#X connect 19 0 16 1;
 #X restore 107 85 pd env2;
 #X obj 402 39 r \$0-pw1s;
 #X obj 474 36 r \$0-pw2s;
@@ -587,6 +595,7 @@ noise;
 #X obj 246 224 shadylib/prepender bmidi porta pw1 pw2 bfmidi bres bmidi1
 bmidi2 noiseq1 noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq ftype;
 #X obj 614 215 r \$0-ftypes;
+#X obj 235 17 inlet;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -615,7 +624,9 @@ bmidi2 noiseq1 noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq ftype;
 #X connect 25 0 0 0;
 #X connect 26 0 0 0;
 #X connect 27 0 26 16;
-#X restore 16 701 pd receivers;
+#X connect 28 0 8 0;
+#X connect 28 0 6 0;
+#X restore 3 700 pd receivers;
 #X obj 310 1051 outlet;
 #X obj 283 67 inlet;
 #X obj 277 94 t b b b;
@@ -826,7 +837,7 @@ noiseq2 gain bhz1 bhz2 bhfmidi bhktrk bhq ftype;
 #X obj 475 207 bng 15 250 50 0 empty empty Clear_All 17 7 0 10 -262144
 -1 -1;
 #X obj -259 295 zexy/nop;
-#N canvas 128 103 779 775 clear 1;
+#N canvas 128 103 779 775 clear 0;
 #X obj 208 60 inlet;
 #X obj 240 646 outlet;
 #X msg 203 116 wav_mtx1 1 0 0 0 0 \, wav_mtx2 0 0 0 0 0 \, env1 attack
@@ -857,7 +868,7 @@ retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
 #X msg 584 151 0.5;
 #X msg 51 486 0.5;
 #X obj 401 718 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
--2 8 0 10 -260097 -4160 -45076 8950 1;
+-2 8 0 10 -260097 -4160 -45076 5400 1;
 #X obj 184 181 s \$0-gain;
 #X floatatom 594 718 5 0 1.2 0 - - -;
 #X msg 541 956 set \$1;
@@ -1116,12 +1127,14 @@ empty empty #000000 0 14;
 #X floatatom 192 694 6 0 0 1 Release #0-velrel #0-velrels;
 #X floatatom 278 694 6 0 0 1 Delay #0-veldel #0-veldels;
 #X obj 573 676 hradio 15 1 0 2 \$0-ftypes \$0-ftype Moog/Cyclone 33
-8 0 10 -262144 -1 -1 1;
+8 0 10 -262144 -1 -1 0;
 #X obj -214 30 route env1 env2 lfo1 lfo2 bmidi porta lfo_mtx sig_mtx
 wav_mtx1 wav_mtx2 pw1 pw2 bmidi1 bmidi2 bfmidi bres mul1 mul2 mono
 noiseq1 noiseq2 gain legato last bhz1 bhz2 bhfmidi bhktrk bhq name
 vca_mtx mul3 vel ftype;
 #X obj 342 5 s \$0-ftype;
+#X msg 56 642 0;
+#X msg 1 639 2000;
 #X connect 1 0 283 0;
 #X connect 60 0 270 0;
 #X connect 64 0 140 0;
@@ -1144,8 +1157,10 @@ vca_mtx mul3 vel ftype;
 #X connect 133 0 132 0;
 #X connect 135 0 136 0;
 #X connect 136 0 138 0;
+#X connect 136 0 286 0;
 #X connect 136 1 142 0;
 #X connect 136 2 137 0;
+#X connect 136 2 285 0;
 #X connect 137 0 132 1;
 #X connect 138 0 132 1;
 #X connect 139 0 132 0;
@@ -1270,4 +1285,6 @@ vca_mtx mul3 vel ftype;
 #X connect 283 31 267 0;
 #X connect 283 32 276 0;
 #X connect 283 33 284 0;
+#X connect 285 0 133 1;
+#X connect 286 0 133 1;
 #X coords 0 -1 1 1 795 676 2 100 200;
