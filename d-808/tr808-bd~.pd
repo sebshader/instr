@@ -1,4 +1,5 @@
 #N canvas 248 101 746 633 10;
+#X declare -stdlib zexy;
 #N canvas 875 307 208 203 counter 0;
 #X obj 10 16 inlet;
 #X obj 10 145 outlet;
@@ -329,7 +330,7 @@
 #X obj 255 227 f 500;
 #X obj 21 9 route trigger gain decay click tune;
 #X obj 295 144 * 50;
-#X floatatom 589 191 5 0 0 0 - - -, f 5;
+#X floatatom 589 191 5 0 0 0 - - -;
 #X obj 475 70 t b a;
 #X obj 461 381 table \$0-attack 500;
 #X obj 419 96 0.4;
@@ -339,7 +340,7 @@
 #X obj 617 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 396 -5 bang;
-#X floatatom 645 159 5 0 0 0 - - -, f 5;
+#X floatatom 645 159 5 0 0 0 - - -;
 #X obj 469 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 614 329 const 0;
@@ -347,9 +348,9 @@
 #X obj 639 87 / 44100;
 #X obj 564 218 * 1;
 #X obj 564 166 * 40;
-#X floatatom 561 249 5 0 0 0 - - -, f 5;
-#X floatatom 412 346 5 0 0 0 - - -, f 5;
-#X floatatom 422 372 5 0 0 0 - - -, f 5;
+#X floatatom 561 249 5 0 0 0 - - -;
+#X floatatom 412 346 5 0 0 0 - - -;
+#X floatatom 422 372 5 0 0 0 - - -;
 #X obj 563 194 - 0;
 #X obj 457 111 t a b;
 #X obj 541 88 f 1;
@@ -357,10 +358,10 @@
 #X obj 168 226 f 5;
 #X obj 193 206 * 5;
 #X obj 255 247 pack 500 50 5;
-#X floatatom 527 290 5 0 0 0 - - -, f 5;
+#X floatatom 527 290 5 0 0 0 - - -;
 #X obj 630 17 loadbang;
 #X obj 640 62 samplerate~;
-#X floatatom 203 242 5 0 0 0 - - -, f 5;
+#X floatatom 212 229 5 0 0 0 - - -;
 #X msg 164 248 0 \, 192 \$1 0;
 #X msg 256 269 \$1 \, \$2 \$3 0;
 #X obj 164 270 line~;
@@ -372,7 +373,8 @@
 #X obj 208 156 swap 1;
 #X obj 205 181 /;
 #X obj 461 150 sqr;
-#X obj 164 300 zexy/>~ 30;
+#X obj 484 -27 declare -stdlib zexy;
+#X obj 164 300 >~ 30;
 #X connect 0 0 10 0;
 #X connect 1 0 0 0;
 #X connect 1 1 8 1;
@@ -458,7 +460,7 @@
 #X connect 67 0 52 0;
 #X connect 69 0 71 0;
 #X connect 70 0 72 0;
-#X connect 71 0 80 0;
+#X connect 71 0 81 0;
 #X connect 72 0 6 0;
 #X connect 73 0 8 0;
 #X connect 74 0 33 1;
@@ -469,5 +471,5 @@
 #X connect 77 1 78 1;
 #X connect 78 0 63 0;
 #X connect 79 0 1 0;
-#X connect 80 0 2 0;
-#X connect 80 0 74 0;
+#X connect 81 0 2 0;
+#X connect 81 0 74 0;

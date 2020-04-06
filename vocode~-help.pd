@@ -1,4 +1,5 @@
 #N canvas 91 130 941 568 10;
+#X declare -stdlib zexy;
 #X obj 721 165 spigot;
 #X obj 762 142 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0
 1;
@@ -6,7 +7,6 @@
 #X obj 492 64 spigot;
 #X obj 530 45 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 45 159 zexy/multiplex~;
 #X obj 52 121 shadylib/blsaw~;
 #X floatatom 215 128 5 0 0 0 - - -;
 #X obj 125 28 shadylib/sndfread~;
@@ -17,31 +17,33 @@
 #X obj 299 136 shadylib/sndfread~;
 #X floatatom 463 206 5 0 0 0 - - -;
 #X obj 129 211 vocode~;
-#X obj 168 163 zexy/multiplex~;
 #X obj 223 217 vocode~;
 #X obj 14 72 shadylib/smoother~;
 #X text 287 407 modified patch from pure data forum https://forum.pdpatchrepo.info/topic/11028/attempting-to-make-a-vocoder-help
 ;
-#X connect 0 0 11 2;
+#X obj 659 65 declare -stdlib zexy;
+#X obj 168 163 multiplex~;
+#X obj 45 159 multiplex~;
+#X connect 0 0 10 2;
 #X connect 1 0 0 1;
-#X connect 3 0 8 2;
+#X connect 3 0 7 2;
 #X connect 4 0 3 1;
-#X connect 5 0 13 0;
-#X connect 6 0 5 0;
-#X connect 6 0 14 0;
-#X connect 7 0 5 0;
-#X connect 7 0 14 0;
-#X connect 8 0 5 1;
-#X connect 8 1 14 1;
-#X connect 8 2 3 0;
+#X connect 5 0 17 0;
+#X connect 5 0 18 0;
+#X connect 6 0 17 0;
+#X connect 6 0 18 0;
+#X connect 7 0 18 1;
+#X connect 7 1 17 1;
+#X connect 7 2 3 0;
+#X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 13 1;
-#X connect 11 0 15 1;
-#X connect 11 2 0 0;
-#X connect 12 0 13 2;
-#X connect 12 0 15 2;
-#X connect 13 0 2 0;
-#X connect 14 0 15 0;
-#X connect 15 0 2 1;
-#X connect 16 0 6 0;
+#X connect 10 0 12 1;
+#X connect 10 0 13 1;
+#X connect 10 2 0 0;
+#X connect 11 0 12 2;
+#X connect 11 0 13 2;
+#X connect 12 0 2 0;
+#X connect 13 0 2 1;
+#X connect 14 0 5 0;
+#X connect 17 0 13 0;
+#X connect 18 0 12 0;

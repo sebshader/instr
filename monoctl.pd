@@ -1,4 +1,5 @@
 #N canvas 662 142 574 637 10;
+#X declare -stdlib zexy;
 #X obj 118 22 inlet;
 #X obj 118 50 sel 0;
 #X obj 202 331 sel 0;
@@ -32,7 +33,8 @@
 #X obj 95 407 !=;
 #X obj 26 50 route clear;
 #X obj 30 234 t b l f;
-#X obj 54 255 zexy/drip;
+#X obj 54 255 drip;
+#X obj 324 86 declare -stdlib zexy;
 #X connect 0 0 1 0;
 #X connect 1 0 22 0;
 #X connect 1 1 23 0;
