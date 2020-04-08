@@ -1,0 +1,95 @@
+#N canvas 182 23 1288 855 12;
+#X floatatom 86 55 5 0 0 0 - - -;
+#X msg 142 56 60;
+#X text 146 30 1st 2 inlets: pitch & velocity;
+#X obj 63 165 instr/datalogue/datalogue-combo;
+#X obj 65 1032 outputc~;
+#X obj 261 999 print datalogue-controls;
+#X obj 460 997 print 3phase-controls;
+#X obj 462 969 spigot;
+#X obj 261 971 spigot;
+#X obj 301 951 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 501 948 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 854 972 spigot;
+#X obj 653 974 spigot;
+#X obj 693 954 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 893 951 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 653 1002 print datalogue-saving;
+#X obj 852 1000 print 3phase-saving;
+#X text 764 1026 state when saved;
+#X text 331 1027 realitme control values;
+#X text 377 40 pitchbend \, range -1 to 1;
+#X text 596 16 modwheel \, range 0 to 1;
+#X obj 450 59 bendin 1;
+#X obj 447 87 instr/pbtou;
+#X obj 623 43 ctlin 1 1;
+#X obj 640 70 instr/pbtou;
+#X msg 697 130 wav_mtx1 1 0.5 0 0 0;
+#X obj 218 58 notein 1;
+#X obj 220 90 spigot;
+#X obj 326 70 r \$0-midi;
+#X obj 274 99 spigot;
+#X obj 447 115 spigot;
+#X obj 630 113 spigot;
+#X obj 543 76 r \$0-midi;
+#X obj 427 7 tgl 15 0 \$0-midi empty use_midi_in_channel_1 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 89 92 makenote 100 1000;
+#X text 844 23 whereas datalogue-main only stores patches in the patches
+folder and presets within the patch itself \, datalogue-combo comes
+as an abstraction (with 3-phase chorus) and can also load patch files
+from PARENT/datalogue-patches where PARENT is the name of the directory
+that contains datalogue's parent patch;
+#X text 906 363 saving works like for datalogue-main - in order to
+copy one patch to another \, first load the patch to copy. Then unselect
+the file or preset load on prepare toggle (whichever you are writing
+to). Prepare the preset or file that you want to write to by selecting
+the hradio or tying in the prepare file box \, and select the appropriate
+hradio position for saving in the global or local patches. then hit
+"save/write";
+#X text 869 206 <-- in datalogue-patches within the datalogue-combo-doc
+folder there are the patches cellalin_test.txt and square_local.txt.
+open them by selecting localfile on the hradio switch and then load
+by typing e.g. "cellalin_test" in the symbol box (the bang above the
+box just sends the symbol box contents again \, "re-prepare");
+#X text 876 153 <-- right two inlets are messages to datalogue~ (and
+editor) and 3phase~ respectively;
+#X msg 865 137 osc1 freq 3;
+#X connect 0 0 34 0;
+#X connect 1 0 34 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 1 8 0;
+#X connect 3 2 7 0;
+#X connect 3 3 12 0;
+#X connect 3 4 11 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 8 1;
+#X connect 10 0 7 1;
+#X connect 11 0 16 0;
+#X connect 12 0 15 0;
+#X connect 13 0 12 1;
+#X connect 14 0 11 1;
+#X connect 21 0 22 0;
+#X connect 22 0 30 0;
+#X connect 23 0 24 0;
+#X connect 24 0 31 0;
+#X connect 25 0 3 4;
+#X connect 26 0 27 0;
+#X connect 26 1 29 0;
+#X connect 27 0 3 0;
+#X connect 28 0 27 1;
+#X connect 28 0 29 1;
+#X connect 29 0 3 1;
+#X connect 30 0 3 2;
+#X connect 31 0 3 3;
+#X connect 32 0 30 1;
+#X connect 32 0 31 1;
+#X connect 34 0 3 0;
+#X connect 34 1 3 1;
+#X connect 39 0 3 5;

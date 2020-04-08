@@ -1,0 +1,10 @@
+#N canvas 117 336 772 225 12;
+#X text 27 53 couldn't get symbolic link to .pd file to work on osx
+;
+#X obj 501 67 pdcontrol;
+#X text 46 119 the real "helpfile" is in datalogue-full-doc (to illustrate
+local vs. global patches);
+#X msg 495 39 dir 0 datalogue-combo-doc;
+#X msg 501 120 \; pd open datalogue-combo-doc.pd \$1 1;
+#X connect 1 0 4 0;
+#X connect 3 0 1 0;
