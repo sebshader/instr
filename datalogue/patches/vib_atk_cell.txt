@@ -1,7 +1,3 @@
-3phase osc2 freq 6.6;
-3phase osc2 depth 0.1;
-3phase osc1 freq 0.6;
-3phase osc1 depth 0.4;
 3phase wet 0;
 datalogue vel lin 0.84096;
 datalogue vel attack 10;
@@ -45,7 +41,7 @@ datalogue bfmidi 90;
 datalogue bres 0;
 datalogue noiseq1 5;
 datalogue noiseq2 10;
-datalogue gain 0.840945;
+datalogue gain 0.594972;
 datalogue bhz1 0;
 datalogue bhz2 0;
 datalogue bhfmidi 60;
