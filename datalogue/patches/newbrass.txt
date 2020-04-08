@@ -3,14 +3,14 @@ datalogue vel lin 0.84096;
 datalogue vel attack 10;
 datalogue vel release 1000;
 datalogue vel delay 0;
-datalogue env1 attack 101 0.5;
+datalogue env1 attack 169 0.5;
 datalogue env1 decay 497 0;
 datalogue env1 sustain 0.754717;
 datalogue env1 release 235 0;
-datalogue env2 attack 84 0;
-datalogue env2 decay 352 0;
-datalogue env2 sustain 0.27027;
-datalogue env2 release 1242 0;
+datalogue env2 attack 15 0;
+datalogue env2 decay 15 0;
+datalogue env2 sustain 0.5;
+datalogue env2 release 10000 0;
 datalogue lfo1 bfreq 3;
 datalogue lfo1 wav 0;
 datalogue lfo1 polar 1;
@@ -27,21 +27,21 @@ datalogue lfo2 offset 0;
 datalogue lfo2 noise 0;
 datalogue mul3 src2 0;
 datalogue mul3 src1 0;
-datalogue mul1 src2 3;
-datalogue mul1 src1 5;
+datalogue mul1 src2 5;
+datalogue mul1 src1 2;
 datalogue mul2 src2 0;
 datalogue mul2 src1 0;
 datalogue bmidi 60;
 datalogue porta 0;
-datalogue pw1 0.746835;
+datalogue pw1 0.5;
 datalogue pw2 0;
-datalogue bmidi1 0;
+datalogue bmidi1 -0.25;
 datalogue bmidi2 0;
-datalogue bfmidi 70;
-datalogue bres 3.08861;
+datalogue bfmidi 55;
+datalogue bres 1.51899;
 datalogue noiseq1 0;
 datalogue noiseq2 0;
-datalogue gain 1;
+datalogue gain 1.08101;
 datalogue bhz1 0;
 datalogue bhz2 0;
 datalogue bhfmidi 60;
@@ -55,12 +55,12 @@ datalogue legato 1;
 datalogue last 0;
 datalogue name brass;
 datalogue wav_mtx2 0 0 0 0 0;
-datalogue wav_mtx1 0.732673 0 0.643564 0 0;
+datalogue wav_mtx1 1 0 0.405941 0.168317 0;
 datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
 datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
 datalogue vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
 datalogue lfo_mtx matrix 2 6 0 0 4 0 0 0 0 0 0 0 0 0;
-datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0 0 0 15 0 0
-0 0 0 0 0 0 0 0 0 -0.14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0;
+datalogue sig_mtx matrix 8 11 1 1 -0.5 0 0.5 0 0 1 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0 0 0 30
+0 0 0 0 0 0 0 0 0 0 0 -0.14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0;
