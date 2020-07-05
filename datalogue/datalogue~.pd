@@ -60,7 +60,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
 #X restore 18 455 pd clear;
-#N canvas 348 197 450 300 poly 0;
+#N canvas 52 255 450 300 poly 0;
 #X obj 25 32 inlet;
 #X obj 117 16 inlet;
 #X obj 17 260 outlet;
@@ -71,12 +71,12 @@
 #X obj 218 42 inlet;
 #X obj 162 131 instr/monoctl 0;
 #X obj 221 153 sel 0;
-#X obj 215 174 f;
+#X obj 202 194 f;
 #X text 189 107 keep track of which notes are still on;
 #X obj 246 219 spigot;
 #X obj 36 218 f;
 #X obj 50 117 t f f;
-#X obj 113 207 f;
+#X obj 114 219 f;
 #X obj 40 146 t b f b;
 #X obj 246 251 f;
 #X obj 163 166 t f;
@@ -115,7 +115,7 @@
 #X connect 21 2 12 1;
 #X connect 22 0 13 0;
 #X connect 22 1 15 0;
-#X restore 86 161 pd poly;
+#X restore 82 193 pd poly;
 #X msg 342 203 clear;
 #X text 46 276 todo: control legato from this patch rather than datavoice~
 (add method for changeing pitch & velocity independantly);
