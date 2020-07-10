@@ -90,7 +90,7 @@ zexy;
 #X obj 121 262 vsl 15 102 0 1 0 0 \$0-osc1saws \$0-osc1saw saw 0 -9
 0 10 -4160 -4032 -4032 10100 1;
 #X obj 141 262 vsl 15 102 0 1 0 0 \$0-osc1sqrs \$0-osc1sqr sqr 0 -9
-0 10 -258113 -257985 -4032 5050 1;
+0 10 -258113 -257985 -4032 0 1;
 #X obj 162 262 vsl 15 102 0 1 0 0 \$0-osc1tris \$0-osc1tri tri 0 -9
 0 10 -257985 -30401 -4032 0 1;
 #X obj 183 262 vsl 15 102 0 1 0 0 \$0-osc1sins \$0-osc1sin sin 0 -9
@@ -120,7 +120,7 @@ empty empty #000000 3 14;
 #X obj 113 373 cnv 15 130 85 empty empty empty 20 12 0 14 -257985 -66577
 0;
 #X obj 120 418 hsl 80 15 0 1 0 0 \$0-pw1s \$0-pw1 Osc_1_PW 10 8 0 10
--159808 -4034 -262144 2370 1;
+-159808 -4034 -262144 3950 1;
 #X floatatom 117 377 5 0 0 1 Tune_Osc1 #0-bmidi1 #0-bmidi1s;
 #X obj 256 229 cnv 15 120 141 empty empty Osc2_Waves 20 12 0 14 -159808
 -232576 0;
@@ -148,11 +148,11 @@ empty empty #000000 0 14;
 #X obj 216 532 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
 0;
 #X obj 293 514 hsl 80 15 0 1 0 0 \$0-lfo1pws \$0-lfo1pw Pulse_Width
-10 8 0 10 -1 -260097 -4032 0 1;
+10 8 0 10 -1 -260097 -4032 3950 1;
 #X obj 252 373 cnv 15 130 85 empty empty empty 22 12 0 14 -257985 -66577
 0;
 #X obj 259 419 hsl 80 15 0 1 0 0 \$0-pw2s \$0-pw2 Osc_2_PW 10 8 0 10
--159808 -4034 -262144 0 1;
+-159808 -4034 -262144 3950 1;
 #X floatatom 256 377 5 0 0 1 Tune_Osc_2 #0-bmidi2 #0-bmidi2s;
 #X obj 201 487 tgl 15 0 \$0-lfo1retrigs \$0-lfo1retrig Reset_Phase
 17 7 0 10 -1 -4032 -1 0 1;
@@ -180,7 +180,7 @@ empty empty #000000 0 14;
 #X obj 496 534 cnv 15 63 14 empty empty unipolar 2 8 0 12 -4160 -257985
 0;
 #X obj 573 514 hsl 80 15 0 1 0 0 \$0-lfo2pws \$0-lfo2pw Pulse_Width
-10 8 0 10 -1 -260097 -4032 0 1;
+10 8 0 10 -1 -260097 -4032 3950 1;
 #X obj 481 489 tgl 15 0 \$0-lfo2retrigs \$0-lfo2retrig Reset_Phase
 17 7 0 10 -1 -4032 -1 0 1;
 #X obj 573 470 hsl 80 15 0 1 0 0 \$0-lfo2phases \$0-lfo2phase Phase
@@ -192,7 +192,7 @@ empty empty #000000 0 14;
 #X floatatom 110 653 6 0 0 1 Release #0-env1release #0-env1releases
 ;
 #X obj 113 633 hsl 75 15 0 1 0 0 \$0-env1sustains \$0-env1sustain Sustain
-10 8 0 10 -99865 -4034 -262144 0 1;
+10 8 0 10 -99865 -4034 -262144 3700 1;
 #X obj 499 576 cnv 15 120 96 empty empty Env2 5 8 0 14 -260097 -4160
 0;
 #X floatatom 503 593 6 0 0 1 Attack #0-env2attack #0-env2attacks;
@@ -200,7 +200,7 @@ empty empty #000000 0 14;
 #X floatatom 503 653 6 0 0 1 Release #0-env2release #0-env2releases
 ;
 #X obj 506 633 hsl 75 15 0 1 0 0 \$0-env2sustains \$0-env2sustain Sustain
-10 8 0 10 -99865 -4034 -262144 0 1;
+10 8 0 10 -99865 -4034 -262144 3700 1;
 #X obj 708 672 cnv 15 153 63 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 714 716 5 0 0 1 Base_Ktrk_Key #0-bmidi #0-bmidis;
@@ -213,9 +213,9 @@ empty empty #000000 0 14;
 #X obj 552 207 bng 15 250 50 0 empty empty Send_All 17 7 0 10 -262144
 -1 -1;
 #X obj 260 262 vsl 15 102 0 1 0 0 \$0-osc2saws \$0-osc2saw saw 0 -9
-0 10 -4160 -4032 -4032 10100 1;
+0 10 -4160 -4032 -4032 0 1;
 #X obj 280 262 vsl 15 102 0 1 0 0 \$0-osc2sqrs \$0-osc2sqr sqr 0 -9
-0 10 -258113 -257985 -4032 5050 1;
+0 10 -258113 -257985 -4032 0 1;
 #X obj 322 262 vsl 15 102 0 1 0 0 \$0-osc2sins \$0-osc2sin sin 0 -9
 0 10 -27201 -4160 -4032 0 1;
 #X obj 342 262 vsl 15 102 0 1 0 0 \$0-osc2noises \$0-osc2noise noise
@@ -837,12 +837,12 @@ src2 0 \, mul3 src1 0 \, bmidi 60 \, porta 0 \, pw1 0.5 \, pw2 0.5
 \, bmidi1 0 \, bmidi2 0 \, bhz1 0 \, bhz2 0 \, bfmidi 133 \, bres 0
 \, bhfmidi 0 \, bhktrk 0 \, bhq 0.01 \, noiseq1 0 \, noiseq2 0 \, lfo2
 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
-\, gain 0.75 \, legato 1 \, last 0 \, vel attack 10 \, vel release
-1000 \, vel delay 0 \, vel lin 0.84096 \, ftype 0 \, sig_mtx matrix
-8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-8 0 0 0 0 0 0 0 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6
-0 0 0 0 0 0 0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
+\, gain 0.5 \, legato 1 \, last 0 \, vel attack 10 \, vel release 1000
+\, vel delay 0 \, vel lin 0.84096 \, ftype 0 \, sig_mtx matrix 8 11
+1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0 0
+0 0 0 0 0 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6 0 0 0
+0 0 0 0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore -233 230 pd clear;
@@ -853,7 +853,7 @@ retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
 #X msg 584 151 0.5;
 #X msg 51 486 0.5;
 #X obj 401 718 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
--2 8 0 10 -260097 -4160 -45076 0 1;
+-2 8 0 10 -260097 -4160 -45076 8950 1;
 #X obj 184 181 s \$0-gain;
 #X floatatom 594 718 5 0 1.2 0 - - -;
 #X msg 541 956 set \$1;
@@ -928,7 +928,7 @@ retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
 #X restore -187 118 pd env2route;
 #X msg 362 956 panic;
 #X obj 760 676 tgl 15 0 empty empty Legato 17 7 0 10 -4160 -260097
--16662 0 1;
+-16662 1 1;
 #X obj -89 458 f;
 #X obj 818 676 tgl 15 0 empty empty Last 17 7 0 10 -4160 -260097 -16662
 0 1;
@@ -949,7 +949,7 @@ retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
 #X obj 159 91 s \$0-bhktrk;
 #X obj 176 8 s \$0-bhq;
 #X obj 597 696 hsl 80 15 0 1 0 0 \$0-bhqs \$0-bhq HPF_Q 20 8 0 10 -4160
--260097 -204786 0 1;
+-260097 -204786 79 1;
 #X obj 215 83 s \$0-name;
 #X symbolatom 316 207 20 0 0 1 name #0-name #0-names;
 #X obj -249 481 shadylib/prepender lfo1 lfo2 mono legato last name
