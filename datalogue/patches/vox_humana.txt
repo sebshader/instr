@@ -26,7 +26,7 @@ datalogue lfo2 bfreq 5.1;
 datalogue lfo2 wav 2;
 datalogue lfo2 polar 0;
 datalogue lfo2 pw 0.5;
-datalogue lfo2 phase 0.0886076;
+datalogue lfo2 phase 0.0506329;
 datalogue lfo2 offset 0;
 datalogue lfo2 noise 1;
 datalogue mul3 src2 0;
