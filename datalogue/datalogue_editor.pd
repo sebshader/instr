@@ -837,12 +837,12 @@ src2 0 \, mul3 src1 0 \, bmidi 60 \, porta 0 \, pw1 0.5 \, pw2 0.5
 \, bmidi1 0 \, bmidi2 0 \, bhz1 0 \, bhz2 0 \, bfmidi 133 \, bres 0
 \, bhfmidi 0 \, bhktrk 0 \, bhq 0.01 \, noiseq1 0 \, noiseq2 0 \, lfo2
 retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
-\, gain 0.5 \, legato 1 \, last 0 \, vel attack 10 \, vel release 1000
-\, vel delay 0 \, vel lin 0.84096 \, ftype 0 \, sig_mtx matrix 8 11
-1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0 0
-0 0 0 0 0 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6 0 0 0
-0 0 0 0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
+\, gain 0.25 \, legato 1 \, last 0 \, vel attack 10 \, vel release
+1000 \, vel delay 0 \, vel lin 0.84096 \, ftype 0 \, sig_mtx matrix
+8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+8 0 0 0 0 0 0 0 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 \, lfo_mtx matrix 2 6
+0 0 0 0 0 0 0 0 0 0 0 0 \, vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore -233 230 pd clear;
@@ -853,7 +853,7 @@ retrig 0 \, lfo1 retrig 0 \, lfo1 noise 0 \, lfo2 noise 0 \, mono 0
 #X msg 584 151 0.5;
 #X msg 51 486 0.5;
 #X obj 401 718 hsl 180 15 0 1.5 0 0 \$0-gains \$0-gain output_gain
--2 8 0 10 -260097 -4160 -45076 8950 1;
+-2 8 0 10 -260097 -4160 -45076 5967 1;
 #X obj 184 181 s \$0-gain;
 #X floatatom 594 718 5 0 1.2 0 - - -;
 #X msg 541 956 set \$1;

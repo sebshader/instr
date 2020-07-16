@@ -45,7 +45,7 @@ datalogue bfmidi 103.75;
 datalogue bres 0.860759;
 datalogue noiseq1 0;
 datalogue noiseq2 0;
-datalogue gain 0.536313;
+datalogue gain 0.460894;
 datalogue bhz1 0;
 datalogue bhz2 0;
 datalogue bhfmidi 0;

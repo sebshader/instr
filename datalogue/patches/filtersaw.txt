@@ -7,16 +7,16 @@ datalogue vel lin 0.84096;
 datalogue vel attack 10;
 datalogue vel release 1000;
 datalogue vel delay 0;
-datalogue env1 attack 100 0.84096;
+datalogue env1 attack 400 0;
 datalogue env1 decay 3000 0;
-datalogue env1 sustain 0.5;
-datalogue env1 release 2000 0;
-datalogue env2 attack 380 0;
-datalogue env2 decay 2500 0;
-datalogue env2 sustain 0.243243;
-datalogue env2 release 2000 0;
-datalogue lfo1 bfreq 0.0001;
-datalogue lfo1 wav 4;
+datalogue env1 sustain 0.797297;
+datalogue env1 release 1000 0;
+datalogue env2 attack 425 0;
+datalogue env2 decay 2000 0;
+datalogue env2 sustain 0.3333;
+datalogue env2 release 1000 0;
+datalogue lfo1 bfreq 4;
+datalogue lfo1 wav 2;
 datalogue lfo1 polar 0;
 datalogue lfo1 pw 0.5;
 datalogue lfo1 phase 1;
@@ -31,8 +31,8 @@ datalogue lfo2 offset 0;
 datalogue lfo2 noise 0;
 datalogue mul3 src2 0;
 datalogue mul3 src1 0;
-datalogue mul1 src2 0;
-datalogue mul1 src1 0;
+datalogue mul1 src2 5;
+datalogue mul1 src1 2;
 datalogue mul2 src2 0;
 datalogue mul2 src1 0;
 datalogue bmidi 60;
@@ -41,8 +41,8 @@ datalogue pw1 0.5;
 datalogue pw2 0.5;
 datalogue bmidi1 0;
 datalogue bmidi2 0.1;
-datalogue bfmidi 69;
-datalogue bres 0;
+datalogue bfmidi 75;
+datalogue bres 0.658228;
 datalogue noiseq1 0;
 datalogue noiseq2 0;
 datalogue gain 0.687151;
@@ -64,7 +64,7 @@ datalogue env2 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
 datalogue env1 mtx matrix 4 3 0 0 0 0 0 0 0 0 0 0 0 0;
 datalogue vca_mtx matrix 3 2 0.5 0 0.5 0 0 0;
 datalogue lfo_mtx matrix 2 6 0 0 0 0 0 0 0 0 0 0 0 0;
-datalogue sig_mtx matrix 8 11 1 1 0 0 0 0.03 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 1 1 0 0 0 0 0.03 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0 0 0
-30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0;
+datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0.25 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 1 1 0 0 0 0 0 0.25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0 0 0
+23.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
