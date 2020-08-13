@@ -1,6 +1,31 @@
-#N canvas 0 23 450 300 10;
-#X obj 114 148 monoctl;
-#X text 87 77 inlets: midi \, velocity \, gliss time;
+#N canvas 566 82 665 300 10;
+#X obj 104 146 monoctl;
+#X text 84 60 inlets: midi \, velocity \, gliss time;
 #X text 139 43 arg: gliss time;
-#X text 82 165 outs: list for line~ (midi + gliss) \, velocity \, list
+#X text 68 245 outs: list for line~ (midi + gliss) \, velocity \, list
 of current notes on;
+#X msg 89 90 64 0;
+#X obj 104 122 unpack;
+#X msg 135 89 64 60;
+#X msg 183 85 60 0;
+#X msg 237 88 60 60;
+#X obj 97 190 print linelist;
+#X obj 121 170 print velocity;
+#X obj 143 212 print notelist;
+#X msg 324 96 stop;
+#X text 358 96 output last note with velocity 0 and clear list;
+#X msg 324 116 clear;
+#X text 363 116 clear list without outputting;
+#X text 266 183 no velocity is given for note-offs;
+#X text 313 28 last-note stack for monophonic stuff;
+#X connect 0 0 9 0;
+#X connect 0 1 10 0;
+#X connect 0 2 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 12 0 0 0;
+#X connect 14 0 0 0;
