@@ -1,5 +1,5 @@
 #N canvas 1 52 964 513 10;
-#X declare -stdlib iemlib;
+#X declare -lib iemlib;
 #X obj 403 115 delwrite~ \$0_scanner 8;
 #X obj 403 317 vd~ \$0_scanner;
 #X obj 403 397 +~;
@@ -89,7 +89,7 @@ empty 0 -8 0 10 -262144 -1 -1 0;
 #X floatatom 460 240 5 0 0 0 - - -;
 #X obj 666 262 outlet;
 #X obj 645 212 iem_prepend scanner-mode;
-#X obj 144 49 declare -stdlib iemlib;
+#X obj 144 49 declare -lib iemlib;
 #X connect 1 0 29 0;
 #X connect 2 0 7 0;
 #X connect 3 0 26 0;

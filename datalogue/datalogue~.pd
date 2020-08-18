@@ -1,5 +1,5 @@
 #N canvas 97 124 505 639 10;
-#X declare -stdlib zexy -stdlib iemlib;
+#X declare -lib zexy -lib iemlib;
 #X obj 82 37 inlet;
 #X obj 186 44 inlet;
 #X text 180 24 pitch bend;
@@ -106,7 +106,7 @@
 #X obj 231 467 iem_prepend all;
 #X obj 75 102 demultiplex;
 #X obj 244 586 demultiplex;
-#X obj 206 7 declare -stdlib zexy -stdlib iemlib;
+#X obj 206 7 declare -lib zexy -lib iemlib;
 #X msg 332 203 stop;
 #X msg 326 242 clear;
 #X obj 367 177 b;

@@ -1,5 +1,5 @@
 #N canvas 182 283 527 374 10;
-#X declare -stdlib zexy -stdlib iemlib;
+#X declare -lib zexy -lib iemlib;
 #X msg 223 236 read \$1;
 #X msg 82 238 write \$1;
 #X obj 231 117 ggee/getdir 1;
@@ -21,7 +21,7 @@
 #X obj 377 273 f;
 #X obj 288 212 t b f b;
 #X msg 344 302 goto \$1;
-#X obj 294 60 declare -stdlib zexy -stdlib iemlib;
+#X obj 294 60 declare -lib zexy -lib iemlib;
 #X obj 228 174 mergefilename /;
 #X obj 91 267 msgfile;
 #X connect 0 0 23 0;

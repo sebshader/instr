@@ -1,5 +1,5 @@
 #N canvas 233 26 1207 852 10;
-#X declare -stdpath iemgui -stdlib iemmatrix -stdlib iemlib -stdlib
+#X declare -path iemgui -lib iemmatrix -lib iemlib -lib
 zexy;
 #X msg 390 102 numberbox_matrix 8 11 5 14 -3.40282e+38 3.40282e+38
 0 empty empty #000000 3 14;
@@ -1114,8 +1114,8 @@ vca_mtx mul3 vel ftype;
 #X obj 342 5 s \$0-ftype;
 #X msg 56 642 0;
 #X msg 1 639 2000;
-#X obj 432 12 declare -stdpath iemgui -stdlib iemmatrix -stdlib iemlib
--stdlib zexy;
+#X obj 432 12 declare -path iemgui -lib iemmatrix -lib iemlib
+-lib zexy;
 #X obj -104 612 iem_prepend element;
 #X obj -107 663 iem_prepend env2 mtx;
 #X obj -167 702 iem_prepend element;

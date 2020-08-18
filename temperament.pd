@@ -1,5 +1,5 @@
 #N canvas 422 23 766 729 10;
-#X declare -stdpath list-abs -stdlib zexy;
+#X declare -path list-abs -lib zexy;
 #X obj 56 209 list-nth;
 #X obj 76 83 mod 12;
 #X obj 37 39 t f b f;
@@ -80,7 +80,7 @@
 #X obj 315 -23 symbol;
 #X obj 56 179 list-math / 100;
 #X obj 310 -167 unpack s f;
-#X obj 450 -69 declare -stdpath list-abs -stdlib zexy;
+#X obj 450 -69 declare -path list-abs -lib zexy;
 #X obj 305 115 list2symbol;
 #X connect 0 0 3 1;
 #X connect 1 0 0 1;

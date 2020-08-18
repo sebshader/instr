@@ -1,5 +1,5 @@
 #N canvas 412 23 1028 552 10;
-#X declare -stdlib zexy;
+#X declare -lib zexy;
 #N canvas 125 111 1090 626 drawbar_controller 0;
 #X msg 348 148 drawbar 4 \$1;
 #X obj 21 120 r \$0_drawbar_1;
@@ -704,7 +704,7 @@ empty 0 -8 0 10 -262144 -1 -1 0;
 #X obj 688 471 list;
 #X msg 689 500 \$1\$2 \$3;
 #X obj 575 356 zexy/nop;
-#X obj 294 25 declare -stdlib zexy;
+#X obj 294 25 declare -lib zexy;
 #X connect 0 0 55 0;
 #X connect 0 1 39 0;
 #X connect 0 1 57 0;

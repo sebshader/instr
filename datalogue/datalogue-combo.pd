@@ -1,5 +1,5 @@
 #N canvas 0 23 1440 801 10;
-#X declare -stdlib iemlib -stdlib zexy;
+#X declare -lib iemlib -lib zexy;
 #X obj 1072 103 stater \$0-mainlogue datalogue;
 #X obj 62 954 *~;
 #X obj 78 924 line~;
@@ -694,7 +694,7 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X restore 1092 469 pd state_saving;
 #X obj 1051 224 print patch;
 #X obj 1085 812 iem_prepend wet;
-#X obj 1069 291 declare -stdlib iemlib -stdlib zexy;
+#X obj 1069 291 declare -lib iemlib -lib zexy;
 #X obj 104 187 inlet;
 #X obj 119 244 inlet;
 #X obj 17 212 inlet;

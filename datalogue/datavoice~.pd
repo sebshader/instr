@@ -1,5 +1,5 @@
 #N canvas 200 23 720 843 10;
-#X declare -stdlib iemmatrix -stdlib iemlib -stdlib zexy;
+#X declare -lib iemmatrix -lib iemlib -lib zexy;
 #X obj 53 31 inlet;
 #X obj 235 32 inlet;
 #X obj 213 536 mtof~;
@@ -1007,7 +1007,7 @@ vel ftype;
 #X restore 358 874 pd lpswitch;
 #X obj 460 561 iem_prepend matrix 1 5;
 #X obj 26 435 iem_prepend matrix 1 5;
-#X obj 322 24 declare -stdlib iemmatrix -stdlib iemlib -stdlib zexy
+#X obj 322 24 declare -lib iemmatrix -lib iemlib -lib zexy
 ;
 #X obj 372 843 min~ 16744;
 #X connect 0 0 90 0;

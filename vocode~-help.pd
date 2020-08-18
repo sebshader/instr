@@ -1,5 +1,5 @@
 #N canvas 91 130 941 568 10;
-#X declare -stdlib zexy;
+#X declare -lib zexy;
 #X obj 721 165 spigot;
 #X obj 762 142 tgl 15 0 empty empty loop 17 7 0 10 -262144 -1 -1 0
 1;
@@ -21,7 +21,7 @@
 #X obj 14 72 shadylib/smoother~;
 #X text 287 407 modified patch from pure data forum https://forum.pdpatchrepo.info/topic/11028/attempting-to-make-a-vocoder-help
 ;
-#X obj 659 65 declare -stdlib zexy;
+#X obj 659 65 declare -lib zexy;
 #X obj 168 163 multiplex~;
 #X obj 45 159 multiplex~;
 #X connect 0 0 10 2;
