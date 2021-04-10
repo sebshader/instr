@@ -7,9 +7,6 @@
 1;
 #X text 112 279 3rd inlet/2nd arg is whether to clear the delay line
 on new note or not;
-#X text 17 21 karstrongo is a simple karplus-strong algorithm \, a
-midi note in the left inlet starts a note and the right inlet/ 1st
-argument is the feedback;
 #X obj 61 140 spigot;
 #X obj 94 120 tgl 15 0 empty empty constant_time 17 7 0 10 -262144
 -1 -1 1 1;
@@ -22,17 +19,22 @@ argument is the feedback;
 #X obj 61 225 shadylib/sdbpole;
 #X obj 30 113 t f f;
 #X obj 61 182 * 5000;
-#X connect 0 0 16 0;
+#X text 17 21 karstrongo is a simple karplus-strong algorithm \, a
+midi note in the left inlet starts a note and the right inlet/ 1st
+argument is the feedback (defaults to 0.98);
+#X text 186 233 <- same as;
+#X obj 256 231 ksmpole;
+#X connect 0 0 15 0;
 #X connect 1 0 2 1;
 #X connect 2 0 3 1;
 #X connect 2 0 3 0;
 #X connect 4 0 2 2;
-#X connect 7 0 9 0;
-#X connect 8 0 7 1;
-#X connect 9 0 17 0;
-#X connect 10 0 17 1;
-#X connect 14 0 15 0;
-#X connect 15 0 1 0;
-#X connect 16 0 2 0;
-#X connect 16 1 7 0;
-#X connect 17 0 14 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 1;
+#X connect 8 0 16 0;
+#X connect 9 0 16 1;
+#X connect 13 0 14 0;
+#X connect 14 0 1 0;
+#X connect 15 0 2 0;
+#X connect 15 1 6 0;
+#X connect 16 0 13 0;
