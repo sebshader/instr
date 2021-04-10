@@ -2,7 +2,7 @@
 #X obj 393 158 noise~;
 #X obj 512 160 rzero~ -1;
 #X obj 516 77 mtof;
-#X msg 501 212 clear;
+#X msg 513 225 clear;
 #X obj 417 199 *~;
 #X obj 471 214 +~;
 #X obj 499 30 inlet;
@@ -20,6 +20,8 @@
 #X obj 508 125 shadylib/vdhs~ \$0-ks;
 #X obj 683 154 shadylib/if 0 0.98;
 #X obj 518 98 shadylib/mstof;
+#X obj 778 36 inlet;
+#X obj 529 200 spigot \$2;
 #X connect 0 0 4 0;
 #X connect 1 0 12 0;
 #X connect 2 0 20 0;
@@ -29,7 +31,7 @@
 #X connect 5 0 17 0;
 #X connect 6 0 7 0;
 #X connect 7 0 2 0;
-#X connect 7 1 3 0;
+#X connect 7 1 22 0;
 #X connect 9 0 10 0;
 #X connect 10 0 12 1;
 #X connect 11 0 13 0;
@@ -41,3 +43,5 @@
 #X connect 19 0 10 0;
 #X connect 20 0 16 0;
 #X connect 20 0 18 0;
+#X connect 21 0 22 1;
+#X connect 22 0 3 0;

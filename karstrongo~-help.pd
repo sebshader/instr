@@ -1,12 +1,38 @@
-#N canvas 479 49 450 300 10;
-#X floatatom 195 88 5 0 0 0 - - -, f 5;
-#X floatatom 284 95 5 0 0 0 - - -, f 5;
-#X obj 210 133 karstrongo~;
-#X obj 219 176 shadylib/outputc~;
+#N canvas 479 49 501 453 10;
+#X floatatom 30 94 5 0 0 0 - - -;
+#X floatatom 61 250 5 0 0 0 - - -;
+#X obj 30 301 karstrongo~;
+#X obj 39 344 shadylib/outputc~;
+#X obj 93 282 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 112 279 3rd inlet/2nd arg is whether to clear the delay line
+on new note or not;
 #X text 17 21 karstrongo is a simple karplus-strong algorithm \, a
-midi note in the left inlet starts a note and the right inlet/argument
-is the feedback;
-#X connect 0 0 2 0;
+midi note in the left inlet starts a note and the right inlet/ 1st
+argument is the feedback;
+#X obj 61 140 spigot;
+#X obj 94 120 tgl 15 0 empty empty constant_time 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 61 161 mtof;
+#X floatatom 113 151 5 0 0 0 - - -;
+#X text 150 150 time to -60db in ms;
+#X text 114 203 convert back to samples;
+#X text 104 181 1000 * #ofmultiplications("samples" for sdbpole);
+#X obj 61 204 * 0.001;
+#X obj 61 225 shadylib/sdbpole;
+#X obj 30 113 t f f;
+#X obj 61 182 * 5000;
+#X connect 0 0 16 0;
 #X connect 1 0 2 1;
 #X connect 2 0 3 1;
 #X connect 2 0 3 0;
+#X connect 4 0 2 2;
+#X connect 7 0 9 0;
+#X connect 8 0 7 1;
+#X connect 9 0 17 0;
+#X connect 10 0 17 1;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 16 0 2 0;
+#X connect 16 1 7 0;
+#X connect 17 0 14 0;
