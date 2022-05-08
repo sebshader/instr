@@ -1,8 +1,3 @@
-3phase osc2 freq 0;
-3phase osc2 depth 0;
-3phase osc1 freq 0;
-3phase osc1 depth 0;
-3phase wet 0;
 datalogue vel lin 0.84096;
 datalogue vel attack 10;
 datalogue vel release 1000;
@@ -41,14 +36,14 @@ datalogue pw1 0.5;
 datalogue pw2 0.5;
 datalogue bmidi1 0;
 datalogue bmidi2 12.05;
-datalogue bfmidi 27;
+datalogue bfmidi 66;
 datalogue bres 0;
 datalogue noiseq1 0;
 datalogue noiseq2 0;
-datalogue gain 0.561453;
+datalogue gain 0.4;
 datalogue bhz1 0;
 datalogue bhz2 0;
-datalogue bhfmidi 0;
+datalogue bhfmidi 47;
 datalogue bhktrk 0;
 datalogue bhq 0.01;
 datalogue ftype 0;
@@ -68,3 +63,8 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0
 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0 0 0 0 0 0 0 0 30 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0;
+3phase osc2 freq 0;
+3phase osc2 depth 0;
+3phase osc1 freq 0;
+3phase osc1 depth 0;
+3phase wet 0;

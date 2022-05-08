@@ -1,8 +1,3 @@
-3phase osc2 freq 6.07;
-3phase osc2 depth 0;
-3phase osc1 freq 0.6;
-3phase osc1 depth 0;
-3phase wet 0;
 datalogue vel lin 0.84096;
 datalogue vel attack 10;
 datalogue vel release 1000;
@@ -68,3 +63,8 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0.1 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 1 1 0 0 0 0.2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 24 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0;
+3phase osc2 freq 6.07;
+3phase osc2 depth 0;
+3phase osc1 freq 0.6;
+3phase osc1 depth 0;
+3phase wet 0;

@@ -1,9 +1,9 @@
-#N canvas 120 23 1320 799 10;
+#N canvas 120 33 1320 799 10;
 #X declare -lib iemlib -lib zexy;
 #X obj 594 48 hradio 15 1 0 16 \$0-preset empty Prepare_Preset 0 -8
-0 10 -262144 -1 -1 15;
-#X obj 1018 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+0 10 #fcfcfc #000000 #000000 0;
+#X obj 1018 102 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 43 254 notein 1;
 #X obj 98 429 instr/pbtou;
 #X obj 92 394 bendin 1;
@@ -14,14 +14,14 @@
 #X obj 225 123 datalogue_editor;
 #X obj 64 475 datalogue~;
 #X obj 129 756 instr/3phase~;
-#X floatatom 313 840 5 0 1 0 - - -;
+#X floatatom 313 840 5 0 1 0 - - - 0;
 #N canvas 221 149 762 472 3phasecontrol 0;
-#X floatatom 241 171 5 0 1 0 Depth1 - -;
-#X floatatom 311 173 5 0 50 0 Freq1 - -;
+#X floatatom 241 171 5 0 1 0 Depth1 - - 0;
+#X floatatom 311 173 5 0 50 0 Freq1 - - 0;
 #X obj 240 301 zexy/nop;
 #X obj 249 273 shadylib/prepender osc1 osc2;
-#X floatatom 388 173 5 0 1 0 depth2 - -;
-#X floatatom 459 173 5 0 50 0 freq2 - -;
+#X floatatom 388 173 5 0 1 0 depth2 - - 0;
+#X floatatom 459 173 5 0 50 0 freq2 - - 0;
 #X msg 183 225 depth \$1;
 #X msg 278 228 freq \$1;
 #X msg 375 229 depth \$1;
@@ -45,8 +45,8 @@
 #X obj 72 119 route depth freq;
 #X obj 86 182 route depth freq;
 #X msg 226 66 0 0;
-#X obj 318 155 bng 15 250 50 0 empty empty 0depth 17 7 0 10 -262144
--1 -1;
+#X obj 318 155 bng 15 250 50 0 empty empty 0depth 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 288 123 0;
 #X obj 287 328 demultiplex;
 #X connect 0 0 6 0;
@@ -96,18 +96,18 @@
 #X restore 175 901 pd 3phasecontrol;
 #X obj 485 881 f;
 #X obj 605 11 bng 15 250 50 0 \$0-load_preset empty load_preset 17
-7 0 10 -262144 -1 -1;
+7 0 10 #fcfcfc #000000 #000000;
 #X obj 476 850 shadylib/stater \$0-mainlogue 3phase;
 #X obj 511 892 route wet;
-#X floatatom 594 65 5 0 0 0 - - -;
+#X floatatom 594 65 5 0 0 0 - - - 0;
 #X obj 638 66 tgl 15 0 \$0-msgtgls \$0-msgtgl Preset_Auto_Load_On_Prepare
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 50 33 1;
 #X obj 129 732 lop~ 5500;
 #X obj 129 778 lop~ 5500;
 #X obj 114 302 ctlin 1 1;
 #X msg 244 93 bhq 0.01;
-#X floatatom 55 281 5 0 0 0 - - -;
+#X floatatom 55 281 5 0 0 0 - - - 0;
 #N canvas 293 318 492 381 examplectl 0;
 #X obj 227 117 inlet;
 #X obj 221 347 outlet;
@@ -221,32 +221,32 @@
 #X connect 16 0 1 0;
 #X restore 127 450 pd examplectl;
 #X obj 51 125 ctlin 7 1;
-#X floatatom 150 112 5 0 0 0 - - -;
-#X floatatom 152 261 7 0 0 0 - - -;
-#X floatatom 168 138 5 0 0 0 - - -;
+#X floatatom 150 112 5 0 0 0 - - - 0;
+#X floatatom 152 261 7 0 0 0 - - - 0;
+#X floatatom 168 138 5 0 0 0 - - - 0;
 #X text 199 14 controller 7 modifies some parameter (set inside examplectl
 subpatch);
 #X obj 57 150 instr/ctltou;
 #X msg 138 59 127;
 #X msg 182 65 -127;
 #X msg 104 368 list bfmidi NULL;
-#X symbolatom 1033 38 17 0 0 0 Prepare_File - #0-patchname;
+#X symbolatom 1033 38 17 0 0 0 Prepare_File - \$0-patchname 0;
 #X obj 932 16 bng 15 250 50 0 \$0-load_file empty load_file 17 7 0
-10 -262144 -1 -1;
+10 #fcfcfc #000000 #000000;
 #X obj 939 62 tgl 15 0 \$0-filetgls \$0-filetgl File_Auto_Load_On_Prepare
-17 7 0 10 -262144 -1 -1 1 1;
-#X obj 848 7 bng 15 250 50 0 \$0-save empty save/write 17 7 0 10 -262144
--1 -1;
-#X obj 1033 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 848 7 bng 15 250 50 0 \$0-save empty save/write 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1033 11 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 557 951 print save;
 #X msg 308 91 pw1 0.3;
 #X obj 1071 84 bng 15 250 50 0 empty empty print_patches 17 7 0 10
--262144 -1 -1;
+#fcfcfc #000000 #000000;
 #X obj 1040 134 hcs/folder_list ./patches/*;
 #X obj 1052 199 list trim;
 #X obj 847 38 hradio 15 1 0 2 \$0-kinds \$0-kind message/file 0 -8
-0 10 -262144 -1 -1 0;
+0 10 #fcfcfc #000000 #000000 0;
 #X obj 43 74 s \$0-msgtgl;
 #X obj 32 54 s \$0-filetgl;
 #X obj 81 873 r \$0-loadfade;
@@ -906,8 +906,8 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X text 344 66 (& turn up outputc~ volume below);
 #X msg 15 322 60;
 #X msg 45 318 127;
-#X floatatom 10 304 5 0 0 0 - - -;
-#X floatatom 112 281 5 0 0 0 - - -;
+#X floatatom 10 304 5 0 0 0 - - - 0;
+#X floatatom 112 281 5 0 0 0 - - - 0;
 #X obj 51 1078 shadylib/outputc~;
 #X obj 3 341 makenote 100 200;
 #X obj 245 1003 shadylib/meters~;
@@ -920,6 +920,7 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X obj 33 869 *~ 1;
 #X obj 1072 103 shadylib/stater \$0-mainlogue datalogue;
 #X obj 78 193 shadylib/scaler 1 0;
+#X text 1060 399 note: moog (bob~) filter changed in pd 0.52;
 #X connect 0 0 18 0;
 #X connect 1 0 9 1;
 #X connect 2 0 10 0;
