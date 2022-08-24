@@ -33,21 +33,21 @@ be made. ajf2010.;
 #X obj 575 9 r \$0-GUI;
 #X obj 21 132 m_majorscale 50;
 #X obj 21 78 metro 500;
-#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
 #X obj 25 242 pack;
 #X obj 31 205 notein;
 #X obj 135 480 s \$0-GUI;
 #X obj 152 300 loadbang;
 #X obj 114 242 r \$0-control;
 #X obj 575 528 s \$0-control;
-#X symbolatom 350 271 20 0 0 0 - - -, f 20;
+#X symbolatom 350 271 20 0 0 0 - - - 0;
 #X obj 445 250 s \$0-GUI;
-#X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 0 256;
+#X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 #fc8000
+#fcfcfc #000000 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 25 185 makenote 127 300;
-#X floatatom 112 62 5 0 0 0 - - -, f 5;
+#X floatatom 112 62 5 0 0 0 - - - 0;
 #X msg 135 319 name dinosaur \, mod3d 0 \, mod3c 0 \, mod3b 0.661417
 \, mod3a 0.551181 \, mod2d 0.409449 \, mod2c 0 \, mod2b 0.456693 \,
 mod2a 0.984252 \, mod1d 0 \, mod1c 0.338583 \, mod1b 0.0314961 \, mod1a
@@ -304,11 +304,11 @@ color 2 \,;
 #X connect 26 17 25 0;
 #X connect 27 0 3 0;
 #X restore 350 228 pd cwc_presets;
-#X obj 299 151 hradio 15 1 0 18 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+#X obj 299 151 hradio 15 1 0 18 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X obj 21 105 random 10;
 #X obj 25 274 s_cwc;
-#X obj 25 322 outputc~;
+#X obj 25 322 shadylib/outputc~;
 #X connect 0 0 17 0;
 #X connect 1 0 14 0;
 #X connect 2 0 20 0;

@@ -1,7 +1,7 @@
 #N canvas 609 23 603 554 10;
 #X obj 43 24 notein 1;
 #X obj 38 50 pack f f;
-#X floatatom 138 55 5 0 0 0 - - -, f 5;
+#X floatatom 138 55 5 0 0 0 - - - 0;
 #X obj 35 77 mellotron 9 4000 0.1 0.1;
 #X text 220 298 2nd outlet: parameters;
 #X obj 204 324 print;

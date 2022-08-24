@@ -1,7 +1,7 @@
 #N canvas 744 352 450 300 10;
 #X obj 223 120 tr808-cp~;
 #X msg 219 91 trigger;
-#X obj 256 178 outputc~;
+#X obj 256 178 shadylib/outputc~;
 #X connect 0 0 2 0;
 #X connect 0 0 2 1;
 #X connect 1 0 0 0;

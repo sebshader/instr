@@ -1,6 +1,5 @@
-#N canvas 0 23 1440 801 10;
+#N canvas -253 74 1440 801 10;
 #X declare -lib iemlib -lib zexy;
-#X obj 1072 103 stater \$0-mainlogue datalogue;
 #X obj 62 954 *~;
 #X obj 78 924 line~;
 #X obj 118 19 loadbang;
@@ -13,7 +12,6 @@
 #X msg 50 33 1;
 #X obj 112 722 lop~ 5500;
 #X obj 122 786 lop~ 5500;
-#X obj 1040 134 hcs/folder_list ./patches/*;
 #X obj 43 74 s \$0-msgtgl;
 #X obj 32 54 s \$0-filetgl;
 #X obj 81 873 r \$0-loadfade;
@@ -692,9 +690,8 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X connect 44 0 42 0;
 #X connect 45 0 24 0;
 #X restore 1092 469 pd state_saving;
-#X obj 1051 224 print patch;
 #X obj 1085 812 iem_prepend wet;
-#X obj 1069 291 declare -lib iemlib -lib zexy;
+#X obj 1090 512 declare -lib iemlib -lib zexy;
 #X obj 104 187 inlet;
 #X obj 119 244 inlet;
 #X obj 17 212 inlet;
@@ -702,41 +699,40 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X obj 69 217 inlet;
 #X text 21 191 midi;
 #X text 64 197 vel;
-#X obj 1167 158 hcs/folder_list;
 #X obj 1168 7 loadbang;
 #X obj 64 1020 outlet~;
-#X obj 228 802 cnv 15 790 24 empty empty empty 20 12 0 14 -203904 -66577
+#X obj 228 802 cnv 15 790 24 empty empty empty 20 12 0 14 #c4c4fc #404040
 0;
-#X floatatom 980 806 5 0 1 0 3phase-wet/dry - -;
+#X floatatom 980 806 5 0 1 0 3phase-wet/dry - - 0;
 #X text 102 167 pitchbend (0-1);
 #X text 116 224 modwheel (-1 1);
-#X obj 227 60 cnv 15 790 60 empty empty Datalogue_COMBO 5 30 0 24 -261682
--45076 0;
+#X obj 227 60 cnv 15 790 60 empty empty Datalogue_COMBO 5 30 0 24 #fce0c4
+#2c004c 0;
 #X obj 451 81 hradio 15 1 0 16 \$0-preset empty Prepare_Preset 0 -8
-0 10 -262144 -1 -1 2;
+0 10 #fcfcfc #000000 #000000 0;
 #X obj 539 63 bng 15 250 50 0 \$0-load_preset empty load_preset 17
-7 0 10 -262144 -1 -1;
-#X floatatom 451 98 5 0 0 0 - - -;
+7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 451 98 5 0 0 0 - - - 0;
 #X obj 495 99 tgl 15 0 \$0-msgtgls \$0-msgtgl Preset_Auto_Load_On_Prepare
-17 7 0 10 -262144 -1 -1 1 1;
-#X symbolatom 862 83 25 0 0 0 Prepare_File - #0-patchname;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X symbolatom 862 83 25 0 0 0 Prepare_File - \$0-patchname 0;
 #X obj 941 64 bng 15 250 50 0 \$0-load_file empty load_file 17 7 0
-10 -262144 -1 -1;
+10 #fcfcfc #000000 #000000;
 #X obj 838 101 tgl 15 0 \$0-filetgls \$0-filetgl File_Auto_Load_On_Prepare
-17 7 0 10 -262144 -1 -1 1 1;
-#X obj 719 99 bng 15 250 50 0 \$0-save empty save/write 17 7 0 10 -262144
--1 -1;
-#X obj 913 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 719 99 bng 15 250 50 0 \$0-save empty save/write 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 913 67 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 730 79 hradio 15 1 0 3 \$0-kinds \$0-kind message/globalfile/localfile
-0 -8 0 10 -262144 -1 -1 2;
+0 -8 0 10 #fcfcfc #000000 #000000 0;
 #N canvas 221 149 762 472 3phasecontrol 0;
-#X floatatom 442 152 5 0 1 0 Depth1 - -;
-#X floatatom 512 152 5 0 50 0 Freq1 - -;
+#X floatatom 442 152 5 0 1 0 Depth1 - - 0;
+#X floatatom 512 152 5 0 50 0 Freq1 - - 0;
 #X obj 240 301 zexy/nop;
 #X obj 249 273 shadylib/prepender osc1 osc2;
-#X floatatom 589 152 5 0 1 0 depth2 - -;
-#X floatatom 660 152 5 0 50 0 freq2 - -;
+#X floatatom 589 152 5 0 1 0 depth2 - - 0;
+#X floatatom 660 152 5 0 50 0 freq2 - - 0;
 #X msg 183 225 depth \$1;
 #X msg 278 228 freq \$1;
 #X msg 375 229 depth \$1;
@@ -760,8 +756,8 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X obj 72 119 route depth freq;
 #X obj 86 182 route depth freq;
 #X msg 226 66 0 0;
-#X obj 318 153 bng 15 250 50 0 empty empty 0depth 17 7 0 10 -262144
--1 -1;
+#X obj 318 153 bng 15 250 50 0 empty empty 0depth 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 288 123 0;
 #X obj 287 328 demultiplex;
 #X connect 0 0 6 0;
@@ -809,8 +805,8 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X connect 31 1 22 0;
 #X coords 0 -1 1 1 500 20 1 200 150;
 #X restore 236 804 pd 3phasecontrol;
-#X obj 628 63 bng 15 250 50 0 empty empty print_patches 17 7 0 10 -262144
--1 -1;
+#X obj 628 63 bng 15 250 50 0 empty empty print_patches 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 724 924 outlet;
 #X obj 238 908 outlet;
 #X obj 361 928 outlet;
@@ -822,61 +818,73 @@ datalogue sig_mtx matrix 8 11 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #X obj 29 770 *~ 1;
 #X obj 122 807 *~ 0;
 #X obj 35 692 shadylib/1-0switch;
-#X connect 0 0 4 1;
-#X connect 0 1 4 0;
-#X connect 1 0 33 0;
-#X connect 2 0 1 1;
-#X connect 3 0 10 0;
-#X connect 4 0 5 4;
-#X connect 4 0 52 0;
-#X connect 4 1 0 0;
-#X connect 4 1 51 0;
+#X obj 1072 103 shadylib/stater \$0-mainlogue datalogue;
+#X obj 1236 195 symbol;
+#X obj 1236 218 file glob;
+#X msg 1116 195 symbol ./patches/*;
+#X obj 1183 252 splitfilename /;
+#X obj 1198 324 list trim;
+#X obj 1198 347 print patch;
+#X obj 1198 301 splitfilename .;
+#X connect 0 0 29 0;
+#X connect 1 0 0 1;
+#X connect 2 0 9 0;
+#X connect 3 0 4 4;
+#X connect 3 0 48 0;
+#X connect 3 1 47 0;
+#X connect 3 1 58 0;
+#X connect 4 0 10 0;
+#X connect 4 0 55 0;
 #X connect 5 0 11 0;
-#X connect 5 0 59 0;
-#X connect 6 0 12 0;
-#X connect 6 1 12 0;
-#X connect 6 2 12 0;
-#X connect 7 0 22 0;
-#X connect 8 0 7 0;
-#X connect 8 1 9 0;
-#X connect 8 1 49 0;
-#X connect 9 0 35 0;
-#X connect 10 0 14 0;
-#X connect 10 0 15 0;
-#X connect 10 0 18 0;
-#X connect 11 0 6 0;
-#X connect 12 0 60 0;
-#X connect 13 0 21 0;
-#X connect 16 0 17 0;
-#X connect 17 0 2 0;
-#X connect 19 0 5 4;
-#X connect 22 0 8 0;
-#X connect 22 0 55 0;
-#X connect 24 0 5 2;
-#X connect 25 0 5 3;
-#X connect 26 0 5 0;
-#X connect 27 0 4 0;
-#X connect 28 0 5 1;
-#X connect 31 0 21 0;
-#X connect 32 0 57 0;
-#X connect 35 0 7 1;
-#X connect 35 0 54 0;
-#X connect 35 0 60 1;
-#X connect 35 0 61 0;
-#X connect 39 0 41 0;
-#X connect 47 0 43 0;
-#X connect 49 0 6 1;
-#X connect 49 0 53 0;
-#X connect 49 1 8 0;
-#X connect 49 1 55 0;
-#X connect 50 0 31 0;
-#X connect 50 0 13 0;
-#X connect 54 0 53 0;
-#X connect 56 0 31 1;
-#X connect 57 0 56 0;
-#X connect 58 0 9 0;
-#X connect 58 0 49 0;
-#X connect 59 0 1 0;
-#X connect 60 0 1 0;
-#X connect 61 0 59 1;
+#X connect 5 1 11 0;
+#X connect 5 2 11 0;
+#X connect 6 0 19 0;
+#X connect 7 0 6 0;
+#X connect 7 1 8 0;
+#X connect 7 1 45 0;
+#X connect 8 0 31 0;
+#X connect 9 0 12 0;
+#X connect 9 0 13 0;
+#X connect 9 0 16 0;
+#X connect 10 0 5 0;
+#X connect 11 0 56 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 17 0 4 4;
+#X connect 19 0 7 0;
+#X connect 19 0 51 0;
+#X connect 21 0 4 2;
+#X connect 22 0 4 3;
+#X connect 23 0 4 0;
+#X connect 24 0 3 0;
+#X connect 25 0 4 1;
+#X connect 28 0 53 0;
+#X connect 31 0 6 1;
+#X connect 31 0 50 0;
+#X connect 31 0 56 1;
+#X connect 31 0 57 0;
+#X connect 35 0 37 0;
+#X connect 43 0 39 0;
+#X connect 45 0 5 1;
+#X connect 45 0 49 0;
+#X connect 45 1 7 0;
+#X connect 45 1 51 0;
+#X connect 46 0 61 0;
+#X connect 46 0 59 0;
+#X connect 50 0 49 0;
+#X connect 52 0 59 1;
+#X connect 53 0 52 0;
+#X connect 54 0 8 0;
+#X connect 54 0 45 0;
+#X connect 55 0 0 0;
+#X connect 56 0 0 0;
+#X connect 57 0 55 1;
+#X connect 58 0 3 1;
+#X connect 58 1 3 0;
+#X connect 59 0 60 0;
+#X connect 60 0 62 0;
+#X connect 61 0 60 0;
+#X connect 62 1 65 0;
+#X connect 63 0 64 0;
+#X connect 65 0 63 0;
 #X coords 0 -1 1 1 800 775 2 222 55;

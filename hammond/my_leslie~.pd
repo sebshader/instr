@@ -1,17 +1,17 @@
 #N canvas 357 167 1066 636 10;
 #X obj 470 21 inlet~;
 #X obj 874 34 inlet cmd;
-#X obj 100 104 cnv 15 270 60 empty empty empty 20 12 0 14 -66577 -66577
+#X obj 100 104 cnv 15 270 60 empty empty empty 20 12 0 14 #404040 #404040
 0;
 #X text 105 100 SIG;
 #X text 346 100 CMD;
-#X obj 127 118 cnv 15 65 16 empty empty LESLIE~ 8 8 0 10 -33289 -262144
+#X obj 127 118 cnv 15 65 16 empty empty LESLIE~ 8 8 0 10 #202020 #fcfcfc
 0;
 #X obj 596 566 outlet~ left;
 #X obj 666 13 r \$0_speed;
 #X obj 695 566 outlet~ right;
 #X obj 245 145 hsl 90 15 0 1 0 0 \$0_dry_slider \$0_rdry empty -2 -8
-0 10 -262144 -1 -1 4300 1;
+0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 471 311 *~ 0;
 #X obj 492 282 r \$0_dry;
 #X obj 596 529 *~ 0.2;
@@ -21,9 +21,9 @@
 #X text 220 144 DRY;
 #X text 105 146 L;
 #X obj 245 126 hsl 90 15 1 5 0 0 \$0_gain_slider \$0_rgain empty -2
--8 0 10 -262144 -1 -1 0 1;
-#X obj 139 137 tgl 15 0 \$0_bypass \$0_rbypass empty 17 7 0 10 -262144
--1 -1 0 1;
+-8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 139 137 tgl 15 0 \$0_bypass \$0_rbypass empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X obj 874 66 s \$0_cmd;
 #X text 156 136 BYPASS;
 #X text 213 125 GAIN;
@@ -211,7 +211,6 @@
 #X connect 52 0 12 0;
 #X restore 595 278 pd rotary_speaker;
 #X obj 701 203 zexy/nop;
-#X obj 737 351 prepender rate dry gain bypass;
 #X obj 840 457 outlet;
 #X obj 869 299 r \$0_bypass;
 #X obj 832 204 r \$0_gain_slider;
@@ -220,13 +219,14 @@
 #X obj 765 296 r \$0_dry_slider;
 #X obj 787 330 * 127;
 #X obj 245 108 hsl 90 15 0 1 0 0 \$0_speed \$0_rspeed empty -2 -8 0
-10 -262144 -1 -1 1600 1;
+10 #fcfcfc #000000 #000000 0 1;
 #X obj 653 62 * 7;
 #X text 207 108 SPEED;
+#X obj 737 351 shadylib/prepender rate dry gain bypass;
 #X connect 0 0 23 0;
 #X connect 1 0 20 0;
-#X connect 7 0 31 0;
-#X connect 7 0 40 0;
+#X connect 7 0 39 0;
+#X connect 7 0 41 0;
 #X connect 10 0 6 0;
 #X connect 10 0 8 0;
 #X connect 11 0 10 1;
@@ -240,12 +240,12 @@
 #X connect 29 0 12 0;
 #X connect 29 1 14 0;
 #X connect 30 0 29 1;
-#X connect 31 0 32 0;
-#X connect 33 0 31 3;
+#X connect 32 0 41 3;
+#X connect 33 0 34 0;
 #X connect 34 0 35 0;
-#X connect 35 0 36 0;
-#X connect 36 0 31 2;
-#X connect 37 0 38 0;
-#X connect 38 0 31 1;
-#X connect 40 0 30 0;
+#X connect 35 0 41 2;
+#X connect 36 0 37 0;
+#X connect 37 0 41 1;
+#X connect 39 0 30 0;
+#X connect 41 0 31 0;
 #X coords 0 -1 1 1 270 68 1 100 100;

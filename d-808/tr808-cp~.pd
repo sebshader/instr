@@ -1,4 +1,5 @@
 #N canvas 427 304 728 455 10;
+#X declare -lib iemlib;
 #X obj 222 259 vline~;
 #X obj 222 281 dbtorms~;
 #X obj 31 255 noise~;
@@ -31,6 +32,7 @@
 ;
 #X obj 17 31 route trigger gain;
 #X obj 31 280 iemlib/bpq2~ 1000 1 3000;
+#X obj 321 165 declare -lib iemlib;
 #X connect 0 0 1 0;
 #X connect 1 0 3 1;
 #X connect 2 0 28 0;
