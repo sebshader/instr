@@ -6,10 +6,10 @@
 #X obj 183 145 inlet~;
 #X obj 97 210 instr/phaser24~;
 #X obj 254 62 inlet;
-#X obj 101 103 cnv 15 108 34 empty empty gphsr~ 20 7 0 14 -233017 -66577
+#X obj 101 103 cnv 15 108 34 empty empty gphsr~ 20 7 0 14 #e0e0e0 #404040
 0;
-#X obj 111 120 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+#X obj 111 120 hradio 15 1 0 6 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X obj 196 33 loadbang;
 #X obj 199 57 f \$1;
 #X connect 2 0 5 0;

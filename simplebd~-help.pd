@@ -1,49 +1,50 @@
 #N canvas 426 80 700 491 10;
-#X obj 53 277 outputc~;
-#X obj 82 208 prepender attack decay pitchenv;
-#X obj 92 54 vsl 15 128 0 20 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 900 1;
-#X obj 199 68 vsl 15 128 0 4000 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3200 1;
-#X obj 298 69 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1400 1;
-#X obj 496 127 saver \$0-sbd;
-#X obj 503 205 msgsave;
+#X obj 92 54 vsl 15 128 0 20 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 199 68 vsl 15 128 0 4000 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 298 69 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X msg 509 243 \; bd pitchenv 0.110236 \; bd decay 1007.87 \; bd attack
 1.41732 \;;
 #X msg 344 129 50;
 #X obj 17 34 metro 500;
-#X obj 22 6 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 22 6 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
 #X obj 114 34 route attack decay pitchenv;
 #X obj 351 58 loadbang;
-#X floatatom 348 163 5 0 0 0 - - -, f 5;
+#X floatatom 348 163 5 0 0 0 - - - 0;
 #X obj 17 178 f;
-#X floatatom 99 8 5 0 0 0 - - -, f 5;
-#X obj 40 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 82 234 simplebd~;
-#X obj 309 262 gsave \$0-sbd bd;
-#X connect 1 0 17 0;
-#X connect 1 0 18 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 1;
-#X connect 4 0 1 2;
-#X connect 5 0 6 0;
-#X connect 5 1 6 1;
-#X connect 5 2 6 2;
-#X connect 6 0 7 0;
-#X connect 8 0 13 0;
-#X connect 9 0 14 0;
-#X connect 10 0 9 0;
-#X connect 11 0 2 0;
-#X connect 11 1 3 0;
-#X connect 11 2 4 0;
-#X connect 12 0 8 0;
-#X connect 13 0 14 1;
-#X connect 14 0 17 0;
-#X connect 15 0 9 1;
-#X connect 16 0 14 0;
-#X connect 17 0 0 1;
-#X connect 17 0 0 0;
-#X connect 18 1 11 0;
+#X floatatom 99 8 5 0 0 0 - - - 0;
+#X obj 40 109 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 82 208 shadylib/prepender attack decay pitchenv;
+#X obj 82 234 ./simplebd~;
+#X obj 53 277 shadylib/outputc~;
+#X obj 309 262 shadylib/gsave \$0-sbd bd;
+#X obj 503 205 shadylib/msgsave;
+#X obj 496 127 shadylib/saver \$0-sbd;
+#X text 403 22 simple sine wave bass drum synth;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 4 0 9 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 0 0;
+#X connect 7 1 1 0;
+#X connect 7 2 2 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 1;
+#X connect 10 0 14 0;
+#X connect 11 0 5 1;
+#X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 1;
+#X connect 14 0 15 0;
+#X connect 16 1 7 0;
+#X connect 17 0 3 0;
+#X connect 18 0 17 0;
+#X connect 18 1 17 1;
+#X connect 18 2 17 2;

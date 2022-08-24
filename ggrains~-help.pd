@@ -1,13 +1,12 @@
-#N canvas 385 77 1055 797 10;
+#N canvas 385 77 1055 673 10;
 #X obj 477 279 openpanel;
-#X obj 489 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 489 261 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 518 248 open stereo soundfile;
 #X text 510 6 simple gui for pitchshifting/timestreaching;
 #X text 443 481 saves: transposition \, frequency \, speed \, loop
 \, ranges (list: low \, high) \, speed->window.;
 #X text 440 603 arguments: array name of buffer;
-#X obj 482 220 stater \$0-guieegrains eegrains;
 #X msg 677 374 \; eegrains loop 1 \; eegrains tie 1 \; eegrains speed
 0.5 \; eegrains freq 9.09091 \; eegrains range 0 1 \; eegrains trans
 0 \;;
@@ -38,20 +37,22 @@ for saving;
 #X obj 13 278 ggrains~ anar;
 #X text 573 143 3rd inlet bang dumps parameters out last outlet;
 #X text 588 175 2nd inlet sets size;
-#X connect 0 0 12 0;
+#X obj 482 220 shadylib/stater \$0-guieegrains eegrains;
+#X obj 456 138 array size;
+#X connect 0 0 11 0;
 #X connect 1 0 0 0;
-#X connect 6 0 15 2;
-#X connect 6 1 15 0;
-#X connect 11 0 10 1;
-#X connect 11 1 10 1;
-#X connect 12 0 15 1;
-#X connect 13 0 14 0;
-#X connect 13 1 14 1;
-#X connect 13 2 14 2;
-#X connect 14 0 7 0;
-#X connect 15 0 10 0;
-#X connect 15 1 10 0;
-#X connect 15 2 11 0;
-#X connect 15 3 11 1;
-#X connect 15 4 11 2;
-#X connect 15 6 6 0;
+#X connect 10 0 9 1;
+#X connect 10 1 9 1;
+#X connect 11 0 14 1;
+#X connect 12 0 13 0;
+#X connect 12 1 13 1;
+#X connect 12 2 13 2;
+#X connect 13 0 6 0;
+#X connect 14 0 9 0;
+#X connect 14 1 9 0;
+#X connect 14 2 10 0;
+#X connect 14 3 10 1;
+#X connect 14 4 10 2;
+#X connect 14 6 17 0;
+#X connect 17 0 14 2;
+#X connect 17 1 14 0;

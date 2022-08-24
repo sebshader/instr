@@ -3,7 +3,7 @@
 #X obj 548 231 line~;
 #X obj 469 139 inlet~;
 #X obj 101 103 cnv 15 299 95 empty empty Voltage_Controlled_Low_Pass_Filter
-20 12 0 10 -1 -191407 0;
+20 12 0 10 #000000 #b8b8b8 0;
 #X obj 546 142 inlet~;
 #X obj 411 288 line~;
 #X obj 644 69 inlet;
@@ -14,31 +14,31 @@
 #X obj 636 172 f \$2;
 #X obj 501 259 max~ 20;
 #X obj 633 343 outlet;
-#X obj 563 307 prepender res fcv;
 #X obj 547 211 pack f 10;
 #X obj 431 253 pack f 10;
 #X obj 122 148 flatgui/knob 32 32 0 4 0 0 empty empty Resonance 0 -8
 0 12 -7.74785e+08 32674 -7.74759e+08 0 1;
 #X obj 234 149 flatgui/knob 32 32 22 15000 1 0 empty empty Fixed_Control_Voltage
 0 -8 0 12 -7.74785e+08 32674 -7.74759e+08 0 1;
+#X obj 563 307 shadylib/prepender res fcv;
 #X connect 0 0 8 0;
 #X connect 1 0 0 2;
 #X connect 2 0 0 0;
 #X connect 4 0 12 0;
 #X connect 5 0 12 0;
 #X connect 6 0 7 0;
-#X connect 7 0 17 0;
-#X connect 7 1 18 0;
+#X connect 7 0 16 0;
+#X connect 7 1 17 0;
 #X connect 9 0 10 0;
 #X connect 9 0 11 0;
-#X connect 10 0 17 0;
-#X connect 11 0 18 0;
+#X connect 10 0 16 0;
+#X connect 11 0 17 0;
 #X connect 12 0 0 1;
-#X connect 14 0 13 0;
-#X connect 15 0 1 0;
-#X connect 16 0 5 0;
-#X connect 17 0 14 0;
+#X connect 14 0 1 0;
+#X connect 15 0 5 0;
+#X connect 16 0 14 0;
+#X connect 16 0 18 0;
 #X connect 17 0 15 0;
-#X connect 18 0 14 1;
-#X connect 18 0 16 0;
+#X connect 17 0 18 1;
+#X connect 18 0 13 0;
 #X coords 0 -1 1 1 300 100 1 100 100;

@@ -1,9 +1,8 @@
 #N canvas 0 22 450 300 10;
-#X obj 148 146 suspedal;
 #X msg 113 55 64 21;
 #X obj 148 95 unpack f f;
-#X obj 236 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 236 93 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X msg 171 56 64 0;
 #X obj 148 210 print;
 #X obj 148 173 pack f f;
@@ -11,13 +10,14 @@
 #X msg 289 58 40 0;
 #X text 258 95 sustain in;
 #X text 129 33 pitch \, velocity;
-#X connect 0 0 6 0;
-#X connect 0 1 6 1;
-#X connect 1 0 2 0;
-#X connect 2 0 0 0;
-#X connect 2 1 0 1;
-#X connect 3 0 0 2;
-#X connect 4 0 2 0;
-#X connect 6 0 5 0;
-#X connect 7 0 2 0;
-#X connect 8 0 2 0;
+#X obj 148 146 ./suspedal;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 1 1 10 1;
+#X connect 2 0 10 2;
+#X connect 3 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 10 0 5 0;
+#X connect 10 1 5 1;

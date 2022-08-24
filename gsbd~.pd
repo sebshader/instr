@@ -1,9 +1,7 @@
 #N canvas 522 95 918 386 10;
-#X obj 294 276 prepender attack decay pitchenv;
 #X obj 320 77 route attack decay pitchenv;
 #X obj 562 323 outlet;
 #X obj 346 31 inlet;
-#X obj 294 302 simplebd~;
 #X obj 290 126 loadbang;
 #X obj 287 152 f \$1;
 #X obj 294 176 sel 0;
@@ -17,54 +15,56 @@
 #X obj 213 251 f \$4;
 #X obj 296 352 outlet~;
 #X obj 556 57 inlet;
-#X obj 101 103 cnv 15 78 188 empty empty gsbd~ 20 10 0 14 -233017 -4160
+#X obj 101 103 cnv 15 78 188 empty empty gsbd~ 20 10 0 14 #e0e0e0 #0400fc
 0;
-#X obj 110 158 vsl 15 128 0 20 0 0 empty empty a 4 5 0 10 -262144 -1
--1 3175 1;
-#X obj 133 158 vsl 15 128 0 4000 0 0 empty empty d 4 5 0 10 -262144
--1 -1 1587 1;
-#X obj 156 157 vsl 15 128 0 1 0 0 empty empty p 4 5 0 10 -262144 -1
--1 0 1;
-#X floatatom 131 135 5 0 0 2 midi - -, f 5;
-#X obj 111 134 bng 15 250 50 0 empty empty t 4 -7 0 10 -262144 -1 -1
-;
+#X obj 110 158 vsl 15 128 0 20 0 0 empty empty a 4 5 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 133 158 vsl 15 128 0 4000 0 0 empty empty d 4 5 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 156 157 vsl 15 128 0 1 0 0 empty empty p 4 5 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 131 135 5 0 0 2 midi - - 0;
+#X obj 111 134 bng 15 250 50 0 empty empty t 4 -7 0 10 #fcfcfc #000000
+#000000;
 #X obj 466 99 route float;
 #X obj 471 122 t b f;
 #X msg 273 201 set 5;
 #X msg 393 223 set 500;
-#X connect 0 0 4 0;
-#X connect 0 0 2 0;
-#X connect 1 0 19 0;
-#X connect 1 1 20 0;
-#X connect 1 2 21 0;
-#X connect 1 3 24 0;
-#X connect 3 0 1 0;
-#X connect 4 0 16 0;
-#X connect 5 0 6 0;
-#X connect 5 0 10 0;
-#X connect 5 0 13 0;
-#X connect 6 0 7 0;
-#X connect 7 0 26 0;
-#X connect 7 1 8 0;
-#X connect 8 0 1 0;
-#X connect 9 0 27 0;
-#X connect 9 1 11 0;
-#X connect 10 0 9 0;
-#X connect 11 0 1 0;
-#X connect 12 1 14 0;
-#X connect 13 0 12 0;
-#X connect 14 0 1 0;
-#X connect 15 0 4 0;
-#X connect 17 0 1 0;
-#X connect 19 0 0 0;
-#X connect 20 0 0 1;
-#X connect 21 0 0 2;
-#X connect 22 0 15 1;
-#X connect 23 0 15 0;
-#X connect 24 0 25 0;
-#X connect 24 1 23 0;
-#X connect 25 0 23 0;
-#X connect 25 1 22 0;
-#X connect 26 0 19 0;
-#X connect 27 0 20 0;
+#X obj 294 276 shadylib/prepender attack decay pitchenv;
+#X obj 294 302 ./simplebd~;
+#X connect 0 0 17 0;
+#X connect 0 1 18 0;
+#X connect 0 2 19 0;
+#X connect 0 3 22 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 0 8 0;
+#X connect 3 0 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 24 0;
+#X connect 5 1 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 25 0;
+#X connect 7 1 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 10 1 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 0 0;
+#X connect 13 0 27 0;
+#X connect 15 0 0 0;
+#X connect 17 0 26 0;
+#X connect 18 0 26 1;
+#X connect 19 0 26 2;
+#X connect 20 0 13 1;
+#X connect 21 0 13 0;
+#X connect 22 0 23 0;
+#X connect 22 1 21 0;
+#X connect 23 0 21 0;
+#X connect 23 1 20 0;
+#X connect 24 0 17 0;
+#X connect 25 0 18 0;
+#X connect 26 0 1 0;
+#X connect 26 0 27 0;
+#X connect 27 0 14 0;
 #X coords 0 -1 1 1 80 195 1 100 100;
